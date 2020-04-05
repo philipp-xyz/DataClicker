@@ -15,6 +15,7 @@ public class GUI {
 
     private JFrame frame;
     private Player player;
+    private String title = "DataClicker";
 
     /**
      * Launch the application.
@@ -43,7 +44,7 @@ public class GUI {
      * Initialize the contents of the frame.
      */
     private void initialize() {
-        frame = new JFrame();
+        frame = new JFrame(title);
         frame.setBounds(100, 100, 800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

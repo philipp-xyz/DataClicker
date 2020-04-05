@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9eeec205-8c3c-43b6-bc9a-eed5d172f495" name="Default Changelist" comment="" />
+    <list default="true" id="9eeec205-8c3c-43b6-bc9a-eed5d172f495" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/gui/GUI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +16,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a86K2e5OUA0SQWVCOt91CpYA3S" />
   <component name="ProjectViewState">
@@ -57,21 +63,21 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1069" height="289" key="GridCell.Tab.0.bottom" timestamp="1586109015365">
+    <state width="987" height="289" key="GridCell.Tab.0.bottom" timestamp="1586109940765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1069" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109015365" />
-    <state width="1069" height="289" key="GridCell.Tab.0.center" timestamp="1586109015365">
+    <state width="987" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109940765" />
+    <state width="987" height="289" key="GridCell.Tab.0.center" timestamp="1586109940765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1069" height="289" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109015365" />
-    <state width="1069" height="289" key="GridCell.Tab.0.left" timestamp="1586109015365">
+    <state width="987" height="289" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109940765" />
+    <state width="987" height="289" key="GridCell.Tab.0.left" timestamp="1586109940764">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1069" height="289" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109015365" />
-    <state width="1069" height="289" key="GridCell.Tab.0.right" timestamp="1586109015365">
+    <state width="987" height="289" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109940764" />
+    <state width="987" height="289" key="GridCell.Tab.0.right" timestamp="1586109940765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1069" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109015365" />
+    <state width="987" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586109940765" />
   </component>
 </project>
