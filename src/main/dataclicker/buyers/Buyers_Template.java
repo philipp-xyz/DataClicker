@@ -1,31 +1,34 @@
 package main.dataclicker.buyers;
 
 import main.dataclicker.player.Player;
+import main.dataclicker.gui.*;
 
 public class Buyers_Template 
 {
-	private String name;
+	private static String name;
 	private int level;
-	private int preis;
-	private int gewinn;
-	//private int dataAmount;
-	//private int moneyAmount;
+	private int price;
+	private int value;
 	
-	public Buyers_Template(String name, int preis, int gewinn)
+	public Buyers_Template(String name, int price, int value)
 	{
 		this.name = name;
-		this.level = 1;
-		this.preis = preis;
-		this.gewinn = gewinn;
+		this.level = 0;
+		this.price = price;
+		this.value = value;
 	}
-	public void kauf()
+	public static String getName()
 	{
-		if(player.getdataAmount() >= preis)
+		return name;
+	}
+	public void buy()
+	{
+		if(main.dataclicker.player.Player.getDataAmount() >= price)
 		{
 			level = level + 1;
-			dataAmount = dataAmount - preis;
-			preis = preis * 2;
-			moneyAmount = moneyAmount + gewinn;
+			main.dataclicker.player.Player.setDataAmount(main.dataclicker.player.Player.getDataAmount() - price);
+			price = price * 2;
+			main.dataclicker.player.Player.setMoneyAmount(main.dataclicker.player.Player.getMoneyAmount() + value);
 		}	
 	}
 }
