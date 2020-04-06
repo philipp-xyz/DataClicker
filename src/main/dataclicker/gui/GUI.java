@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 public class GUI {
 
 	private JFrame frame;
+	private String title = "DataClicker";
 	private static  Buyers_Template mustermann;
 
 	/**
@@ -48,7 +49,7 @@ public class GUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
+		frame = new JFrame(title);
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

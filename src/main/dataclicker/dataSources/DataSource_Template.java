@@ -18,6 +18,12 @@ public class DataSource_Template {
     private boolean sourceAvailable;
     private Player player;
 
+    public DataSource_Template(String sourceMame, String sourceDescription, int dataPerSecond, int currentCost) {
+        this.sourceName = sourceMame;
+        this.sourceDescription = sourceDescription;
+        this.dataPerSecond = dataPerSecond;
+        this.currentCost = currentCost;
+    }
 
     public String getSourceName() {
         return sourceName;
