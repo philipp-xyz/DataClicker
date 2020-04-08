@@ -129,10 +129,12 @@ public class DataSource_Template {
     		playersData=playersData-getCurrentCost();
     		Player.setDataAmount(playersData);				//Bezahlung der Datenquelle erfolgt
     		int amountOwned = getSourceAmountOwned();		
+    		amountOwned=+1;
     		if (amountOwned > 1)				//wenn es nicht die erste Quelle ihrer Art ist, die erworben wird, wird nun  die erarbeiteten Daten pro Sekunde aktualisiert
     			increaseDataPerSecond();
-    		amountOwned=+1;
-    		setSourceAmountOwned(amountOwned);				//Anzahl der Datenquellen die man hat wird aktualisiert		
+    		setSourceAmountOwned(amountOwned);				//Anzahl der Datenquellen die man hat wird aktualisiert
+    		int datapersec = getDataPerSecond();
+    		Player.setCurrentDataPerSecond(datapersec);
     		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
     	}
     }

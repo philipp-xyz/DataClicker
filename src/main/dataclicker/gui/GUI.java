@@ -23,6 +23,11 @@ public class GUI {
 	private JFrame frame;
 	private String title = "DataClicker";
 	private static  Buyers_Template mustermann;
+	private static DataSource_Template musterSource;
+	
+	 public String playerRessources() {
+		 return ("Data: "+main.dataclicker.player.Player.getDataAmount()+" Daten pro Sekunde: "+main.dataclicker.player.Player.getCurrentDataPerSecond()+" Money: "+main.dataclicker.player.Player.getMoneyAmount());
+	 }
 
 	/**
 	 * Launch the application.
@@ -39,6 +44,7 @@ public class GUI {
 			}
 		});
 		 mustermann = new  Buyers_Template("Max Mustermann", 10, 50);
+		 musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
 	}
 
 	/**
@@ -51,6 +57,7 @@ public class GUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	
 	private void initialize() {
 		frame = new JFrame(title);
 		frame.setBounds(100, 100, 800, 600);
@@ -62,27 +69,26 @@ public class GUI {
 		fl_playerRessourcesPanel.setVgap(50);
 		frame.getContentPane().add(playerRessourcesPanel, BorderLayout.NORTH);
 		
-		JLabel playerRessources = new JLabel("Data: "+main.dataclicker.player.Player.getDataAmount()+" Money: "+main.dataclicker.player.Player.getMoneyAmount());
+		JLabel playerRessources = new JLabel(playerRessources());
 		playerRessourcesPanel.add(playerRessources);
 		
 		JPanel dataSources = new JPanel();
 		frame.getContentPane().add(dataSources, BorderLayout.EAST);
 		
-		DataSource_Template musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
-		
-		JButton dataSource1 = new JButton(musterSource.getSourceName());
+		JButton dataSource1 = new JButton(musterSource.getSourceName()+" Kostet: "+musterSource.getCurrentCost());
 		dataSources.add(dataSource1);
 		dataSource1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				musterSource.purchaseDataSource();
+				dataSource1.setText(musterSource.getSourceName()+" Kostet: "+musterSource.getCurrentCost());
 			}
 		});
-		Timer everySecond = new Timer();
+		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollf�hrt
 		everySecond.schedule(new TimerTask() {
 			public void run() {
 				musterSource.collectDataPerSecond();
-				playerRessources.setText("Data: "+main.dataclicker.player.Player.getDataAmount()+" Money: "+main.dataclicker.player.Player.getMoneyAmount());
+				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
 		
@@ -96,7 +102,7 @@ public class GUI {
 		dataBank.addActionListener(new ActionListener() { //überprüft wann geclickt wird und was in dem Falle passiert
 			public void actionPerformed(ActionEvent click) {
 				main.dataclicker.player.Player.dataClick();		//added die durch klicken dazugewonnene Anzahl von Daten
-				playerRessources.setText("Data: "+main.dataclicker.player.Player.getDataAmount()+" Money: "+main.dataclicker.player.Player.getMoneyAmount()); //updatet das Label welches die aktuelle Anzahl an Daten anzeigt
+				playerRessources.setText(playerRessources()); //updatet das Label welches die aktuelle Anzahl an Daten anzeigt
 				
 			}
 		});
@@ -112,7 +118,7 @@ public class GUI {
 			public void actionPerformed(ActionEvent click)
 			{
 				mustermann.buy();
-				playerRessources.setText("Data: "+main.dataclicker.player.Player.getDataAmount()+" Money: "+main.dataclicker.player.Player.getMoneyAmount());
+				playerRessources.setText(playerRessources());
 			}
 		});
 		
