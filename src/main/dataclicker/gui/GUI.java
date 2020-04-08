@@ -6,10 +6,13 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 
 import main.dataclicker.buyers.Buyers_Template;
+import main.dataclicker.dataSources.*;
 import main.dataclicker.gui.GUI;
 
 import java.awt.FlowLayout;
@@ -65,8 +68,23 @@ public class GUI {
 		JPanel dataSources = new JPanel();
 		frame.getContentPane().add(dataSources, BorderLayout.EAST);
 		
-		JButton dataSource1 = new JButton("1st DataSource");
+		DataSource_Template musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
+		
+		JButton dataSource1 = new JButton(musterSource.getSourceName());
 		dataSources.add(dataSource1);
+		dataSource1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				musterSource.purchaseDataSource();
+			}
+		});
+		Timer everySecond = new Timer();
+		everySecond.schedule(new TimerTask() {
+			public void run() {
+				musterSource.collectDataPerSecond();
+				playerRessources.setText("Data: "+main.dataclicker.player.Player.getDataAmount()+" Money: "+main.dataclicker.player.Player.getMoneyAmount());
+			}
+		}, 0, 1000);
 		
 		JButton dataSource2 = new JButton("2nd DataSource");
 		dataSources.add(dataSource2);

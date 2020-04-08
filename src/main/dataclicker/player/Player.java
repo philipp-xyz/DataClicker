@@ -22,15 +22,15 @@ public class Player {
         return dataPerClick;
     }
 
-    public void setDataPerClick(int dataPerClick) {
+    public static void setDataPerClick(int dataPerClick) {
         Player.dataPerClick = dataPerClick;
     }
 
-    public int getClickMultiplier() {
+    public static  int getClickMultiplier() {
         return clickMultiplier;
     }
 
-    public void setClickMultiplier(int clickMultiplier) {
+    public static void setClickMultiplier(int clickMultiplier) {
         Player.clickMultiplier = clickMultiplier;
     }
 
@@ -42,11 +42,11 @@ public class Player {
         Player.moneyAmount = moneyAmount;
     }
 
-    public int getCurrentDataPerSecond() {
+    public static int getCurrentDataPerSecond() {
         return currentDataPerSecond;
     }
 
-    public void setCurrentDataPerSecond(int currentDataPerSecond) {
+    public static void setCurrentDataPerSecond(int currentDataPerSecond) {
         Player.currentDataPerSecond = currentDataPerSecond;
     }
 
@@ -55,11 +55,5 @@ public class Player {
         int clickAmount = getDataPerClick();
         dataAmount += clickAmount;
         setDataAmount(dataAmount);
-    }
-
-    public void purchaseDataSource(String sourceName) {
-    }
-
-    public void sellData() {
     }
 }

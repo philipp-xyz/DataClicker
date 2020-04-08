@@ -9,20 +9,21 @@ public class DataSource_Template {
     private int dataPerSecond;
     private int requiredData;
     private int initialCost;
-    private static int currentCost;
+    private int currentCost;
     private double costIncrease;
     private double dataIncrease;
     private int sourceAmountOwned;
-    private int dataMultiplier;
-    private boolean sourceActive;
+    private int dataMultiplier=1;
+    private boolean sourceActive = false;
     private boolean sourceAvailable;
-    private Player player;
 
-    public DataSource_Template(String sourceMame, String sourceDescription, int dataPerSecond, int currentCost) {
-        this.sourceName = sourceMame;
+    public DataSource_Template(String sourceName, String sourceDescription, int dataPerSecond, int currentCost, double costIncrease, int requiredData) {
+        this.sourceName = sourceName;
         this.sourceDescription = sourceDescription;
         this.dataPerSecond = dataPerSecond;
         this.currentCost = currentCost;
+        this.costIncrease = costIncrease;
+        this.requiredData = requiredData;
     }
 
     public String getSourceName() {
@@ -41,7 +42,7 @@ public class DataSource_Template {
         return initialCost;
     }
 
-    public static int getCurrentCost() {
+    public int getCurrentCost() {
         return currentCost;
     }
 
@@ -56,13 +57,23 @@ public class DataSource_Template {
     public int getSourceAmountOwned() {
         return sourceAmountOwned;
     }
+    
+    public void setSourceAmountOwned(int sourceAmountOwned) {
+		this.sourceAmountOwned = sourceAmountOwned;
+	}
 
-    public int getDataMultiplier() {
+	public int getDataMultiplier() {
         return dataMultiplier;
     }
 
     public boolean isSourceActive() {
-        return sourceActive;
+    	return sourceActive;
+    }
+    
+    public void setSourceActive(boolean state) {
+    	if (state == true) {
+    		this.sourceActive = true;
+    	} else this.sourceActive = false;
     }
 
     public boolean isSourceAvailable() {
@@ -79,21 +90,22 @@ public class DataSource_Template {
 
     public void increaseCurrentCost() {
         int currentCost = getCurrentCost();
-        if (costIncrease < 1.00) {
+        if (costIncrease < 1.00) {   //Guckt nach ob der Anstieg auch wirklich groß genug ist, um den Preis zu erhöen (also mehr als 100% darstellt)
             costIncrease += 1.00;
         }
         currentCost = (int) (currentCost * costIncrease);
-        DataSource_Template.currentCost = currentCost;
+        this.currentCost = currentCost;
     }
 
     public void increaseDataPerSecond() {
         int dataPerSecond = getDataPerSecond();
-        dataPerSecond = dataPerSecond * dataMultiplier;
+        int sourceAmountOwned = getSourceAmountOwned();
+        dataPerSecond = dataPerSecond * sourceAmountOwned * dataMultiplier; 
         this.dataPerSecond = dataPerSecond;
     }
 
-    public boolean toggleVisibility(int dataAmount) {
-        if (player.getDataAmount() >= requiredData) {
+    public boolean toggleVisibility() {
+        if (Player.getDataAmount() >= requiredData) {
             return true;
         } else {
             return false;
@@ -101,9 +113,28 @@ public class DataSource_Template {
 
     }
 
-    public void collectDataPerSecond(int dataPerSecond) {
-        int dataAmount = player.getDataAmount();
-        dataAmount = dataAmount + dataPerSecond;
+    public void collectDataPerSecond() {
+        if (this.sourceActive == true) {
+        	int dataAmount = Player.getDataAmount();
+            dataAmount = dataAmount + this.dataPerSecond;
+            Player.setDataAmount(dataAmount);
+        }
+    }
+    
+    public void purchaseDataSource() {
+    	if (Player.getDataAmount()>= getCurrentCost()) {  //checkt ob der Player sich die Datenquelle leisten kann
+    		if(isSourceActive()==false)
+    			setSourceActive(true);
+    		int playersData = Player.getDataAmount();
+    		playersData=playersData-getCurrentCost();
+    		Player.setDataAmount(playersData);				//Bezahlung der Datenquelle erfolgt
+    		int amountOwned = getSourceAmountOwned();		
+    		if (amountOwned > 1)				//wenn es nicht die erste Quelle ihrer Art ist, die erworben wird, wird nun  die erarbeiteten Daten pro Sekunde aktualisiert
+    			increaseDataPerSecond();
+    		amountOwned=+1;
+    		setSourceAmountOwned(amountOwned);				//Anzahl der Datenquellen die man hat wird aktualisiert		
+    		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
+    	}
     }
 }
 
