@@ -31,4 +31,8 @@ public class Buyers_Template
 			main.dataclicker.player.Player.setMoneyAmount(main.dataclicker.player.Player.getMoneyAmount() + value);
 		}	
 	}
+	public int getPrice() 
+	{
+		return price;
+	}
 }

@@ -111,7 +111,7 @@ public class GUI {
 		JPanel buyersPanel = new JPanel();
 		frame.getContentPane().add(buyersPanel, BorderLayout.WEST);
 		
-		JButton buyer1 = new JButton(mustermann.getName());
+		JButton buyer1 = new JButton(mustermann.getName() + " Kosten: " + mustermann.getPrice());
 		buyersPanel.add(buyer1);
 		buyer1.addActionListener(new ActionListener()
 		{
@@ -119,6 +119,7 @@ public class GUI {
 			{
 				mustermann.buy();
 				playerRessources.setText(playerRessources());
+				buyer1.setText(mustermann.getName() + " Kosten: " + mustermann.getPrice());
 			}
 		});
 		
