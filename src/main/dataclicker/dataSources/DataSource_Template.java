@@ -7,6 +7,7 @@ public class DataSource_Template {
     private String sourceName;
     private String sourceDescription;
     private int dataPerSecond;
+    private int initialDataPerSecond;
     private int requiredData;
     private int initialCost;
     private int currentCost;
@@ -21,6 +22,7 @@ public class DataSource_Template {
         this.sourceName = sourceName;
         this.sourceDescription = sourceDescription;
         this.dataPerSecond = dataPerSecond;
+        this.initialDataPerSecond = dataPerSecond;
         this.currentCost = currentCost;
         this.costIncrease = costIncrease;
         this.requiredData = requiredData;
@@ -39,7 +41,19 @@ public class DataSource_Template {
         return dataPerSecond;
     }
 
-    public int getInitialCost() {
+    public void setDataPerSecond(int dataPerSecond) {
+		this.dataPerSecond = dataPerSecond;
+	}
+
+	public int getInitialDataPerSecond() {
+		return initialDataPerSecond;
+	}
+
+	public void setInitialDataPerSecond(int initialDataPerSecond) {
+		this.initialDataPerSecond = initialDataPerSecond;
+	}
+
+	public int getInitialCost() {
         return initialCost;
     }
 
@@ -100,9 +114,9 @@ public class DataSource_Template {
 
     public void increaseDataPerSecond() {
         int dataPerSecond = getDataPerSecond();
-        int sourceAmountOwned = getSourceAmountOwned();
-        dataPerSecond = dataPerSecond * sourceAmountOwned * dataMultiplier; 
-        this.dataPerSecond = dataPerSecond;
+        int initDataPerSecond = getInitialDataPerSecond();
+        dataPerSecond = (dataPerSecond + initDataPerSecond) * dataMultiplier; 
+        setDataPerSecond(dataPerSecond);
     }
 
     public boolean toggleVisibility() {
@@ -117,7 +131,7 @@ public class DataSource_Template {
     public void collectDataPerSecond() {
         if (this.sourceActive == true) {
         	int dataAmount = Player.getDataAmount();
-            dataAmount = dataAmount + this.dataPerSecond;
+            dataAmount = dataAmount + getDataPerSecond();
             Player.setDataAmount(dataAmount);
         }
     }
@@ -130,11 +144,10 @@ public class DataSource_Template {
     		playersMoney=playersMoney-getCurrentCost();
     		Player.setMoneyAmount(playersMoney);				//Bezahlung der Datenquelle erfolgt
     		int amountOwned = getSourceAmountOwned();		
-    		amountOwned=+1;
-    		setSourceAmountOwned(amountOwned);
+    		amountOwned= amountOwned+1;
+    		setSourceAmountOwned(amountOwned);	//Anzahl der Datenquellen die man hat wird aktualisiert
     		if (amountOwned > 1)				//wenn es nicht die erste Quelle ihrer Art ist, die erworben wird, wird nun  die erarbeiteten Daten pro Sekunde aktualisiert
-    		increaseDataPerSecond();
-    		//setSourceAmountOwned(amountOwned);				//Anzahl der Datenquellen die man hat wird aktualisiert
+    		increaseDataPerSecond();		
     		int datapersec = getDataPerSecond();
     		Player.setCurrentDataPerSecond(datapersec);
     		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
