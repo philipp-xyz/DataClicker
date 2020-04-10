@@ -13,7 +13,7 @@ public class DataSource_Template {
     private double costIncrease;
     private double dataIncrease;
     private int sourceAmountOwned;
-    private int dataMultiplier=1;
+    private int dataMultiplier = 1;
     private boolean sourceActive = false;
     private boolean sourceAvailable;
 
@@ -24,6 +24,7 @@ public class DataSource_Template {
         this.currentCost = currentCost;
         this.costIncrease = costIncrease;
         this.requiredData = requiredData;
+        sourceAmountOwned = 0;
     }
 
     public String getSourceName() {
@@ -122,17 +123,18 @@ public class DataSource_Template {
     }
     
     public void purchaseDataSource() {
-    	if (Player.getDataAmount()>= getCurrentCost()) {  //checkt ob der Player sich die Datenquelle leisten kann
+    	if (Player.getMoneyAmount()>= getCurrentCost()) {  //checkt ob der Player sich die Datenquelle leisten kann
     		if(isSourceActive()==false)
     			setSourceActive(true);
-    		int playersData = Player.getDataAmount();
-    		playersData=playersData-getCurrentCost();
-    		Player.setDataAmount(playersData);				//Bezahlung der Datenquelle erfolgt
+    		int playersMoney = Player.getMoneyAmount();
+    		playersMoney=playersMoney-getCurrentCost();
+    		Player.setMoneyAmount(playersMoney);				//Bezahlung der Datenquelle erfolgt
     		int amountOwned = getSourceAmountOwned();		
     		amountOwned=+1;
+    		setSourceAmountOwned(amountOwned);
     		if (amountOwned > 1)				//wenn es nicht die erste Quelle ihrer Art ist, die erworben wird, wird nun  die erarbeiteten Daten pro Sekunde aktualisiert
-    			increaseDataPerSecond();
-    		setSourceAmountOwned(amountOwned);				//Anzahl der Datenquellen die man hat wird aktualisiert
+    		increaseDataPerSecond();
+    		//setSourceAmountOwned(amountOwned);				//Anzahl der Datenquellen die man hat wird aktualisiert
     		int datapersec = getDataPerSecond();
     		Player.setCurrentDataPerSecond(datapersec);
     		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
