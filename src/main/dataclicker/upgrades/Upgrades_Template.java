@@ -18,8 +18,8 @@ public class Upgrades_Template {
 			
 	    }
 	
-	public boolean getRequirement(){
-		return requirement;
+	public boolean getUpgradeRequirement() {
+		return upgradeRequirement;
 	}
 	
 	public boolean getActive() {

@@ -60,12 +60,12 @@ public class GUI {
 
 		 //Datasources
 		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
-		 dataBook = new DataSource_Template("Daten-Buch", "Bringt 2 Daten Pro Sekunde", 10, 50, 1.20, 2000);
-		 dataPirate = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
-		 dataHub = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
-		 dataGewinnspiele = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
-		 dataScout24 = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
-		 dataSearch = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000);
+		 dataPirate = new DataSource_Template("Daten-Pirat", "", 2, 10, 1.15, 0);
+		 dataHub = new DataSource_Template("Daten-Hub", "", 2, 10, 1.15, 0);
+		 dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 2, 10, 1.15, 0);
+		 dataScout24 = new DataSource_Template("Daten-Scout24", "", 2, 10, 1.15, 0);
+		 dataSearch = new DataSource_Template("Daten-Suche", "", 2, 10, 1.15, 0);
 
 	}
 
@@ -98,14 +98,14 @@ public class GUI {
 		dataSources.setLayout(new GridLayout(10,1));
 		frame.getContentPane().add(dataSources, BorderLayout.EAST);
 		
-		JButton dataSource1 = new JButton(dataFarm.getSourceName()+" Kostet: "+ dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond());
+		JButton dataSource1 = new JButton(dataFarm.getSourceName() + " Kostet: "+ dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond());
 		dataSources.add(dataSource1);
 		dataSource1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataFarm.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource1.setText(dataFarm.getSourceName()+" Kostet: " + dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond());
+				dataSource1.setText(dataFarm.getSourceName() + " Kostet: " + dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond());
 			}
 		});
 		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollführt
