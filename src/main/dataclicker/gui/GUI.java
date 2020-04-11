@@ -22,7 +22,7 @@ public class GUI {
 
 	private JFrame frame;
 	private String title = "DataClicker";
-	private static  Buyers_Template mustermann;
+	private static  Buyers_Template nsa;
 	private static DataSource_Template musterSource;
 	
 	 public String playerRessources() {
@@ -43,7 +43,7 @@ public class GUI {
 				}
 			}
 		});
-		 mustermann = new  Buyers_Template("Max Mustermann", 10, 50);
+		 nsa = new  Buyers_Template("NSA", 10, 50);
 		 musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
 	}
 
@@ -111,15 +111,15 @@ public class GUI {
 		JPanel buyersPanel = new JPanel();
 		frame.getContentPane().add(buyersPanel, BorderLayout.WEST);
 		
-		JButton buyer1 = new JButton(mustermann.getName() + " Kosten: " + mustermann.getPrice());
+		JButton buyer1 = new JButton("LvL: " + nsa.getLevel() + " " +  nsa.getName() + " kauft " + nsa.getPrice() + " Daten für " + nsa.getValue() + "€");
 		buyersPanel.add(buyer1);
 		buyer1.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				mustermann.buy();
+				nsa.buy();
 				playerRessources.setText(playerRessources());
-				buyer1.setText(mustermann.getName() + " Kosten: " + mustermann.getPrice());
+				buyer1.setText("LvL: " + nsa.getLevel() + " " +  nsa.getName() + " kauft " + nsa.getPrice() + " Daten für " + nsa.getValue() + "€");
 			}
 		});
 		

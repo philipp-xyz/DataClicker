@@ -27,12 +27,20 @@ public class Buyers_Template
 		{
 			level = level + 1;
 			main.dataclicker.player.Player.setDataAmount(main.dataclicker.player.Player.getDataAmount() - price);
-			price = price * 2;
+			price = (int) (price * 1.2);
 			main.dataclicker.player.Player.setMoneyAmount(main.dataclicker.player.Player.getMoneyAmount() + value);
 		}	
 	}
 	public int getPrice() 
 	{
 		return price;
+	}
+	public int getValue()
+	{
+		return value;
+	}
+	public int getLevel()
+	{
+		return level;
 	}
 }
