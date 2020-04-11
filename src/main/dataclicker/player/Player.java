@@ -47,7 +47,8 @@ public class Player {
     }
 
     public static void setCurrentDataPerSecond(int currentDataPerSecond) {
-        Player.currentDataPerSecond = currentDataPerSecond;
+        int formerDataPerSecond = getCurrentDataPerSecond();
+        Player.currentDataPerSecond = formerDataPerSecond + currentDataPerSecond;
     }
 
     public static void dataClick() {

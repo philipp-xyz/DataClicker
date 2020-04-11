@@ -61,11 +61,12 @@ public class GUI {
 		 //Datasources
 		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
 		 dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000);
-		 dataPirate = new DataSource_Template("Daten-Pirat", "", 2, 10, 1.15, 0);
-		 dataHub = new DataSource_Template("Daten-Hub", "", 2, 10, 1.15, 0);
-		 dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 2, 10, 1.15, 0);
-		 dataScout24 = new DataSource_Template("Daten-Scout24", "", 2, 10, 1.15, 0);
-		 dataSearch = new DataSource_Template("Daten-Suche", "", 2, 10, 1.15, 0);
+		 dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 3000);
+		 dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 6000);
+		 dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 8000);
+		 dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 12000);
+		 dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 20000);
+		 whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 25000);
 
 	}
 
@@ -113,6 +114,13 @@ public class GUI {
 			public void run() {
 				dataFarm.collectDataPerSecond();
 				dataBook.collectDataPerSecond();
+				dataGewinnspiele.collectDataPerSecond();
+				dataHub.getDataPerSecond();
+				dataPirate.getDataPerSecond();
+				dataScout24.getDataPerSecond();
+				dataSearch.getDataPerSecond();
+				dataGewinnspiele.getDataPerSecond();
+				whatsData.getDataPerSecond();
 				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
@@ -128,9 +136,72 @@ public class GUI {
 			}
 		});
 
-		/*JButton dataSource3 = new JButton("3rd DataSource");
-		dataSources.add(dataSource3);*/
-		
+		JButton dataSource3 = new JButton(dataPirate.getSourceName() + " Kostet: " + dataPirate.getCurrentCost() + " DPS: " + dataPirate.getInitialDataPerSecond());
+		dataSources.add(dataSource3);
+		dataSource3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				dataPirate.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource3.setText(dataPirate.getSourceName() + " Kostet: " + dataPirate.getCurrentCost() + " DPS: " + dataPirate.getInitialDataPerSecond());
+			}
+		});
+
+		JButton dataSource4 = new JButton(dataHub.getSourceName() + " Kostet: " + dataHub.getCurrentCost() + " DPS: " + dataHub.getInitialDataPerSecond());
+		dataSources.add(dataSource4);
+		dataSource4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				dataHub.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource4.setText(dataHub.getSourceName() + " Kostet: " + dataHub.getCurrentCost() + " DPS: " + dataHub.getInitialDataPerSecond());
+			}
+		});
+
+		JButton dataSource5 = new JButton(dataGewinnspiele.getSourceName() + " Kostet: " + dataGewinnspiele.getCurrentCost() + " DPS: " + dataGewinnspiele.getInitialDataPerSecond());
+		dataSources.add(dataSource5);
+		dataSource5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				dataGewinnspiele.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource5.setText(dataGewinnspiele.getSourceName() + " Kostet: " + dataGewinnspiele.getCurrentCost() + " DPS: " + dataGewinnspiele.getInitialDataPerSecond());
+			}
+		});
+
+		JButton dataSource6 = new JButton(dataScout24.getSourceName() + " Kostet: " + dataScout24.getCurrentCost() + " DPS: " + dataScout24.getInitialDataPerSecond());
+		dataSources.add(dataSource6);
+		dataSource6.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				dataScout24.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource6.setText(dataScout24.getSourceName() + " Kostet: " + dataScout24.getCurrentCost() + " DPS: " + dataScout24.getInitialDataPerSecond());
+			}
+		});
+
+		JButton dataSource7 = new JButton(dataHub.getSourceName() + " Kostet: " + dataHub.getCurrentCost() + " DPS: " + dataHub.getInitialDataPerSecond());
+		dataSources.add(dataSource7);
+		dataSource7.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				dataHub.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource7.setText(dataHub.getSourceName() + " Kostet: " + dataHub.getCurrentCost() + " DPS: " + dataHub.getInitialDataPerSecond());
+			}
+		});
+
+		JButton dataSource8 = new JButton(whatsData.getSourceName() + " Kostet: " + whatsData.getCurrentCost() + " DPS: " + whatsData.getInitialDataPerSecond());
+		dataSources.add(dataSource8);
+		dataSource8.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				whatsData.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource8.setText(whatsData.getSourceName() + " Kostet: " + whatsData.getCurrentCost() + " DPS: " + whatsData.getInitialDataPerSecond());
+			}
+		});
+
 		JPanel dataBankPanel = new JPanel();
 		frame.getContentPane().add(dataBankPanel, BorderLayout.CENTER);
 		
