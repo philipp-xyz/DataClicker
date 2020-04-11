@@ -86,6 +86,7 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				musterSource.purchaseDataSource();
+				playerRessources.setText(playerRessources());
 				dataSource1.setText(musterSource.getSourceName()+" Kostet: "+musterSource.getCurrentCost());
 			}
 		});
