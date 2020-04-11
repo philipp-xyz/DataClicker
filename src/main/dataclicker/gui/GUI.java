@@ -23,6 +23,7 @@ public class GUI {
 	private JFrame frame;
 	private String title = "DataClicker";
 	private static  Buyers_Template nsa;
+	private static Buyers_Template krake;
 	private static DataSource_Template musterSource;
 	
 	 public String playerRessources() {
@@ -44,6 +45,7 @@ public class GUI {
 			}
 		});
 		 nsa = new  Buyers_Template("NSA", 10, 50);
+		 krake = new Buyers_Template("Daten-Krake", 50, 200);
 		 musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
 	}
 
@@ -123,8 +125,17 @@ public class GUI {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		buyersPanel.add(btnNewButton_1);
+		JButton buyer2 = new JButton("LvL: " + krake.getLevel() + " " +  krake.getName() + " kauft " + krake.getPrice() + " Daten für " + krake.getValue() + "€");
+		buyersPanel.add(buyer2);
+		buyer2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				krake.buy();
+				playerRessources.setText(playerRessources());
+				buyer2.setText("LvL: " + krake.getLevel() + " " +  krake.getName() + " kauft " + krake.getPrice() + " Daten für " + krake.getValue() + "€");
+			}
+		});
 		
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);

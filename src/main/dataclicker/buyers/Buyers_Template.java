@@ -5,7 +5,7 @@ import main.dataclicker.gui.*;
 
 public class Buyers_Template 
 {
-	private static String name;
+	private String name;
 	private int level;
 	private int price;
 	private int value;
@@ -17,7 +17,7 @@ public class Buyers_Template
 		this.price = price;
 		this.value = value;
 	}
-	public static String getName()
+	public String getName()
 	{
 		return name;
 	}
