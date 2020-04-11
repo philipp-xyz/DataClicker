@@ -2,7 +2,7 @@ package main.dataclicker.upgrades;
 
 public class Upgrades_Template {
 	private String upgradeName;
-	private String "upgradeDescription";
+	private String upgradeDescription;
 	private int upgradeCost;
 	private boolean upgradeAvailable;
 	private boolean active;

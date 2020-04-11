@@ -43,8 +43,11 @@ public class GUI {
 				}
 			}
 		});
+		 //Buyer
 		 nsa = new  Buyers_Template("NSA", 10, 50);
 		 krake = new Buyers_Template("Daten-Krake", 50, 200);
+		 
+		 //Datasources
 		 musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
 	}
 
