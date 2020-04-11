@@ -1,10 +1,10 @@
 package main.dataclicker.gui;
 
 import main.dataclicker.player.Player;
-import java.awt.EventQueue;
+
+import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,7 +15,6 @@ import main.dataclicker.buyers.Buyers_Template;
 import main.dataclicker.dataSources.*;
 import main.dataclicker.gui.GUI;
 
-import java.awt.FlowLayout;
 import javax.swing.JLabel;
 
 public class GUI {
@@ -75,6 +74,7 @@ public class GUI {
 		playerRessourcesPanel.add(playerRessources);
 		
 		JPanel dataSources = new JPanel();
+		dataSources.setLayout(new GridLayout(10,1));
 		frame.getContentPane().add(dataSources, BorderLayout.EAST);
 		
 		JButton dataSource1 = new JButton(musterSource.getSourceName()+" Kostet: "+musterSource.getCurrentCost());
@@ -96,6 +96,9 @@ public class GUI {
 		
 		JButton dataSource2 = new JButton("2nd DataSource");
 		dataSources.add(dataSource2);
+
+		/*JButton dataSource3 = new JButton("3rd DataSource");
+		dataSources.add(dataSource3);*/
 		
 		JPanel dataBankPanel = new JPanel();
 		frame.getContentPane().add(dataBankPanel, BorderLayout.CENTER);
@@ -111,6 +114,7 @@ public class GUI {
 		dataBankPanel.add(dataBank);
 		
 		JPanel buyersPanel = new JPanel();
+		buyersPanel.setLayout(new GridLayout(10,1));
 		frame.getContentPane().add(buyersPanel, BorderLayout.WEST);
 		
 		JButton buyer1 = new JButton("LvL: " + nsa.getLevel() + " " +  nsa.getName() + " kauft " + nsa.getPrice() + " Daten für " + nsa.getValue() + "€");
@@ -124,7 +128,7 @@ public class GUI {
 				buyer1.setText("LvL: " + nsa.getLevel() + " " +  nsa.getName() + " kauft " + nsa.getPrice() + " Daten für " + nsa.getValue() + "€");
 			}
 		});
-		
+
 		JButton buyer2 = new JButton("LvL: " + krake.getLevel() + " " +  krake.getName() + " kauft " + krake.getPrice() + " Daten für " + krake.getValue() + "€");
 		buyersPanel.add(buyer2);
 		buyer2.addActionListener(new ActionListener()
@@ -136,7 +140,10 @@ public class GUI {
 				buyer2.setText("LvL: " + krake.getLevel() + " " +  krake.getName() + " kauft " + krake.getPrice() + " Daten für " + krake.getValue() + "€");
 			}
 		});
-		
+
+		JButton btnNewButton_1 = new JButton("New button");
+		buyersPanel.add(btnNewButton_1);
+
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);
 		
