@@ -112,6 +112,7 @@ public class GUI {
 		everySecond.schedule(new TimerTask() {
 			public void run() {
 				dataFarm.collectDataPerSecond();
+				dataBook.collectDataPerSecond();
 				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
