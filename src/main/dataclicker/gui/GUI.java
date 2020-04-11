@@ -21,12 +21,23 @@ public class GUI {
 
 	private JFrame frame;
 	private String title = "DataClicker";
-	private static  Buyers_Template nsa;
+
+	//Buyers
+	private static Buyers_Template nsa;
 	private static Buyers_Template krake;
-	private static DataSource_Template musterSource;
+
+	//Datasources
+	private static DataSource_Template dataFarm;
+	private static DataSource_Template dataBook;
+	private static DataSource_Template dataPirate;
+	private static DataSource_Template dataHub;
+	private static DataSource_Template dataGewinnspiele;
+	private static DataSource_Template dataScout24;
+	private static DataSource_Template whatsData;
+	private static DataSource_Template dataSearch;
 	
 	 public String playerRessources() {
-		 return ("Data: "+main.dataclicker.player.Player.getDataAmount()+" Daten pro Sekunde: "+main.dataclicker.player.Player.getCurrentDataPerSecond()+" Money: "+main.dataclicker.player.Player.getMoneyAmount());
+		 return ("Data: " + main.dataclicker.player.Player.getDataAmount() + " Daten pro Sekunde: " + main.dataclicker.player.Player.getCurrentDataPerSecond() + " Money: " + main.dataclicker.player.Player.getMoneyAmount());
 	 }
 
 	/**
@@ -46,9 +57,16 @@ public class GUI {
 		 //Buyer
 		 nsa = new  Buyers_Template("NSA", 10, 50);
 		 krake = new Buyers_Template("Daten-Krake", 50, 200);
-		 
+
 		 //Datasources
-		 musterSource = new DataSource_Template("Free Data", "genau das was versprochen wird", 2, 10, 1.15, 0);
+		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataBook = new DataSource_Template("Daten-Buch", "Bringt 2 Daten Pro Sekunde", 10, 50, 1.20, 2000);
+		 dataPirate = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataHub = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataGewinnspiele = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataScout24 = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataSearch = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+
 	}
 
 	/**
@@ -80,26 +98,34 @@ public class GUI {
 		dataSources.setLayout(new GridLayout(10,1));
 		frame.getContentPane().add(dataSources, BorderLayout.EAST);
 		
-		JButton dataSource1 = new JButton(musterSource.getSourceName()+" Kostet: "+musterSource.getCurrentCost());
+		JButton dataSource1 = new JButton(dataFarm.getSourceName()+" Kostet: "+ dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond());
 		dataSources.add(dataSource1);
 		dataSource1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-				musterSource.purchaseDataSource();
+				dataFarm.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource1.setText(musterSource.getSourceName()+" Kostet: "+musterSource.getCurrentCost());
+				dataSource1.setText(dataFarm.getSourceName()+" Kostet: " + dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond());
 			}
 		});
 		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollführt
 		everySecond.schedule(new TimerTask() {
 			public void run() {
-				musterSource.collectDataPerSecond();
+				dataFarm.collectDataPerSecond();
 				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
 		
-		JButton dataSource2 = new JButton("2nd DataSource");
+		JButton dataSource2 = new JButton(dataBook.getSourceName() + " Kostet: " + dataBook.getCurrentCost() + " DPS: " + dataBook.getInitialDataPerSecond());
 		dataSources.add(dataSource2);
+		dataSource2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				dataBook.purchaseDataSource();
+				playerRessources.setText(playerRessources());
+				dataSource2.setText(dataBook.getSourceName() + " Kostet: " + dataBook.getCurrentCost() + " DPS: " + dataBook.getInitialDataPerSecond());
+			}
+		});
 
 		/*JButton dataSource3 = new JButton("3rd DataSource");
 		dataSources.add(dataSource3);*/
