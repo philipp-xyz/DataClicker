@@ -18,7 +18,7 @@ public class DataSource_Template {
     private boolean sourceActive = false;
     private boolean sourceAvailable;
 
-    public DataSource_Template(String sourceName, String sourceDescription, int dataPerSecond, int currentCost, double costIncrease, int requiredData, int sourceAmountOwned) {
+    public DataSource_Template(String sourceName, String sourceDescription, int dataPerSecond, int currentCost, double costIncrease, int requiredData) {
         this.sourceName = sourceName;
         this.sourceDescription = sourceDescription;
         this.dataPerSecond = dataPerSecond;
@@ -26,7 +26,7 @@ public class DataSource_Template {
         this.currentCost = currentCost;
         this.costIncrease = costIncrease;
         this.requiredData = requiredData;
-        this.sourceAmountOwned = 0;
+        sourceAmountOwned = 0;
     }
 
     public String getSourceName() {

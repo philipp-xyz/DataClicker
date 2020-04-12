@@ -59,14 +59,14 @@ public class GUI {
 		 krake = new Buyers_Template("Daten-Krake", 50, 200);
 
 		 //Datasources
-		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0, 0);
-		 dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000,0);
-		 dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 3000,0);
-		 dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 6000,0);
-		 dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 8000,0);
-		 dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 12000,0);
-		 dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 20000,0);
-		 whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 25000,0);
+		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000);
+		 dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 3000);
+		 dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 6000);
+		 dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 8000);
+		 dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 12000);
+		 dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 20000);
+		 whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 25000);
 
 	}
 
