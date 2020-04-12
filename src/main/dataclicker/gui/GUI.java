@@ -115,12 +115,12 @@ public class GUI {
 				dataFarm.collectDataPerSecond();
 				dataBook.collectDataPerSecond();
 				dataGewinnspiele.collectDataPerSecond();
-				dataHub.getDataPerSecond();
-				dataPirate.getDataPerSecond();
-				dataScout24.getDataPerSecond();
-				dataSearch.getDataPerSecond();
-				dataGewinnspiele.getDataPerSecond();
-				whatsData.getDataPerSecond();
+				dataHub.collectDataPerSecond();
+				dataPirate.collectDataPerSecond();
+				dataScout24.collectDataPerSecond();
+				dataSearch.collectDataPerSecond();
+				dataGewinnspiele.collectDataPerSecond();
+				whatsData.collectDataPerSecond();
 				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
