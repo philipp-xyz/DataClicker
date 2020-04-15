@@ -1,6 +1,7 @@
 package main.dataclicker.upgrades;
 import dataSources.Datasources;
 public class Upgrades_Template {
+	
 	private String upgradeName;
 	private String upgradeDescription;
 	private int upgradeCost;
@@ -21,8 +22,23 @@ public class Upgrades_Template {
 	{
 		this.upgradeDescription=text;
 	}
-	public boolean getUpgradeRequirement() {
-		return upgradeRequirement;
+	public void checkUpgradeRequirement(int upgradeLevel) {  //upgradeLevel ist eine Hilfsvariable für mich, welche nur einen Wert von 1 oder 2 haben soll
+		return upgradeRequirement;// does this work, i return it to rewrite it? or can i just Rewrite it without this line
+		if (upgradeLevel==1)
+		{
+			if (Datasource.sourceAmountOwned>=25)
+				upgradeRequirement=true;
+			else upgradeRequirement=false;
+		}
+		else
+		if (upgradeLevel==2)
+		{
+			if (Datasource.sourceAmountOwned>=50)
+				upgradeRequirement=true;
+			else upgradeRequirement=false;
+		}
+		else
+			System.out.println("SIR YOU HAVE FAILED, no really pls only input 1 or 2 as upgradeLevel");
 	}
 	
 	public boolean getActive() {
