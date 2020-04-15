@@ -7,7 +7,7 @@ public class Upgrades_Template {
 	private boolean upgradeAvailable;
 	private boolean active;
 	private static boolean upgradeRequirement;  //Die erforderung damit das Upgrade  Ehälltlich ist söllte universell veränderbar sein
-	
+	private int dataMultiplier = 1;	// war mir unsicher ob ich die nochmal komplett neu einschreiben musste bzw. ob ich hier eine neue die ONLY für diese Datasource zählt
 	
 	 public Upgrades_Template(String upgradeName, String upgradeDescription, int upgradeCost, boolean upgradeAvailable, boolean active) {
 		 this.upgradeName=upgradeName ;
@@ -15,9 +15,13 @@ public class Upgrades_Template {
 			this.upgradeCost=upgradeCost;
 			this.upgradeAvailable=upgradeAvailable;
 			this.active=active;
-			
+			if (this.dataMultiplier=2) {this.dataMultiplier=4}
+			if (this.dataMultiplier=1) {this.dataMultiplier=2}
 	    }
-	
+	public void setUpgradeDescription(String text)
+	{
+		this.upgradeDescription=text;
+	}
 	public boolean getUpgradeRequirement() {
 		return upgradeRequirement;
 	}
