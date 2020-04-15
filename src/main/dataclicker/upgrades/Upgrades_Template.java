@@ -1,5 +1,7 @@
 package main.dataclicker.upgrades;
-import dataSources.Datasources;
+import main.dataclicker.dataSources.*;
+import main.dataclicker.player.Player;
+
 public class Upgrades_Template {
 	
 	private String upgradeName;
@@ -7,17 +9,17 @@ public class Upgrades_Template {
 	private int upgradeCost;
 	private boolean upgradeAvailable;
 	private boolean active;
+	private int upgradeMultiplier;
 	private static boolean upgradeRequirement;  //Die erforderung damit das Upgrade  Erhaelltlich ist soellte universell veränderbar sein
 	
 	
-	 public Upgrades_Template(String upgradeName, String upgradeDescription, int upgradeCost, boolean upgradeAvailable, boolean active) {
-		 this.upgradeName=upgradeName ;
-			this.upgradeDescription=upgradeDescription;
-			this.upgradeCost=upgradeCost;
-			this.upgradeAvailable=upgradeAvailable;
-			this.active=active;
-	
-	    }
+	 public Upgrades_Template(String upgradeName, String upgradeDescription, int upgradeCost, int upgradeMultiplier, DataSource_Template dataSource) {
+		this.upgradeName=upgradeName ;
+		this.upgradeDescription=upgradeDescription;
+		this.upgradeCost=upgradeCost;
+		this.upgradeMultiplier=upgradeMultiplier;
+	}
+	 
 	public void setUpgradeDescription(String text)
 	{
 		this.upgradeDescription=text;
@@ -40,14 +42,32 @@ public class Upgrades_Template {
 		else
 			System.out.println("SIR YOU HAVE FAILED, no really pls only input 1 or 2 as upgradeLevel");
 	}
-	
+	public String getUpgradeName() {
+		return upgradeName;
+	}
+
+	public String getUpgradeDescription() {
+		return upgradeDescription;
+	}
+
+	public int getUpgradeCost() {
+		return upgradeCost;
+	}
 	public boolean getActive() {
 		return active;
 	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	public int getUpgradeMultiplier() {
+		return upgradeMultiplier;
+	}
+	
+	
 	public void togglevisibility() {		//noch ist das requirement relativ überflüssig -> gerne Inspirationen an mich weiterleiten
 		if (active==true)					// ist das Upgrade bereits Aktiv kann man es nicht mehr kaufen
 		{
-			this.upgradeAvailable=false
+			this.upgradeAvailable=false;
 		}
 		else
 		{
@@ -69,12 +89,43 @@ public class Upgrades_Template {
 	public void setupgradeAvailable(boolean upgradeAvailable){
 		this.upgradeAvailable=upgradeAvailable;
 	}
-	public void upgrade1Effect()		//Das erste Upgrade setzt den Multiplier auf 2, das 2. auf 4, hätten wir mehr würden wir so immer weiter richtung 2^2 weiterarbeiten
+	
+	public void upgradeEffect(DataSource_Template dataSource)		
 	{
-		DataSource.setDataMultiplier(2);
+			dataSource.setDataMultiplier(getUpgradeMultiplier());
+			dataSource.increaseDataPerSecond();
+			
 	}
-	public void upgrade2Effect()
-	{
-		DataSource.setDataMultiplier(4);
+	
+	
+	public void purchaseUpgrade(DataSource_Template datasource) {
+		if (Player.getMoneyAmount()>= getUpgradeCost()) {
+			
+			int playersMoney = Player.getMoneyAmount();
+			playersMoney =playersMoney-getUpgradeCost();    //Bezahlung des Upgrades
+			Player.setMoneyAmount(playersMoney);   
+			
+			upgradeEffect(datasource);
+
+		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -1,6 +1,7 @@
 package main.dataclicker.gui;
 
 import main.dataclicker.player.Player;
+import main.dataclicker.upgrades.Upgrades_Template;
 
 import java.awt.*;
 import javax.swing.JFrame;
@@ -14,6 +15,7 @@ import javax.swing.JPanel;
 import main.dataclicker.buyers.Buyers_Template;
 import main.dataclicker.dataSources.*;
 import main.dataclicker.gui.GUI;
+import main.dataclicker.upgrades.*;
 
 import javax.swing.JLabel;
 
@@ -36,8 +38,21 @@ public class GUI {
 	private static DataSource_Template whatsData;
 	private static DataSource_Template dataSearch;
 	
+	//upgrades
+	private static Upgrades_Template zuchtBot;
+	
+	//Beschriftung der Buttons die immer dem gelichen Formular folgt
 	 public String playerRessources() {
 		 return ("Data: " + main.dataclicker.player.Player.getDataAmount() + " Daten pro Sekunde: " + main.dataclicker.player.Player.getCurrentDataPerSecond() + " Money: " + main.dataclicker.player.Player.getMoneyAmount());
+	 }
+	 public String dataSourcesText(DataSource_Template datasource) {
+		 return (datasource.getSourceName() + " kostet: " + datasource.getCurrentCost() + " DPS: " + datasource.getInitialDataPerSecond() + " A: " + datasource.getSourceAmountOwned());
+	 }
+	 public String buyersText(Buyers_Template buyer) {
+		 return ("LvL: " + buyer.getLevel() + " " +  buyer.getName() + " kauft " + buyer.getPrice() + " Daten für " + buyer.getValue() + "€");
+	 }
+	 public String upgradesText(Upgrades_Template upgrade, DataSource_Template datasource) {
+		 return (upgrade.getUpgradeName()+ " kostet: "+ upgrade.getUpgradeCost()+" verbessert "+ datasource.getSourceName() +" um: "+ upgrade.getUpgradeMultiplier());
 	 }
 
 	/**
@@ -67,6 +82,9 @@ public class GUI {
 		 dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 12000);
 		 dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 20000);
 		 whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 25000);
+		 
+		 //upgrades
+		 zuchtBot = new Upgrades_Template("Zucht-Bot", "Zieht die Daten vom klein auf an und macht diese Loyal wie keine anderen", 20, 2, dataFarm);
 
 	}
 
@@ -99,14 +117,14 @@ public class GUI {
 		dataSources.setLayout(new GridLayout(10,1));
 		frame.getContentPane().add(dataSources, BorderLayout.EAST);
 		
-		JButton dataSource1 = new JButton(dataFarm.getSourceName() + " Kostet: "+ dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond() + " A: " + dataFarm.getSourceAmountOwned());
+		JButton dataSource1 = new JButton(dataSourcesText(dataFarm));
 		dataSources.add(dataSource1);
 		dataSource1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataFarm.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource1.setText(dataFarm.getSourceName() + " Kostet: " + dataFarm.getCurrentCost() + " DPS: " + dataFarm.getInitialDataPerSecond() + " A: " + dataFarm.getSourceAmountOwned());
+				dataSource1.setText(dataSourcesText(dataFarm));
 			}
 		});
 		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollführt
@@ -125,80 +143,80 @@ public class GUI {
 			}
 		}, 0, 1000);
 		
-		JButton dataSource2 = new JButton(dataBook.getSourceName() + " Kostet: " + dataBook.getCurrentCost() + " DPS: " + dataBook.getInitialDataPerSecond()  + " A: " + dataBook.getSourceAmountOwned());
+		JButton dataSource2 = new JButton(dataSourcesText(dataBook));
 		dataSources.add(dataSource2);
 		dataSource2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataBook.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource2.setText(dataBook.getSourceName() + " Kostet: " + dataBook.getCurrentCost() + " DPS: " + dataBook.getInitialDataPerSecond() + " A: " + dataBook.getSourceAmountOwned());
+				dataSource2.setText(dataSourcesText(dataBook));
 			}
 		});
 
-		JButton dataSource3 = new JButton(dataPirate.getSourceName() + " Kostet: " + dataPirate.getCurrentCost() + " DPS: " + dataPirate.getInitialDataPerSecond() + " A: " + dataPirate.getSourceAmountOwned());
+		JButton dataSource3 = new JButton(dataSourcesText(dataPirate));
 		dataSources.add(dataSource3);
 		dataSource3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataPirate.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource3.setText(dataPirate.getSourceName() + " Kostet: " + dataPirate.getCurrentCost() + " DPS: " + dataPirate.getInitialDataPerSecond() + " A: " + dataPirate.getSourceAmountOwned());
+				dataSource3.setText(dataSourcesText(dataPirate));
 			}
 		});
 
-		JButton dataSource4 = new JButton(dataHub.getSourceName() + " Kostet: " + dataHub.getCurrentCost() + " DPS: " + dataHub.getInitialDataPerSecond() + " A: " + dataHub.getSourceAmountOwned());
+		JButton dataSource4 = new JButton(dataSourcesText(dataHub)); 
 		dataSources.add(dataSource4);
 		dataSource4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataHub.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource4.setText(dataHub.getSourceName() + " Kostet: " + dataHub.getCurrentCost() + " DPS: " + dataHub.getInitialDataPerSecond() + " A: " + dataHub.getSourceAmountOwned());
+				dataSource4.setText(dataSourcesText(dataHub));
 			}
 		});
 
-		JButton dataSource5 = new JButton(dataGewinnspiele.getSourceName() + " Kostet: " + dataGewinnspiele.getCurrentCost() + " DPS: " + dataGewinnspiele.getInitialDataPerSecond() + " A: " + dataGewinnspiele.getSourceAmountOwned());
+		JButton dataSource5 = new JButton(dataSourcesText(dataGewinnspiele));
 		dataSources.add(dataSource5);
 		dataSource5.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataGewinnspiele.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource5.setText(dataGewinnspiele.getSourceName() + " Kostet: " + dataGewinnspiele.getCurrentCost() + " DPS: " + dataGewinnspiele.getInitialDataPerSecond() + " A: " + dataGewinnspiele.getSourceAmountOwned());
+				dataSource5.setText(dataSourcesText(dataGewinnspiele));
 			}
 		});
 
-		JButton dataSource6 = new JButton(dataScout24.getSourceName() + " Kostet: " + dataScout24.getCurrentCost() + " DPS: " + dataScout24.getInitialDataPerSecond() + " A: " + dataScout24.getSourceAmountOwned());
+		JButton dataSource6 = new JButton(dataSourcesText(dataScout24));
 		dataSources.add(dataSource6);
 		dataSource6.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataScout24.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource6.setText(dataScout24.getSourceName() + " Kostet: " + dataScout24.getCurrentCost() + " DPS: " + dataScout24.getInitialDataPerSecond() + " A: " + dataScout24.getSourceAmountOwned());
+				dataSource6.setText(dataSourcesText(dataScout24));
 			}
 		});
 
-		JButton dataSource7 = new JButton(dataSearch.getSourceName() + " Kostet: " + dataSearch.getCurrentCost() + " DPS: " + dataSearch.getInitialDataPerSecond() + " A: " + dataSearch.getSourceAmountOwned());
+		JButton dataSource7 = new JButton(dataSourcesText(dataSearch));
 		dataSources.add(dataSource7);
 		dataSource7.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataSearch.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource7.setText(dataSearch.getSourceName() + " Kostet: " + dataSearch.getCurrentCost() + " DPS: " + dataSearch.getInitialDataPerSecond() + " A: " + dataSearch.getSourceAmountOwned());
+				dataSource7.setText(dataSourcesText(dataSearch));
 			}
 		});
 
-		JButton dataSource8 = new JButton(whatsData.getSourceName() + " Kostet: " + whatsData.getCurrentCost() + " DPS: " + whatsData.getInitialDataPerSecond() + " A: " + whatsData.getSourceAmountOwned());
+		JButton dataSource8 = new JButton(dataSourcesText(whatsData));
 		dataSources.add(dataSource8);
 		dataSource8.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				whatsData.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSource8.setText(whatsData.getSourceName() + " Kostet: " + whatsData.getCurrentCost() + " DPS: " + whatsData.getInitialDataPerSecond() + " A: " + whatsData.getSourceAmountOwned());
+				dataSource8.setText(dataSourcesText(whatsData));
 			}
 		});
 
@@ -219,7 +237,7 @@ public class GUI {
 		buyersPanel.setLayout(new GridLayout(10,1));
 		frame.getContentPane().add(buyersPanel, BorderLayout.WEST);
 		
-		JButton buyer1 = new JButton("LvL: " + nsa.getLevel() + " " +  nsa.getName() + " kauft " + nsa.getPrice() + " Daten für " + nsa.getValue() + "€");
+		JButton buyer1 = new JButton(buyersText(nsa));
 		buyersPanel.add(buyer1);
 		buyer1.addActionListener(new ActionListener()
 		{
@@ -227,11 +245,11 @@ public class GUI {
 			{
 				nsa.buy();
 				playerRessources.setText(playerRessources());
-				buyer1.setText("LvL: " + nsa.getLevel() + " " +  nsa.getName() + " kauft " + nsa.getPrice() + " Daten für " + nsa.getValue() + "€");
+				buyer1.setText(buyersText(nsa));
 			}
 		});
 
-		JButton buyer2 = new JButton("LvL: " + krake.getLevel() + " " +  krake.getName() + " kauft " + krake.getPrice() + " Daten für " + krake.getValue() + "€");
+		JButton buyer2 = new JButton(buyersText(krake));
 		buyersPanel.add(buyer2);
 		buyer2.addActionListener(new ActionListener()
 		{
@@ -239,7 +257,7 @@ public class GUI {
 			{
 				krake.buy();
 				playerRessources.setText(playerRessources());
-				buyer2.setText("LvL: " + krake.getLevel() + " " +  krake.getName() + " kauft " + krake.getPrice() + " Daten für " + krake.getValue() + "€");
+				buyer2.setText(buyersText(krake));
 			}
 		});
 
@@ -248,6 +266,17 @@ public class GUI {
 
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);
+		
+		JButton upgrade1 = new JButton(upgradesText(zuchtBot, dataFarm));
+		upgradesPanel.add(upgrade1);
+		upgrade1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				zuchtBot.purchaseUpgrade(dataFarm);
+				playerRessources.setText(playerRessources());
+				dataSource1.setText(dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade1);   //der button wird removed, da man Upgrades nur 1 mal erwerben kann
+			}
+		});
 		
 		
 	}
