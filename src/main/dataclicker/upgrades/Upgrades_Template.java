@@ -1,13 +1,13 @@
 package main.dataclicker.upgrades;
-
+import dataSources.Datasources;
 public class Upgrades_Template {
 	private String upgradeName;
 	private String upgradeDescription;
 	private int upgradeCost;
 	private boolean upgradeAvailable;
 	private boolean active;
-	private static boolean upgradeRequirement;  //Die erforderung damit das Upgrade  Ehälltlich ist söllte universell veränderbar sein
-	private int dataMultiplier = 1;	// war mir unsicher ob ich die nochmal komplett neu einschreiben musste bzw. ob ich hier eine neue die ONLY für diese Datasource zählt
+	private static boolean upgradeRequirement;  //Die erforderung damit das Upgrade  Erhaelltlich ist soellte universell veränderbar sein
+	
 	
 	 public Upgrades_Template(String upgradeName, String upgradeDescription, int upgradeCost, boolean upgradeAvailable, boolean active) {
 		 this.upgradeName=upgradeName ;
@@ -15,8 +15,7 @@ public class Upgrades_Template {
 			this.upgradeCost=upgradeCost;
 			this.upgradeAvailable=upgradeAvailable;
 			this.active=active;
-			if (this.dataMultiplier=2) {this.dataMultiplier=4}
-			if (this.dataMultiplier=1) {this.dataMultiplier=2}
+	
 	    }
 	public void setUpgradeDescription(String text)
 	{
@@ -30,8 +29,22 @@ public class Upgrades_Template {
 		return active;
 	}
 	public void togglevisibility() {		//noch ist das requirement relativ überflüssig -> gerne Inspirationen an mich weiterleiten
-		if (upgradeRequirement==true)
-		this.upgradeAvailable=true;
+		if (active==true)					// ist das Upgrade bereits Aktiv kann man es nicht mehr kaufen
+		{
+			this.upgradeAvailable=false
+		}
+		else
+		{
+			if (upgradeRequirement==true)
+			{
+			this.upgradeAvailable=true;
+			}
+			else 
+			{
+				this.upgradeAvailable=false;
+			}
+		}
+		
 		
 	}
 	public boolean getupgradeAvailable(){
@@ -40,5 +53,12 @@ public class Upgrades_Template {
 	public void setupgradeAvailable(boolean upgradeAvailable){
 		this.upgradeAvailable=upgradeAvailable;
 	}
-	
+	public void upgrade1Effect()		//Das erste Upgrade setzt den Multiplier auf 2, das 2. auf 4, hätten wir mehr würden wir so immer weiter richtung 2^2 weiterarbeiten
+	{
+		DataSource.setDataMultiplier(2);
+	}
+	public void upgrade2Effect()
+	{
+		DataSource.setDataMultiplier(4);
+	}
 }
