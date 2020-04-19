@@ -127,6 +127,7 @@ public class GUI {
 				dataSource1.setText(dataSourcesText(dataFarm));
 			}
 		});
+
 		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollführt
 		everySecond.schedule(new TimerTask() {
 			public void run() {
