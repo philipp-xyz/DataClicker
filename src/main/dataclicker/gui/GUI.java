@@ -304,7 +304,7 @@ public class GUI {
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				nsa.buy();
+				eSport.buy();
 				playerRessources.setText(playerRessources());
 				buyer5.setText(buyersText(eSport));
 			}
