@@ -27,6 +27,12 @@ public class GUI {
 	//Buyers
 	private static Buyers_Template nsa;
 	private static Buyers_Template krake;
+	private static Buyers_Template mobile;
+	private static Buyers_Template party;
+	private static Buyers_Template eSport;
+	private static Buyers_Template tech;
+	private static Buyers_Template vegtables;
+	private static Buyers_Template drump;
 
 	//Datasources
 	private static DataSource_Template dataFarm;
@@ -72,6 +78,12 @@ public class GUI {
 		 //Buyer
 		 nsa = new  Buyers_Template("NSA", 10, 50);
 		 krake = new Buyers_Template("Daten-Krake", 50, 200);
+		 mobile = new Buyers_Template("Mobile-Data", 1000, 250);
+		 party =  new Buyers_Template("deutsche Daten Partei", 2000, 750);
+		 eSport =  new Buyers_Template("Data eSport", 5555, 1337);
+		 tech =  new Buyers_Template("Data Tech", 10000, 2000);
+		 vegtables =  new Buyers_Template("Obst und Daten", 100000, 10000);
+		 drump =  new Buyers_Template("Tonald Drump", 1000000, 0);
 
 		 //Datasources
 		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
@@ -262,8 +274,90 @@ public class GUI {
 			}
 		});
 
-		JButton btnNewButton_1 = new JButton("New button");
-		buyersPanel.add(btnNewButton_1);
+		JButton buyer3 = new JButton(buyersText(mobile));
+		buyersPanel.add(buyer3);
+		buyer3.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				mobile.buy();
+				playerRessources.setText(playerRessources());
+				buyer3.setText(buyersText(mobile));
+			}
+		});
+		
+		JButton buyer4 = new JButton(buyersText(party));
+		buyersPanel.add(buyer4);
+		buyer4.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				party.buy();
+				playerRessources.setText(playerRessources());
+				buyer4.setText(buyersText(party));
+			}
+		});
+		
+		JButton buyer5 = new JButton(buyersText(eSport));
+		buyersPanel.add(buyer5);
+		buyer5.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				nsa.buy();
+				playerRessources.setText(playerRessources());
+				buyer5.setText(buyersText(eSport));
+			}
+		});
+		
+		JButton buyer6 = new JButton(buyersText(tech));
+		buyersPanel.add(buyer6);
+		buyer6.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				tech.buy();
+				playerRessources.setText(playerRessources());
+				buyer6.setText(buyersText(tech));
+			}
+		});
+		
+		JButton buyer7 = new JButton(buyersText(vegtables));
+		buyersPanel.add(buyer7);
+		buyer7.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				vegtables.buy();
+				playerRessources.setText(playerRessources());
+				buyer7.setText(buyersText(vegtables));
+			}
+		});
+		
+		JButton buyer8 = new JButton(buyersText(drump));
+		buyersPanel.add(buyer8);
+		buyer8.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				nsa.buy();
+				krake.buy();
+				mobile.buy();
+				eSport.buy();
+				tech.buy();
+				vegtables.buy();
+				drump.buy();
+				playerRessources.setText(playerRessources());
+				buyer1.setText(buyersText(nsa));
+				buyer2.setText(buyersText(krake));
+				buyer3.setText(buyersText(mobile));
+				buyer4.setText(buyersText(party));
+				buyer5.setText(buyersText(eSport));
+				buyer6.setText(buyersText(tech));
+				buyer7.setText(buyersText(vegtables));
+				buyer8.setText(buyersText(drump));
+			}
+		});
 
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);
