@@ -454,7 +454,7 @@ public class GUI {
 			public void actionPerformed(ActionEvent click) {				
 				datenFutter.purchaseUpgrade(dataFarm);
 				playerRessources.setText(playerRessources());
-				dataSource2.setText(dataSourcesText(dataFarm));
+				dataSource1.setText(dataSourcesText(dataFarm));	//double rewrite??
 				upgradesPanel.remove(upgrade2);  
 			}
 		});
@@ -465,41 +465,151 @@ public class GUI {
 			public void actionPerformed(ActionEvent click) {				
 				datenFutter.purchaseUpgrade(dataBook);
 				playerRessources.setText(playerRessources());
-				dataSource3.setText(dataSourcesText(dataBook));
+				dataSource2.setText(dataSourcesText(dataBook));
 				upgradesPanel.remove(upgrade3);  
 			}
 		});
-		JButton upgrade4 = new JButton(upgradesText(datenFutter, dataFarm));
+		JButton upgrade4 = new JButton(upgradesText(gruppenInDeinerNähe, dataBook));
 		upgradesPanel.add(upgrade4);
-		upgrade4.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade4.setToolTipText("<html>"+upgradesToolTip(gruppenInDeinerNähe, dataBook));
 		upgrade4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {				
-				datenFutter.purchaseUpgrade(dataFarm);
+				gruppenInDeinerNähe.purchaseUpgrade(dataBook);
 				playerRessources.setText(playerRessources());
-				dataSource4.setText(dataSourcesText(dataFarm));
+				dataSource2.setText(dataSourcesText(dataBook));
 				upgradesPanel.remove(upgrade2);  
 			}
 		});
-		JButton upgrade5 = new JButton(upgradesText(datenFutter, dataFarm));
+		JButton upgrade5 = new JButton(upgradesText(karperbrief, dataPirate));
 		upgradesPanel.add(upgrade4);
-		upgrade5.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade5.setToolTipText("<html>"+upgradesToolTip(karperbrief, dataPirate));
 		upgrade5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {				
-				datenFutter.purchaseUpgrade(dataFarm);
+				karperbrief.purchaseUpgrade(dataPirate);
 				playerRessources.setText(playerRessources());
-				dataSource5.setText(dataSourcesText(dataFarm));
+				dataSource3.setText(dataSourcesText(dataPirate));
 				upgradesPanel.remove(upgrade5);  
 			}
 		});
-		JButton upgrade6 = new JButton(upgradesText(datenFutter, dataFarm));
+		JButton upgrade6 = new JButton(upgradesText(einNeuesSchiff, dataPirate));
 		upgradesPanel.add(upgrade6);
-		upgrade6.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade6.setToolTipText("<html>"+upgradesToolTip(einNeuesSchiff, dataPirate));
 		upgrade6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {				
-				datenFutter.purchaseUpgrade(dataFarm);
+				einNeuesSchiff.purchaseUpgrade(dataPirate);
 				playerRessources.setText(playerRessources());
-				dataSource6.setText(dataSourcesText(dataFarm));
+				dataSource3.setText(dataSourcesText(dataPirate));
 				upgradesPanel.remove(upgrade6);  
+			}
+		});
+		JButton upgrade7 = new JButton(upgradesText(einNeuerMarktplatz , dataHub));
+		upgradesPanel.add(upgrade7);
+		upgrade7.setToolTipText("<html>"+upgradesToolTip(einNeuerMarktplatz, dataHub));
+		upgrade7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				einNeuerMarktplatz.purchaseUpgrade(dataHub);
+				playerRessources.setText(playerRessources());
+				dataSource4.setText(dataSourcesText(dataHub));
+				upgradesPanel.remove(upgrade7);  
+			}
+		});
+		JButton upgrade8 = new JButton(upgradesText(twoWayLiveChat, dataHub));
+		upgradesPanel.add(upgrade8);
+		upgrade8.setToolTipText("<html>"+upgradesToolTip(twoWayLiveChat, dataHub));
+		upgrade8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				twoWayLiveChat.purchaseUpgrade(dataHub);
+				playerRessources.setText(playerRessources());
+				dataSource4.setText(dataSourcesText(dataHub));
+				upgradesPanel.remove(upgrade8);  
+			}
+		});
+		JButton upgrade9 = new JButton(upgradesText(offlineEinbindung, dataGewinnspiele));
+		upgradesPanel.add(upgrade9);
+		upgrade9.setToolTipText("<html>"+upgradesToolTip(offlineEinbindung, dataGewinnspiele));
+		upgrade9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				offlineEinbindung.purchaseUpgrade(dataGewinnspiele);
+				playerRessources.setText(playerRessources());
+				dataSource5.setText(dataSourcesText(dataGewinnspiele));
+				upgradesPanel.remove(upgrade9);  
+			}
+		});
+		JButton upgrade10 = new JButton(upgradesText(waehlDeineBelohnung, dataGewinnspiele));
+		upgradesPanel.add(upgrade4);
+		upgrade10.setToolTipText("<html>"+upgradesToolTip(waehlDeineBelohnung, dataGewinnspiele));
+		upgrade10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				waehlDeineBelohnung.purchaseUpgrade(dataGewinnspiele);
+				playerRessources.setText(playerRessources());
+				dataSource5.setText(dataSourcesText(dataGewinnspiele));
+				upgradesPanel.remove(upgrade10);  
+			}
+		});
+		JButton upgrade11 = new JButton(upgradesText(callCenterSupport, dataScout24));
+		upgradesPanel.add(upgrade4);
+		upgrade11.setToolTipText("<html>"+upgradesToolTip(callCenterSupport, dataScout24));
+		upgrade10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				callCenterSupport.purchaseUpgrade(dataScout24);
+				playerRessources.setText(playerRessources());
+				dataSource6.setText(dataSourcesText(dataScout24));
+				upgradesPanel.remove(upgrade10);  
+			}
+		});
+		JButton upgrade12 = new JButton(upgradesText(onlineAusfüllformular, dataScout24));
+		upgradesPanel.add(upgrade12);
+		upgrade12.setToolTipText("<html>"+upgradesToolTip(onlineAusfüllformular, dataScout24));
+		upgrade12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				onlineAusfüllformular.purchaseUpgrade(dataScout24);
+				playerRessources.setText(playerRessources());
+				dataSource6.setText(dataSourcesText(dataScout24));
+				upgradesPanel.remove(upgrade12);  
+			}
+		});
+		JButton upgrade13 = new JButton(upgradesText(statusModul, whatsData));
+		upgradesPanel.add(upgrade13);
+		upgrade13.setToolTipText("<html>"+upgradesToolTip(statusModul, whatsData));
+		upgrade13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				statusModul.purchaseUpgrade(whatsData);
+				playerRessources.setText(playerRessources());
+				dataSource7.setText(dataSourcesText(whatsData));
+				upgradesPanel.remove(upgrade13);  
+			}
+		});
+		JButton upgrade14 = new JButton(upgradesText(faceScanner, whatsData));
+		upgradesPanel.add(upgrade14);
+		upgrade14.setToolTipText("<html>"+upgradesToolTip(faceScanner, whatsData));
+		upgrade14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				faceScanner.purchaseUpgrade(whatsData);
+				playerRessources.setText(playerRessources());
+				dataSource7.setText(dataSourcesText(whatsData));
+				upgradesPanel.remove(upgrade14);  
+			}
+		});
+		JButton upgrade15 = new JButton(upgradesText(personalisierteSuche, dataSearch));
+		upgradesPanel.add(upgrade15);
+		upgrade15.setToolTipText("<html>"+upgradesToolTip(personalisierteSuche, dataSearch));
+		upgrade15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				personalisierteSuche.purchaseUpgrade(dataSearch);
+				playerRessources.setText(playerRessources());
+				dataSource8.setText(dataSourcesText(dataSearch));
+				upgradesPanel.remove(upgrade15);  
+			}
+		});
+		JButton upgrade16 = new JButton(upgradesText(werbung, dataSearch));
+		upgradesPanel.add(upgrade16);
+		upgrade16.setToolTipText("<html>"+upgradesToolTip(werbung, dataSearch));
+		upgrade16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				werbung.purchaseUpgrade(dataSearch);
+				playerRessources.setText(playerRessources());
+				dataSource8.setText(dataSourcesText(dataSearch));
+				upgradesPanel.remove(upgrade16);  
 			}
 		});
 	}
