@@ -10,7 +10,7 @@ public class Upgrades_Template {
 	private boolean upgradeAvailable;
 	private boolean active;
 	private int upgradeMultiplier;
-	private static boolean upgradeRequirement;  //Die erforderung damit das Upgrade  Erhaelltlich ist soellte universell veränderbar sein
+	private static boolean upgradeRequirement;  //Die erforderung damit das Upgrade  Erhaelltlich ist soellte universell verï¿½nderbar sein
 	
 	
 	 public Upgrades_Template(String upgradeName, String upgradeDescription, int upgradeCost, int upgradeMultiplier, DataSource_Template dataSource) {
@@ -24,23 +24,24 @@ public class Upgrades_Template {
 	{
 		this.upgradeDescription=text;
 	}
-	public void checkUpgradeRequirement(int upgradeLevel) {  //upgradeLevel ist eine Hilfsvariable für mich, welche nur einen Wert von 1 oder 2 haben soll
-		return upgradeRequirement;// does this work, i return it to rewrite it? or can i just Rewrite it without this line
-		if (upgradeLevel==1)
+	public void checkUpgradeRequirement(int upgradeLevel) {  //upgradeLevel ist eine Hilfsvariable fï¿½r mich, welche nur einen Wert von 1 oder 2 haben soll
+		 // does this work, i return it to rewrite it? or can i just Rewrite it without this line
+	/*	if (upgradeLevel==1)
 		{
-			if (Datasource.sourceAmountOwned>=25)
+			if (datasource.sourceAmountOwned>=25)
 				upgradeRequirement=true;
 			else upgradeRequirement=false;
 		}
 		else
 		if (upgradeLevel==2)
 		{
-			if (Datasource.sourceAmountOwned>=50)
+			if (DataSource_Template.getSourceAmountOwned()>=50)
 				upgradeRequirement=true;
 			else upgradeRequirement=false;
 		}
 		else
 			System.out.println("SIR YOU HAVE FAILED, no really pls only input 1 or 2 as upgradeLevel");
+	*/
 	}
 	public String getUpgradeName() {
 		return upgradeName;
@@ -64,7 +65,7 @@ public class Upgrades_Template {
 	}
 	
 	
-	public void togglevisibility() {		//noch ist das requirement relativ überflüssig -> gerne Inspirationen an mich weiterleiten
+	public void togglevisibility() {		//noch ist das requirement relativ ï¿½berflï¿½ssig -> gerne Inspirationen an mich weiterleiten
 		if (active==true)					// ist das Upgrade bereits Aktiv kann man es nicht mehr kaufen
 		{
 			this.upgradeAvailable=false;

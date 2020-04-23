@@ -50,6 +50,22 @@ public class GUI {
 	
 	//upgrades
 	private static Upgrades_Template zuchtBot;
+	private static Upgrades_Template datenFutter;
+	private static Upgrades_Template miniGames;	//könnte verwirrend sein
+	private static Upgrades_Template gruppenInDeinerNähe;
+	private static Upgrades_Template karperbrief;
+	private static Upgrades_Template einNeuesSchiff;
+	private static Upgrades_Template einNeuerMarktplatz;
+	private static Upgrades_Template twoWayLiveChat;
+	private static Upgrades_Template offlineEinbindung;
+	private static Upgrades_Template waehlDeineBelohnung;
+	private static Upgrades_Template callCenterSupport;
+	private static Upgrades_Template onlineAusfüllformular;
+	private static Upgrades_Template personalisierteSuche;
+	private static Upgrades_Template werbung;
+	private static Upgrades_Template statusModul;
+	private static Upgrades_Template faceScanner;
+	
 	
 	//Beschriftung der Buttons die immer dem gelichen Formular folgt
 	 public String playerRessources() {
@@ -118,6 +134,21 @@ public class GUI {
 		 
 		 //upgrades
 		 zuchtBot = new Upgrades_Template("Zucht-Bot", "Zieht die Daten vom klein auf an und macht diese Loyal wie keine anderen", 20, 2, dataFarm);
+		 datenFutter = new Upgrades_Template("Daten-Futter", "Füttere deine Daten-Sprößlinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen", 100, 4, dataFarm);
+		 miniGames = new Upgrades_Template("Mini Games", "Füttere deine Daten-Sprößlinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen", 20, 2, dataBook);
+		 gruppenInDeinerNähe = new Upgrades_Template("Gruppen-In-Deiner-Nähe", "Wir erstellen gruppen in größeren Städten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]", 20, 4, dataBook);
+		 karperbrief = new Upgrades_Template("Karperbrief", "Verschaff deinem Piraten exclusiven zutritt zu legalen gewässern", 20, 2, dataPirate);
+		 einNeuesSchiff = new Upgrades_Template("Ein neues Schiff", "Auch ein online Pirat profitiert von einem neuen Schiff (PC) mit welchem er gefährlichere Gewässer besser und schneller erreichen kann", 20, 4, dataPirate);
+		 einNeuerMarktplatz = new Upgrades_Template("Ein neuer Marktplatz", "Verschönere dein Datenhub mit einer schöneren Frontseite", 20, 2, dataHub);
+		 twoWayLiveChat = new Upgrades_Template("Two way Livechat", "woher sollen die denn wissen das wir auch ihre Live-Chat seite aufzeichnen", 20, 4, dataHub);
+		 offlineEinbindung = new Upgrades_Template("Offline Einbindung", "Lass die spieler richtig mitfiebern und gib ihnen die möglichkeit sich per Post mit rücksende beleg zu bewerben", 20, 2, dataGewinnspiele);
+		 waehlDeineBelohnung = new Upgrades_Template("Waehl deine Belohnung", "Lassen wir unsere Mitspieler doch einfach schon im vorhinaus entscheiden welchen von 50 Gewinnen sie am besten finden, selbst diese Information ist in unserer Welt Bares !", 20, 4, dataGewinnspiele);
+		 callCenterSupport = new Upgrades_Template("Call Center Support", "Für Premium-Kunden bieten wir einen 24/7 Call Center bei welchem sie innerhalb kürzester zeit Sich die seele vom Leib über ihr Angebot reden können und wir die beste ausrede haben mehr private Informationen zu erfragen", 20, 2, dataScout24);
+		 onlineAusfüllformular = new Upgrades_Template("Online Ausfüllformular", "Warum söllten unsere Kunden noch ausserhalb unserer Website Hantieren wenn wir ihnen doch hier Alles bieten können", 20, 4, dataScout24);
+		 personalisierteSuche = new Upgrades_Template("Personalisierte Suche", "Vorschläge die an vorherige  Suchen und wahlen zwischen den Suchergebnissen angelehnt sind freuen doch jeden Benutzer", 20, 2, dataSearch);
+		 werbung = new Upgrades_Template("Werbung", "Funktioniert noch besser als es Klingt, platzieren wir verstreut ein wenig Werbung und sammeln daten darüber ob mit dieser interagiert wird finden wir noch mehr über die Leute heraus als diese wirklich zugeben wollen", 20, 4, dataSearch);
+		 statusModul = new Upgrades_Template("Status Modul", "Klauen wir doch von der Konkurenz, geben wir den Nutzern die Möglichkeit ihree jede kleinste Bewegung hochzuladen und mit ihren Freunden und UNS zu teilen", 20, 2, whatsData);
+		 faceScanner = new Upgrades_Template("Face Scanner", "Wir scannen jedes Bild und jedes Video das die Menschen durch uns versenden und finden Darüber mehr über ihr 	Umfeld heraus", 20, 4, whatsData);
 
 	}
 
@@ -416,8 +447,61 @@ public class GUI {
 				upgradesPanel.remove(upgrade1);   //der button wird removed, da man Upgrades nur 1 mal erwerben kann
 			}
 		});
-		
-		
+		JButton upgrade2 = new JButton(upgradesText(datenFutter, dataFarm));
+		upgradesPanel.add(upgrade2);
+		upgrade2.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				datenFutter.purchaseUpgrade(dataFarm);
+				playerRessources.setText(playerRessources());
+				dataSource2.setText(dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade2);  
+			}
+		});
+		JButton upgrade3 = new JButton(upgradesText(miniGames, dataBook));
+		upgradesPanel.add(upgrade3);
+		upgrade3.setToolTipText("<html>"+upgradesToolTip(miniGames, dataBook));
+		upgrade3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				datenFutter.purchaseUpgrade(dataBook);
+				playerRessources.setText(playerRessources());
+				dataSource3.setText(dataSourcesText(dataBook));
+				upgradesPanel.remove(upgrade3);  
+			}
+		});
+		JButton upgrade4 = new JButton(upgradesText(datenFutter, dataFarm));
+		upgradesPanel.add(upgrade4);
+		upgrade4.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				datenFutter.purchaseUpgrade(dataFarm);
+				playerRessources.setText(playerRessources());
+				dataSource4.setText(dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade2);  
+			}
+		});
+		JButton upgrade5 = new JButton(upgradesText(datenFutter, dataFarm));
+		upgradesPanel.add(upgrade4);
+		upgrade5.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				datenFutter.purchaseUpgrade(dataFarm);
+				playerRessources.setText(playerRessources());
+				dataSource5.setText(dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade5);  
+			}
+		});
+		JButton upgrade6 = new JButton(upgradesText(datenFutter, dataFarm));
+		upgradesPanel.add(upgrade6);
+		upgrade6.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
+		upgrade6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {				
+				datenFutter.purchaseUpgrade(dataFarm);
+				playerRessources.setText(playerRessources());
+				dataSource6.setText(dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade6);  
+			}
+		});
 	}
 	
 	
