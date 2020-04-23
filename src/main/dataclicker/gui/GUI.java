@@ -5,12 +5,15 @@ import main.dataclicker.upgrades.Upgrades_Template;
 
 import java.awt.*;
 import javax.swing.JFrame;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
+import javax.swing.JToolTip;
 
 import main.dataclicker.buyers.Buyers_Template;
 import main.dataclicker.dataSources.*;
@@ -18,6 +21,7 @@ import main.dataclicker.gui.GUI;
 import main.dataclicker.upgrades.*;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class GUI {
 
@@ -52,13 +56,30 @@ public class GUI {
 		 return ("Data: " + main.dataclicker.player.Player.getDataAmount() + " Daten pro Sekunde: " + main.dataclicker.player.Player.getCurrentDataPerSecond() + " Money: " + main.dataclicker.player.Player.getMoneyAmount());
 	 }
 	 public String dataSourcesText(DataSource_Template datasource) {
-		 return (datasource.getSourceName() + " kostet: " + datasource.getCurrentCost() + " DPS: " + datasource.getInitialDataPerSecond() + " A: " + datasource.getSourceAmountOwned());
+		 return (datasource.getSourceName() + " kostet: " + datasource.getCurrentCost() + " in Besitz: " + datasource.getSourceAmountOwned());
 	 }
+	 
+	 public String dataSourceToolTip(DataSource_Template datasource) {
+		 if (datasource.getSourceAmountOwned() != 0)
+			 return(datasource.getSourceName()+": "+ datasource.getSourceDescription()+"<br>"
+		 		+ datasource.getSourceName()+" produziert "+datasource.getInitialDataPerSecond()+" pro Sekunde fÃ¼r jede gekaufte Instanz"+"<br>"
+				+ "zur Zeit werden "+datasource.getDataPerSecond()+ " Daten pro Sekunde produziert.");
+		 
+		 else return(datasource.getSourceName()+": "+ datasource.getSourceDescription()+"<br>"
+			 		+ datasource.getSourceName()+" produziert "+datasource.getInitialDataPerSecond()+" pro Sekunde fÃ¼r jede gekaufte Instanz"+"<br>"
+					+ "zur Zeit werden 0 Daten pro Sekunde produziert.");
+	 }
+	 
 	 public String buyersText(Buyers_Template buyer) {
-		 return ("LvL: " + buyer.getLevel() + " " +  buyer.getName() + " kauft " + buyer.getPrice() + " Daten für " + buyer.getValue() + "€");
+		 return ("LvL: " + buyer.getLevel() + " " +  buyer.getName() + " kauft " + buyer.getPrice() + " Daten fï¿½r " + buyer.getValue() + "ï¿½");
 	 }
+	 
 	 public String upgradesText(Upgrades_Template upgrade, DataSource_Template datasource) {
-		 return (upgrade.getUpgradeName()+ " kostet: "+ upgrade.getUpgradeCost()+" verbessert "+ datasource.getSourceName() +" um: "+ upgrade.getUpgradeMultiplier());
+		 return (upgrade.getUpgradeName()+ " kostet: "+ upgrade.getUpgradeCost());
+	 }
+	 public String upgradesToolTip(Upgrades_Template upgrade, DataSource_Template datasource) {
+		 return (upgrade.getUpgradeDescription()+"<br>"
+				+ "Durch Kauf dieses Upgrades wird die produktivitÃ¤t von " + datasource.getSourceName()+ " verdoppelt.");
 	 }
 
 	/**
@@ -86,7 +107,7 @@ public class GUI {
 		 drump =  new Buyers_Template("Tonald Drump", 1000000, 0);
 
 		 //Datasources
-		 dataFarm = new DataSource_Template("Daten-Farm", "Bringt 2 Daten Pro Sekunde", 2, 10, 1.15, 0);
+		 dataFarm = new DataSource_Template("Daten-Farm", "QualitÃ¤tsdaten aus Freilandhaltung", 2, 10, 1.15, 0);
 		 dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000);
 		 dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 3000);
 		 dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 6000);
@@ -131,16 +152,18 @@ public class GUI {
 		
 		JButton dataSource1 = new JButton(dataSourcesText(dataFarm));
 		dataSources.add(dataSource1);
+		dataSource1.setToolTipText("<html>"+dataSourceToolTip(dataFarm)+"<html>");
 		dataSource1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataFarm.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource1.setText(dataSourcesText(dataFarm));
+				dataSource1.setToolTipText("<html>"+dataSourceToolTip(dataFarm)+"/<html>");
 			}
 		});
 
-		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollführt
+		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollfï¿½hrt
 		everySecond.schedule(new TimerTask() {
 			public void run() {
 				dataFarm.collectDataPerSecond();
@@ -158,78 +181,98 @@ public class GUI {
 		
 		JButton dataSource2 = new JButton(dataSourcesText(dataBook));
 		dataSources.add(dataSource2);
+		dataSource2.setToolTipText("<html>"+dataSourceToolTip(dataBook)+"<html>");
+		 try {
+			    dataSource2.setIcon(new ImageIcon(getClass().getResource("main.dataclicker.res.textures/databook_logo_small.png")));
+			  } catch (Exception ex) {
+			    System.out.println(ex);
+			  }
+		 
 		dataSource2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataBook.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource2.setText(dataSourcesText(dataBook));
+				dataSource2.setToolTipText("<html>"+dataSourceToolTip(dataBook)+"<html>");
 			}
 		});
 
 		JButton dataSource3 = new JButton(dataSourcesText(dataPirate));
 		dataSources.add(dataSource3);
+		dataSource3.setToolTipText("<html>"+dataSourceToolTip(dataPirate)+"<html>");
 		dataSource3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataPirate.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource3.setText(dataSourcesText(dataPirate));
+				dataSource3.setToolTipText("<html>"+dataSourceToolTip(dataPirate)+"<html>");
 			}
 		});
 
 		JButton dataSource4 = new JButton(dataSourcesText(dataHub)); 
 		dataSources.add(dataSource4);
+		dataSource4.setToolTipText("<html>"+dataSourceToolTip(dataHub)+"<html>");
 		dataSource4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataHub.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource4.setText(dataSourcesText(dataHub));
+				dataSource4.setToolTipText("<html>"+dataSourceToolTip(dataHub)+"<html>");
 			}
 		});
 
 		JButton dataSource5 = new JButton(dataSourcesText(dataGewinnspiele));
 		dataSources.add(dataSource5);
+		dataSource5.setToolTipText("<html>"+dataSourceToolTip(dataGewinnspiele)+"<html>");
 		dataSource5.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataGewinnspiele.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource5.setText(dataSourcesText(dataGewinnspiele));
+				dataSource5.setToolTipText("<html>"+dataSourceToolTip(dataGewinnspiele)+"<html>");
 			}
 		});
 
 		JButton dataSource6 = new JButton(dataSourcesText(dataScout24));
 		dataSources.add(dataSource6);
+		dataSource6.setToolTipText("<html>"+dataSourceToolTip(dataScout24)+"<html>");
 		dataSource6.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataScout24.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource6.setText(dataSourcesText(dataScout24));
+				dataSource6.setToolTipText("<html>"+dataSourceToolTip(dataScout24)+"<html>");
 			}
 		});
 
 		JButton dataSource7 = new JButton(dataSourcesText(dataSearch));
 		dataSources.add(dataSource7);
+		dataSource7.setToolTipText("<html>"+dataSourceToolTip(dataSearch)+"<html>");
 		dataSource7.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataSearch.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource7.setText(dataSourcesText(dataSearch));
+				dataSource7.setToolTipText("<html>"+dataSourceToolTip(dataSearch)+"<html>");
 			}
 		});
 
 		JButton dataSource8 = new JButton(dataSourcesText(whatsData));
 		dataSources.add(dataSource8);
+		dataSource8.setToolTipText("<html>"+dataSourceToolTip(whatsData)+"<html>");
 		dataSource8.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				whatsData.purchaseDataSource();
 				playerRessources.setText(playerRessources());
 				dataSource8.setText(dataSourcesText(whatsData));
+				dataSource8.setToolTipText("<html>"+dataSourceToolTip(whatsData)+"<html>");
 			}
 		});
 
@@ -364,6 +407,7 @@ public class GUI {
 		
 		JButton upgrade1 = new JButton(upgradesText(zuchtBot, dataFarm));
 		upgradesPanel.add(upgrade1);
+		upgrade1.setToolTipText("<html>"+upgradesToolTip(zuchtBot, dataFarm));
 		upgrade1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {				
 				zuchtBot.purchaseUpgrade(dataFarm);
