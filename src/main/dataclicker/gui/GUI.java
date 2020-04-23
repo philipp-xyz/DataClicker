@@ -183,7 +183,7 @@ public class GUI {
 		dataSources.add(dataSource2);
 		dataSource2.setToolTipText("<html>"+dataSourceToolTip(dataBook)+"<html>");
 		 try {
-			    dataSource2.setIcon(new ImageIcon(getClass().getResource("main.dataclicker.res.textures/databook_logo_small.png")));
+			    dataSource2.setIcon(new ImageIcon(getClass().getResource("../res/textures/databook_logo_small.png")));
 			  } catch (Exception ex) {
 			    System.out.println(ex);
 			  }
