@@ -135,20 +135,20 @@ public class GUI {
 		 //upgrades
 		 zuchtBot = new Upgrades_Template("Zucht-Bot", "Zieht die Daten vom klein auf an und macht diese Loyal wie keine anderen", 20, 2, dataFarm);
 		 datenFutter = new Upgrades_Template("Daten-Futter", "Füttere deine Daten-Sprößlinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen", 100, 4, dataFarm);
-		 miniGames = new Upgrades_Template("Mini Games", "Füttere deine Daten-Sprößlinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen", 20, 2, dataBook);
-		 gruppenInDeinerNähe = new Upgrades_Template("Gruppen-In-Deiner-Nähe", "Wir erstellen gruppen in größeren Städten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]", 20, 4, dataBook);
-		 karperbrief = new Upgrades_Template("Karperbrief", "Verschaff deinem Piraten exclusiven zutritt zu legalen gewässern", 20, 2, dataPirate);
-		 einNeuesSchiff = new Upgrades_Template("Ein neues Schiff", "Auch ein online Pirat profitiert von einem neuen Schiff (PC) mit welchem er gefährlichere Gewässer besser und schneller erreichen kann", 20, 4, dataPirate);
-		 einNeuerMarktplatz = new Upgrades_Template("Ein neuer Marktplatz", "Verschönere dein Datenhub mit einer schöneren Frontseite", 20, 2, dataHub);
-		 twoWayLiveChat = new Upgrades_Template("Two way Livechat", "woher sollen die denn wissen das wir auch ihre Live-Chat seite aufzeichnen", 20, 4, dataHub);
-		 offlineEinbindung = new Upgrades_Template("Offline Einbindung", "Lass die spieler richtig mitfiebern und gib ihnen die möglichkeit sich per Post mit rücksende beleg zu bewerben", 20, 2, dataGewinnspiele);
-		 waehlDeineBelohnung = new Upgrades_Template("Waehl deine Belohnung", "Lassen wir unsere Mitspieler doch einfach schon im vorhinaus entscheiden welchen von 50 Gewinnen sie am besten finden, selbst diese Information ist in unserer Welt Bares !", 20, 4, dataGewinnspiele);
-		 callCenterSupport = new Upgrades_Template("Call Center Support", "Für Premium-Kunden bieten wir einen 24/7 Call Center bei welchem sie innerhalb kürzester zeit Sich die seele vom Leib über ihr Angebot reden können und wir die beste ausrede haben mehr private Informationen zu erfragen", 20, 2, dataScout24);
-		 onlineAusfüllformular = new Upgrades_Template("Online Ausfüllformular", "Warum söllten unsere Kunden noch ausserhalb unserer Website Hantieren wenn wir ihnen doch hier Alles bieten können", 20, 4, dataScout24);
-		 personalisierteSuche = new Upgrades_Template("Personalisierte Suche", "Vorschläge die an vorherige  Suchen und wahlen zwischen den Suchergebnissen angelehnt sind freuen doch jeden Benutzer", 20, 2, dataSearch);
-		 werbung = new Upgrades_Template("Werbung", "Funktioniert noch besser als es Klingt, platzieren wir verstreut ein wenig Werbung und sammeln daten darüber ob mit dieser interagiert wird finden wir noch mehr über die Leute heraus als diese wirklich zugeben wollen", 20, 4, dataSearch);
-		 statusModul = new Upgrades_Template("Status Modul", "Klauen wir doch von der Konkurenz, geben wir den Nutzern die Möglichkeit ihree jede kleinste Bewegung hochzuladen und mit ihren Freunden und UNS zu teilen", 20, 2, whatsData);
-		 faceScanner = new Upgrades_Template("Face Scanner", "Wir scannen jedes Bild und jedes Video das die Menschen durch uns versenden und finden Darüber mehr über ihr 	Umfeld heraus", 20, 4, whatsData);
+		 miniGames = new Upgrades_Template("Mini Games", "Füttere deine Daten-Sprößlinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen", 100, 2, dataBook);
+		 gruppenInDeinerNähe = new Upgrades_Template("Gruppen-In-Deiner-Nähe", "Wir erstellen gruppen in größeren Städten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]", 500, 4, dataBook);
+		 karperbrief = new Upgrades_Template("Karperbrief", "Verschaff deinem Piraten exclusiven zutritt zu legalen gewässern", 200, 2, dataPirate);
+		 einNeuesSchiff = new Upgrades_Template("Ein neues Schiff", "Auch ein online Pirat profitiert von einem neuen Schiff (PC) mit welchem er gefährlichere Gewässer besser und schneller erreichen kann", 1000, 4, dataPirate);
+		 einNeuerMarktplatz = new Upgrades_Template("Ein neuer Marktplatz", "Verschönere dein Datenhub mit einer schöneren Frontseite", 300, 2, dataHub);
+		 twoWayLiveChat = new Upgrades_Template("Two way Livechat", "woher sollen die denn wissen das wir auch ihre Live-Chat seite aufzeichnen", 1200, 4, dataHub);
+		 offlineEinbindung = new Upgrades_Template("Offline Einbindung", "Lass die spieler richtig mitfiebern und gib ihnen die möglichkeit sich per Post mit rücksende beleg zu bewerben", 400, 2, dataGewinnspiele);
+		 waehlDeineBelohnung = new Upgrades_Template("Waehl deine Belohnung", "Lassen wir unsere Mitspieler doch einfach schon im vorhinaus entscheiden welchen von 50 Gewinnen sie am besten finden, selbst diese Information ist in unserer Welt Bares !", 2000, 4, dataGewinnspiele);
+		 callCenterSupport = new Upgrades_Template("Call Center Support", "Für Premium-Kunden bieten wir einen 24/7 Call Center bei welchem sie innerhalb kürzester zeit Sich die seele vom Leib über ihr Angebot reden können und wir die beste ausrede haben mehr private Informationen zu erfragen", 500, 2, dataScout24);
+		 onlineAusfüllformular = new Upgrades_Template("Online Ausfüllformular", "Warum söllten unsere Kunden noch ausserhalb unserer Website Hantieren wenn wir ihnen doch hier Alles bieten können", 2500, 4, dataScout24);
+		 personalisierteSuche = new Upgrades_Template("Personalisierte Suche", "Vorschläge die an vorherige  Suchen und wahlen zwischen den Suchergebnissen angelehnt sind freuen doch jeden Benutzer", 600, 2, dataSearch);
+		 werbung = new Upgrades_Template("Werbung", "Funktioniert noch besser als es Klingt, platzieren wir verstreut ein wenig Werbung und sammeln daten darüber ob mit dieser interagiert wird finden wir noch mehr über die Leute heraus als diese wirklich zugeben wollen", 3000, 4, dataSearch);
+		 statusModul = new Upgrades_Template("Status Modul", "Klauen wir doch von der Konkurenz, geben wir den Nutzern die Möglichkeit ihree jede kleinste Bewegung hochzuladen und mit ihren Freunden und UNS zu teilen", 1000, 2, whatsData);
+		 faceScanner = new Upgrades_Template("Face Scanner", "Wir scannen jedes Bild und jedes Video das die Menschen durch uns versenden und finden Darüber mehr über ihr 	Umfeld heraus", 5005, 4, whatsData);
 
 	}
 
