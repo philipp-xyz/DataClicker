@@ -435,9 +435,11 @@ public class GUI {
 
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);
-		
+		int Z=dataFarm.getSourceAmountOwned();
 		JButton upgrade1 = new JButton(upgradesText(zuchtBot, dataFarm));
+		
 		upgradesPanel.add(upgrade1);
+		
 		upgrade1.setToolTipText("<html>"+upgradesToolTip(zuchtBot, dataFarm));
 		upgrade1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {				
@@ -447,6 +449,7 @@ public class GUI {
 				upgradesPanel.remove(upgrade1);   //der button wird removed, da man Upgrades nur 1 mal erwerben kann
 			}
 		});
+		
 		JButton upgrade2 = new JButton(upgradesText(datenFutter, dataFarm));
 		upgradesPanel.add(upgrade2);
 		upgrade2.setToolTipText("<html>"+upgradesToolTip(datenFutter, dataFarm));
