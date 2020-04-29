@@ -149,7 +149,7 @@ public class DataSource_Template {
     		if (amountOwned > 1)				//wenn es nicht die erste Quelle ihrer Art ist, die erworben wird, wird nun  die erarbeiteten Daten pro Sekunde aktualisiert
     		increaseDataPerSecond();		
     		int datapersec = getDataPerSecond();
-    		Player.setCurrentDataPerSecond(datapersec);
+    		Player.setCurrentDataPerSecond((Player.getCurrentDataPerSecond()+datapersec));
     		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
     	}
     }
