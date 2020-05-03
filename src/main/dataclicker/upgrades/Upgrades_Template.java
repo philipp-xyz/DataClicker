@@ -94,8 +94,9 @@ public class Upgrades_Template {
 	public void upgradeEffect(DataSource_Template dataSource)		
 	{
 			dataSource.setDataMultiplier(getUpgradeMultiplier());
-			dataSource.increaseDataPerSecond();
-			
+			dataSource.updateDataPerSecond();
+			int datapersec = dataSource.getDataPerSecond();
+    		Player.setCurrentDataPerSecond(datapersec);
 	}
 	
 	

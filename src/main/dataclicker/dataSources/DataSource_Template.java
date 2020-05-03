@@ -119,6 +119,12 @@ public class DataSource_Template {
         setDataPerSecond(dataPerSecond);
     }
 
+    public void updateDataPerSecond() {
+        int dataPerSecond = getDataPerSecond();
+        dataPerSecond = (dataPerSecond ) * dataMultiplier; 
+        setDataPerSecond(dataPerSecond);
+    }
+    
     public boolean toggleVisibility() {
         if (Player.getDataAmount() >= requiredData) {
             return true;
@@ -149,7 +155,7 @@ public class DataSource_Template {
     		if (amountOwned > 1)				//wenn es nicht die erste Quelle ihrer Art ist, die erworben wird, wird nun  die erarbeiteten Daten pro Sekunde aktualisiert
     		increaseDataPerSecond();		
     		int datapersec = getDataPerSecond();
-    		Player.setCurrentDataPerSecond((Player.getCurrentDataPerSecond()+datapersec));
+    		Player.setCurrentDataPerSecond((Player.getCurrentDataPerSecond()+initialDataPerSecond*dataMultiplier));
     		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
     	}
     }
