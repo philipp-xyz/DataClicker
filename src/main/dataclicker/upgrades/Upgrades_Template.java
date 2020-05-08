@@ -1,6 +1,9 @@
 package main.dataclicker.upgrades;
+import javax.swing.JButton;
+
 import main.dataclicker.dataSources.*;
 import main.dataclicker.player.Player;
+import main.dataclicker.gui.*;
 
 public class Upgrades_Template {
 	
@@ -24,25 +27,13 @@ public class Upgrades_Template {
 	{
 		this.upgradeDescription=text;
 	}
-	public void checkUpgradeRequirement(int upgradeLevel) {  //upgradeLevel ist eine Hilfsvariable f�r mich, welche nur einen Wert von 1 oder 2 haben soll
-		 // does this work, i return it to rewrite it? or can i just Rewrite it without this line
-	/*	if (upgradeLevel==1)
-		{
-			if (datasource.sourceAmountOwned>=25)
-				upgradeRequirement=true;
-			else upgradeRequirement=false;
-		}
-		else
-		if (upgradeLevel==2)
-		{
-			if (DataSource_Template.getSourceAmountOwned()>=50)
-				upgradeRequirement=true;
-			else upgradeRequirement=false;
-		}
-		else
-			System.out.println("SIR YOU HAVE FAILED, no really pls only input 1 or 2 as upgradeLevel");
-	*/
+	public void checkUpgrade(DataSource_Template datasource, int amountNeeded, JButton button) {  //upgradeLevel ist eine Hilfsvariable f�r mich, welche nur einen Wert von 1 oder 2 haben soll || man kann code sparen indem man einfach das if-statement mit der übergebenen Variable macht
+																							// does this work, i return it to rewrite it? or can i just Rewrite it without this line || return nur wenn man danach noch etwas mit einem Resultat der Funktion machen möchte, da wir aber nur einmal einen Wert setzen, ist die funktion void und gibt nichts zurück
+		if(datasource.getSourceAmountOwned()>=amountNeeded){
+			button.setVisible(true);
+		} 
 	}
+	
 	public String getUpgradeName() {
 		return upgradeName;
 	}
@@ -66,18 +57,14 @@ public class Upgrades_Template {
 	
 	
 	public void togglevisibility() {		//noch ist das requirement relativ �berfl�ssig -> gerne Inspirationen an mich weiterleiten
-		if (active==true)					// ist das Upgrade bereits Aktiv kann man es nicht mehr kaufen
-		{
+		if (active==true) {					// ist das Upgrade bereits Aktiv kann man es nicht mehr kaufen{
 			this.upgradeAvailable=false;
 		}
-		else
-		{
-			if (upgradeRequirement==true)
-			{
-			this.upgradeAvailable=true;
+		else{
+			if (upgradeRequirement==true){
+				this.upgradeAvailable=true;
 			}
-			else 
-			{
+			else {
 				this.upgradeAvailable=false;
 			}
 		}
@@ -96,7 +83,7 @@ public class Upgrades_Template {
 			dataSource.setDataMultiplier(getUpgradeMultiplier());
 			dataSource.updateDataPerSecond();
 			int datapersec = dataSource.getDataPerSecond();
-    		Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond()+datapersec);
+    		Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond());
 	}
 	
 	
