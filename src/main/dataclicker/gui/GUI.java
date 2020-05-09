@@ -484,7 +484,7 @@ public class GUI {
 		gbl_buyersPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		buyersPanel.setLayout(gbl_buyersPanel);
 		
-				JButton buyer1 = new JButton(buyersText(nsa));
+				JButton buyer1 = new JButton(buyersText(vegtables));
 				GridBagConstraints gbc_buyer1 = new GridBagConstraints();
 				gbc_buyer1.fill = GridBagConstraints.BOTH;
 				gbc_buyer1.insets = new Insets(0, 0, 5, 5);
@@ -493,9 +493,9 @@ public class GUI {
 				buyersPanel.add(buyer1, gbc_buyer1);
 				buyer1.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent click) {
-						nsa.buy();
+						vegtables.buy();
 						playerRessources.setText(playerRessources());
-						buyer1.setText(buyersText(nsa));
+						buyer1.setText(buyersText(vegtables));
 					}
 				});
 						
@@ -507,7 +507,7 @@ public class GUI {
 						gbc_buyer1Icon.gridy = 0;
 						buyersPanel.add(buyer1Icon, gbc_buyer1Icon);
 				
-						JButton buyer2 = new JButton(buyersText(krake));
+						JButton buyer2 = new JButton(buyersText(mobile));
 						GridBagConstraints gbc_buyer2 = new GridBagConstraints();
 						gbc_buyer2.fill = GridBagConstraints.BOTH;
 						gbc_buyer2.insets = new Insets(0, 0, 5, 5);
@@ -516,9 +516,9 @@ public class GUI {
 						buyersPanel.add(buyer2, gbc_buyer2);
 						buyer2.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent click) {
-								krake.buy();
+								mobile.buy();
 								playerRessources.setText(playerRessources());
-								buyer2.setText(buyersText(krake));
+								buyer2.setText(buyersText(mobile));
 							}
 						});
 				
@@ -530,7 +530,7 @@ public class GUI {
 						gbc_buyer2Icon.gridy = 1;
 						buyersPanel.add(buyer2Icon, gbc_buyer2Icon);
 		
-				JButton buyer3 = new JButton(buyersText(mobile));
+				JButton buyer3 = new JButton(buyersText(tech));
 				GridBagConstraints gbc_buyer3 = new GridBagConstraints();
 				gbc_buyer3.fill = GridBagConstraints.BOTH;
 				gbc_buyer3.insets = new Insets(0, 0, 5, 5);
@@ -539,9 +539,9 @@ public class GUI {
 				buyersPanel.add(buyer3, gbc_buyer3);
 				buyer3.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent click) {
-						mobile.buy();
+						tech.buy();
 						playerRessources.setText(playerRessources());
-						buyer3.setText(buyersText(mobile));
+						buyer3.setText(buyersText(tech));
 					}
 				});
 				
@@ -553,7 +553,7 @@ public class GUI {
 				gbc_buyer3Icon.gridy = 2;
 				buyersPanel.add(buyer3Icon, gbc_buyer3Icon);
 						
-								JButton buyer4 = new JButton(buyersText(party));
+								JButton buyer4 = new JButton(buyersText(eSport));
 								GridBagConstraints gbc_buyer4 = new GridBagConstraints();
 								gbc_buyer4.fill = GridBagConstraints.BOTH;
 								gbc_buyer4.insets = new Insets(0, 0, 5, 5);
@@ -562,9 +562,9 @@ public class GUI {
 								buyersPanel.add(buyer4, gbc_buyer4);
 								buyer4.addActionListener(new ActionListener() {
 									public void actionPerformed(ActionEvent click) {
-										party.buy();
+										eSport.buy();
 										playerRessources.setText(playerRessources());
-										buyer4.setText(buyersText(party));
+										buyer4.setText(buyersText(eSport));
 									}
 								});
 						
@@ -576,7 +576,7 @@ public class GUI {
 						gbc_buyer4Icon.gridy = 3;
 						buyersPanel.add(buyer4Icon, gbc_buyer4Icon);
 				
-						JButton buyer5 = new JButton(buyersText(eSport));
+						JButton buyer5 = new JButton(buyersText(party));
 						GridBagConstraints gbc_buyer5 = new GridBagConstraints();
 						gbc_buyer5.fill = GridBagConstraints.BOTH;
 						gbc_buyer5.insets = new Insets(0, 0, 5, 5);
@@ -585,9 +585,9 @@ public class GUI {
 						buyersPanel.add(buyer5, gbc_buyer5);
 						buyer5.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent click) {
-								eSport.buy();
+								party.buy();
 								playerRessources.setText(playerRessources());
-								buyer5.setText(buyersText(eSport));
+								buyer5.setText(buyersText(party));
 							}
 						});
 						
@@ -599,7 +599,7 @@ public class GUI {
 						gbc_buyer5Icon.gridy = 4;
 						buyersPanel.add(buyer5Icon, gbc_buyer5Icon);
 				
-						JButton buyer6 = new JButton(buyersText(tech));
+						JButton buyer6 = new JButton(buyersText(nsa));
 						GridBagConstraints gbc_buyer6 = new GridBagConstraints();
 						gbc_buyer6.fill = GridBagConstraints.BOTH;
 						gbc_buyer6.insets = new Insets(0, 0, 5, 5);
@@ -608,9 +608,9 @@ public class GUI {
 						buyersPanel.add(buyer6, gbc_buyer6);
 						buyer6.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent click) {
-								tech.buy();
+								nsa.buy();
 								playerRessources.setText(playerRessources());
-								buyer6.setText(buyersText(tech));
+								buyer6.setText(buyersText(nsa));
 							}
 						});
 				
@@ -622,7 +622,7 @@ public class GUI {
 				gbc_buyer6Icon.gridy = 5;
 				buyersPanel.add(buyer6Icon, gbc_buyer6Icon);
 		
-				JButton buyer7 = new JButton(buyersText(vegtables));
+				JButton buyer7 = new JButton(buyersText(krake));
 				GridBagConstraints gbc_buyer7 = new GridBagConstraints();
 				gbc_buyer7.fill = GridBagConstraints.BOTH;
 				gbc_buyer7.insets = new Insets(0, 0, 5, 5);
@@ -631,9 +631,9 @@ public class GUI {
 				buyersPanel.add(buyer7, gbc_buyer7);
 				buyer7.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent click) {
-						vegtables.buy();
+						krake.buy();
 						playerRessources.setText(playerRessources());
-						buyer7.setText(buyersText(vegtables));
+						buyer7.setText(buyersText(krake));
 					}
 				});
 				
