@@ -905,6 +905,21 @@ public class GUI {
 			public void run() {
 				zuchtBot.checkUpgrade(dataFarm, 2, upgrade1);
 				datenFutter.checkUpgrade(dataFarm, 5, upgrade2);
+				miniGames.checkUpgrade(dataBook, 2, upgrade3);
+				gruppenInDeinerNaehe.checkUpgrade(dataBook, 5, upgrade4);
+				karperbrief.checkUpgrade(dataPirate, 2, upgrade5);
+				einNeuesSchiff.checkUpgrade(dataPirate, 5, upgrade6);
+				einNeuerMarktplatz.checkUpgrade(dataHub, 2, upgrade7);
+				twoWayLiveChat.checkUpgrade(dataHub, 5, upgrade8);
+				offlineEinbindung.checkUpgrade(dataGewinnspiele, 2, upgrade9);
+				waehlDeineBelohnung.checkUpgrade(dataGewinnspiele, 5, upgrade10);
+				callCenterSupport.checkUpgrade(dataScout24, 2, upgrade11);
+				onlineAusfuellformular.checkUpgrade(dataScout24, 5, upgrade12);
+				personalisierteSuche.checkUpgrade(dataSearch, 2, upgrade13);
+				werbung.checkUpgrade(dataSearch, 5, upgrade14);
+				statusModul.checkUpgrade(whatsData, 2, upgrade15);
+				faceScanner.checkUpgrade(whatsData, 2, upgrade16);
+				
 			}
 		}, 0, 1000);
 		
