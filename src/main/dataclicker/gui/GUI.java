@@ -293,6 +293,12 @@ public class GUI {
 		gbc_dataSource3Icon.gridx = 0;
 		gbc_dataSource3Icon.gridy = 2;
 		dataSources.add(dataSource3Icon, gbc_dataSource3Icon);
+		dataSource3Icon.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				main.dataclicker.minigames.dataSweeper.SweeperGUI.createSweeper();
+			}
+		});
 
 		JButton dataSource3 = new JButton("<html>" + dataSourcesText(dataPirate));
 		GridBagConstraints gbc_dataSource3 = new GridBagConstraints();
