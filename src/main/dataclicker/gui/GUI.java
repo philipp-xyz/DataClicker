@@ -119,13 +119,13 @@ public class GUI {
 			}
 		});
 		// Buyer
-		nsa = new Buyers_Template("NSA", 10, 50);
-		krake = new Buyers_Template("Daten-Krake", 50, 200);
-		mobile = new Buyers_Template("Mobile-Data", 1000, 250);
-		party = new Buyers_Template("deutsche Daten Partei", 2000, 750);
-		eSport = new Buyers_Template("Data eSport", 5555, 1337);
-		tech = new Buyers_Template("Data Tech", 10000, 2000);
-		vegtables = new Buyers_Template("Obst und Daten", 100000, 10000);
+		vegtables = new Buyers_Template("Obst und Daten", 10, 50);
+		mobile = new Buyers_Template("Mobile-Data", 50, 200);
+		tech = new Buyers_Template("Data Tech", 1000, 250);
+		eSport = new Buyers_Template("Data eSport", 2000, 750);
+		party = new Buyers_Template("deutsche Daten Partei", 5555, 1337);
+		nsa = new Buyers_Template("NSA", 10000, 2000);
+		krake = new Buyers_Template("Daten-Krake", 100000, 10000);
 		drump = new Buyers_Template("Tonald Drump", 1000000, 0);
 
 		// Datasources

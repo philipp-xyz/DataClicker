@@ -83,7 +83,7 @@ public class Upgrades_Template {
 			dataSource.setDataMultiplier(getUpgradeMultiplier());
 			dataSource.updateDataPerSecond();
 			int datapersec = dataSource.getDataPerSecond();
-    		Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond());
+			Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond());
 	}
 	
 	
