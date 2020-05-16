@@ -1,12 +1,9 @@
 package main.dataclicker.gui;
 
-import main.dataclicker.player.Player;
 import main.dataclicker.upgrades.Upgrades_Template;
-import main.dataclicker.minigames.dataSweeper.*;
 
 import java.awt.*;
 import javax.swing.JFrame;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -14,16 +11,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
-import javax.swing.JToolTip;
 
 import main.dataclicker.buyers.Buyers_Template;
 import main.dataclicker.dataSources.*;
-import main.dataclicker.gui.GUI;
-import main.dataclicker.upgrades.*;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 
 public class GUI {
 
@@ -210,7 +202,14 @@ public class GUI {
 		frame.setBounds(100, 100, 1500, 786);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
 		JPanel playerRessourcesPanel = new JPanel(); // Anzeige von Daten & Geld welches der Spieler zur Zeit hat
+
+		//frame.setResizable(false);
+		
+		
+		//JPanel playerRessourcesPanel = new JPanel();  //Anzeige von Daten & Geld welches der Spieler zur Zeit hat
+
 		FlowLayout fl_playerRessourcesPanel = (FlowLayout) playerRessourcesPanel.getLayout();
 		fl_playerRessourcesPanel.setVgap(50);
 		frame.getContentPane().add(playerRessourcesPanel, BorderLayout.NORTH);
@@ -255,6 +254,7 @@ public class GUI {
 			}
 		});
 
+
 		JButton dataSource2Icon = new JButton();
 		dataSource2Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/databook_logo_small.png")));
@@ -273,6 +273,33 @@ public class GUI {
 		gbc_dataSource2.gridy = 1;
 		dataSources.add(dataSource2, gbc_dataSource2);
 		dataSource2.setToolTipText("<html>" + dataSourceToolTip(dataBook) + "<html>");
+
+
+		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollf�hrt
+		everySecond.schedule(new TimerTask() {
+			public void run() {
+				dataFarm.collectDataPerSecond();
+				dataBook.collectDataPerSecond();
+				dataGewinnspiele.collectDataPerSecond();
+				dataHub.collectDataPerSecond();
+				dataPirate.collectDataPerSecond();
+				dataScout24.collectDataPerSecond();
+				dataSearch.collectDataPerSecond();
+				dataGewinnspiele.collectDataPerSecond();
+				whatsData.collectDataPerSecond();
+				playerRessources.setText(playerRessources());
+			}
+		}, 0, 1000);
+		
+		/*JButton dataSource2 = new JButton(dataSourcesText(dataBook));
+		dataSources.add(dataSource2);
+		dataSource2.setToolTipText("<html>"+dataSourceToolTip(dataBook)+"<html>");
+		 try {
+			    dataSource2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("../res/textures/databook_logo_small.png"))));
+			  } catch (Exception ex) {
+			    System.out.println(ex);
+			  }*/
+		 
 
 		dataSource2.addActionListener(new ActionListener() {
 			@Override
@@ -889,8 +916,8 @@ public class GUI {
 				upgradesPanel.remove(upgrade16);
 			}
 		});
-		
-		Timer everySecond = new Timer(); // erstellt einen Timer der jede Sekunde eine Aufgabe vollfï¿½hrt
+
+		/*Timer everySecond = new Timer(); // erstellt einen Timer der jede Sekunde eine Aufgabe vollfï¿½hrt
 		everySecond.schedule(new TimerTask() {
 			public void run() {
 				dataFarm.collectDataPerSecond();
@@ -904,7 +931,7 @@ public class GUI {
 				whatsData.collectDataPerSecond();
 				playerRessources.setText(playerRessources());
 			}
-		}, 0, 1000);
+		}, 0, 1000);*/
 		
 		Timer upgradeVisibility = new Timer();  
 		upgradeVisibility.schedule(new TimerTask() {

@@ -2,7 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9eeec205-8c3c-43b6-bc9a-eed5d172f495" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/Spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/data.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataFarm_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataFarm_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataHub_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataHub_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataPirate_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataPirate_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataScout_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/data_krake.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/data_krake_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/data_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/databank_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/doogle_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/gewinnspiel_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/gewinnspiel_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/whatsData_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/whatsData_logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resDataSnake/data.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Collision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Head.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Parts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/PickUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Snake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Tail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/Assets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/ImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/SpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/EndState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/MenuState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/input/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/input/KeyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/Spritesheet.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataClicker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClicker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataScout_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/dataScout_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/databook_logo_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataClicker/main/dataclicker/res/textures/databook_logo_small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/inputs/KeyManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/inputs/MouseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/inputs/MouseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Gui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +58,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -27,8 +74,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.18965517" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="main.dataclicker.minigames.dataSnake.entities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\res" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\resDataSnake" />
+      <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.dataclicker.gui.GUI" />
       <module name="DataClicker" />
@@ -42,9 +105,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Gui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.dataclicker.minigames.dataSnake.gui.Gui" />
+      <module name="DataClicker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.dataclicker.minigames.dataSnake.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.dataclicker.minigames.dataSnake.Launcher" />
+      <module name="DataClicker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.dataclicker.minigames.dataSnake.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.dataclicker.minigames.dataSnake2.actions.Main" />
+      <module name="DataClicker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.dataclicker.minigames.dataSnake2.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Gui" />
       </list>
     </recent_temporary>
   </component>
@@ -62,49 +167,105 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1589638277862">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589638277862" />
+    <state x="790" y="375" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1589637478725">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="790" y="375" key="#com.intellij.debugger.actions.ViewTextAction/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589637478725" />
     <state x="2209" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587300636753">
       <screen x="1920" y="0" width="1680" height="1010" />
     </state>
     <state x="2209" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1680.1010@1920.0.1680.1010" timestamp="1587300636753" />
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1588605893436">
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1589579292469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588605893436" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1588606980663">
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589579292469" />
+    <state x="722" y="414" width="477" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589637677983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588606980663" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1588606980663">
+    <state x="722" y="414" width="477" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589637677983" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589549563877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588606980663" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1588606980663">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589549563877" />
+    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1589641073183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588606980663" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1588606980663">
+    <state x="587" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589641073183" />
+    <state width="1877" height="187" key="GridCell.Tab.0.bottom" timestamp="1589643518175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588606980663" />
-    <state width="1921" height="356" key="GridCell.Tab.1.bottom" timestamp="1586696236273">
+    <state width="1877" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643518175" />
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
+    <state width="1877" height="187" key="GridCell.Tab.0.center" timestamp="1589643518175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586696236273" />
-    <state width="1921" height="356" key="GridCell.Tab.1.center" timestamp="1586696236273">
+    <state width="1877" height="187" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643518175" />
+    <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
+    <state width="1877" height="187" key="GridCell.Tab.0.left" timestamp="1589643518175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586696236273" />
-    <state width="1921" height="356" key="GridCell.Tab.1.left" timestamp="1586696236273">
+    <state width="1877" height="187" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643518175" />
+    <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
+    <state width="1877" height="187" key="GridCell.Tab.0.right" timestamp="1589643518175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586696236273" />
-    <state width="1921" height="356" key="GridCell.Tab.1.right" timestamp="1586696236273">
+    <state width="1877" height="187" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643518175" />
+    <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1589637488667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1586696236273" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1587560412409">
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589637488667" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1589637488666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1587560412409" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589637488666" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1589637488666">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589637488666" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1589637488667">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589637488667" />
+    <state x="1178" y="222" key="RollbackChangesDialog" timestamp="1588882131678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1178" y="222" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588882131678" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1589554628286">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589554628286" />
+    <state x="1249" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589550032069">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1249" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589550032069" />
+    <state x="1920" y="0" width="1654" height="1017" key="dock-window-1" timestamp="1589545062139">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="1920" y="0" width="1654" height="1017" key="dock-window-1/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589545062139" />
+    <state x="667" y="224" width="585" height="592" key="find.popup" timestamp="1589638147378">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="224" width="585" height="592" key="find.popup/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589638147378" />
+    <state x="342" y="140" key="new project wizard" timestamp="1589552533322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589552533322" />
+    <state x="666" y="277" key="refactoring.ChangeSignatureDialog" timestamp="1589639770078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="277" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589639770078" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1588968436842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1588968436842" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589316507979">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589316507979" />
   </component>
 </project>
