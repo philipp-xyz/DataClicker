@@ -227,6 +227,7 @@ public class GUI {
 		gbl_dataSources.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		dataSources.setLayout(gbl_dataSources);
 
+
 		JButton dataSource1Icon = new JButton();
 		dataSource1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataFarm_logo_small.png")));
 		GridBagConstraints gbc_dataSource1Icon = new GridBagConstraints();
