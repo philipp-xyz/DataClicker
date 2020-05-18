@@ -296,7 +296,7 @@ public class GUI {
 		dataSource3Icon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-				main.dataclicker.minigames.dataSweeper.SweeperGUI.createSweeper();
+				main.dataclicker.minigames.dataSweeper.SweeperMain.createDataSweeper();
 			}
 		});
 

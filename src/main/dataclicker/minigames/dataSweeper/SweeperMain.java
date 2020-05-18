@@ -11,7 +11,7 @@ import main.dataclicker.gui.GUI;
 
 public class SweeperMain {
 	
-	static GUI gui = new GUI();
+	static SweeperGUI gui = new SweeperGUI();
 	
 	public static void createDataSweeper() {
 		EventQueue.invokeLater(new Runnable() {
@@ -19,16 +19,7 @@ public class SweeperMain {
 			@Override
 			public void run() {
 				
-				JFrame frame = new JFrame("Datasweeper");
-				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	//close operation can be made to add data/money?
-				
-				try {
-					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				JPanel panel = new JPanel(); 
-				panel.setLayout(new GridLayout());
+				gui.sweeperInitialize();
 				
 			}
 			
