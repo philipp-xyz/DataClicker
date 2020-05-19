@@ -18,13 +18,13 @@ public class SweeperBoard extends JPanel {
 	private int numOfMines;
 	private double probability;
 	private int minesLeft;
-	private JButton Minefield[][];
+	private MineState Minefield[][];
 	private boolean hasMine = false;
 	private JButton cell;
 
 	public SweeperBoard() {
 		setLayout(new GridLayout(10, 10));
-		Minefield = new JButton[ROWS][COLUMNS];
+		Minefield = new MineState[ROWS][COLUMNS];
 		buildButtonField();
 	}
 
@@ -40,17 +40,7 @@ public class SweeperBoard extends JPanel {
 
 	// Assigns a JButton the value of true or false, which represents whether or not
 	// it
-	public boolean setMines(JButton button) {
-		probability = Math.random() * 100;
-		if (probability >= 80) {
-			hasMine = true;
-			addMine();
-			button.setText(" ");
-		} else {
-			hasMine = false;
-		}
-		return hasMine;
-	}
+	
 
 	public class MouseHandler extends MouseAdapter {
 		public int r, c; // instance variables
@@ -62,124 +52,76 @@ public class SweeperBoard extends JPanel {
 
 		public void mouseClicked(MouseEvent e) {
 			if (e.getButton() == 1) {
-				int nearMines = checkForMines(Minefield,r,c);
-				if(nearMines == 9)
-					Minefield[r][c].setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/DataSweeper/9.png")));
-				else
-					Minefield[r][c].setText(""+nearMines);
-
-			} else if (e.getButton() == 2) { // getButton 2 für rechtsklick -> fahne setzen
-				Minefield[r][c].setText("F");
+				checkForMines(Minefield,r,c);
+			
+			} else if (e.getButton() == 3) { // getButton 2 für rechtsklick -> fahne setzen
+				toggleFlag(Minefield,r,c);
 			}
 		}
 	}
+	
+	public void toggleFlag(MineState[][] button, int row, int col) {
+		if(button[row][col].isSwept)
+			return;
+		
+		if(button[row][col].isFlagged) {
+			button[row][col].button.setText("");
+			button[row][col].isFlagged = false;
+		}
+		
+		if(!button[row][col].isFlagged) {
+			button[row][col].button.setText("F");
+			button[row][col].isFlagged = true;
+		}
+	}
 
-	public int checkForMines(JButton[][] button, int row, int col) {
+	public void checkForMines(MineState[][] button, int row, int col) {
 		int nearMines = 0;
-		if (button[row][col].getText() == " ") {
-			nearMines = 9;
-			//button[row][col].setIcon("/main/dataclicker/res/textures/DataSweeper/9.png");
-		} // Fall für linke obere Ecke
-		else if (col == 0 && row == 0) {
-			for (int y = row; y <= row + 1; y++) {
-				for (int x = col; x <= col + 1; x++) {
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-				}
-			}
-		} 
-		//Fall für obere rechte ecke
-		else if(row == 0 && col == COLUMNS-1) {
-			for(int y = row; y<= row+1; y++) {
-				for( int x = col; x>= col-1; x--) {
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-				}
-			}
+		
+		//check if row and col are inside of the minefield array
+		if(row > ROWS-1)
+			row = ROWS-1;
+		if(row < 0)
+			row = 0;
+		if(col > COLUMNS-1)
+			col = COLUMNS-1;
+		if(col < 0)
+			col = 0;
+		
+		if (button[row][col].isSwept || button[row][col].isFlagged) {
+			return;
 		}
-		//Fall für untere linke ecke
-		else if(row== ROWS-1 && col == 0) {
-			for(int y = row; y>= row-1; y--) {
-				for( int x = col; x<= col+1; x++) {
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-				}
-			}
-		}
-		//Fall für untere rechte Ecke
-		else if(row == ROWS-1 && col == COLUMNS -1) {
-			for(int y = row; y>= row+1; y--) {
-				for( int x = col; x>= col-1; x--) {
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-				}
-			}
-		}
-
-		// Fall für wenn der Button am oberen BildschirmRand geklickt wurde
-		else if (row == 0) {
-			for (int x = col - 1; x <= col + 1; x++) { // checks all adjacent coloums
-				int y = row;
-				while (y < row + 2) { // checks the adjacent rows
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-					y++;
-				}
-
-			}
-			// Fall für wenn der Button am unteren BildschirmRand geklickt wurde
-		} else if (row == ROWS - 1) {
-			for (int x = col - 1; x <= col + 1; x++) { // checks all adjacent coloums
-				int y = row;
-				while (y > ROWS - 2) { // checks the adjacent rows
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-					y--;
-				}
-
-			}
-			// Fall für wenn der Button am linken BildschirmRand geklickt wurde
-		} else if (col == 0) {
-			for (int y = row - 1; y <= row + 1; y++) {
-				int x = col;
-				while (x < col + 2) {
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-					x++;
-				}
-			}
-			// Fall für den rechten Bildschirmrand
-		} else if (col == COLUMNS - 1) {
-			for (int y = row - 1; y <= row + 1; y++) {
-				int x = col;
-				while (x > col - 2) {
-					if (button[y][x].getText() == " ") {
-						nearMines++;
-					}
-					x--;
-				}
-			}
+		//fall für button = mine
+		if (button[row][col].isMine) {
+			nearMines = -1;
+			button[row][col].button.setIcon(
+					new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/DataSweeper/9.png")));
 		}
 		//Fall für beliebiges Feld innterhalb des koordiantensystems
 		else {
 			for (int x = col-1 ; x <= col+1; x++) {
 				for (int y = row-1; y<= row+1; y++) {
-					if (button[y][x].getText() == " ") {
+					
+					if(x > COLUMNS-1 || x < 0 || y > ROWS-1 || y < 0)
+						continue;
+					
+					if (button[y][x].isMine) {
 						nearMines++;
 					}
 				}
 			}
+			button[row][col].button.setText(""+nearMines);
 		}
+		button[row][col].isSwept = true;
+		if(nearMines == 0) {
+			checkForMines(Minefield, row+1, col+1);
+			checkForMines(Minefield, row+1, col);
+			checkForMines(Minefield, row, col+1);
+			checkForMines(Minefield, row-1, col-1);
+			checkForMines(Minefield, row-1, col);
+			checkForMines(Minefield, row, col-1);
 		
-		return nearMines;
-
+		}
 	}
 
 	// This builds the "Minefield" with a ROWS*COLUMNS amount of buttons.
@@ -187,13 +129,13 @@ public class SweeperBoard extends JPanel {
 	public void buildButtonField() {
 		for (int r = 0; r < ROWS; r++) {
 			for (int c = 0; c < COLUMNS; c++) {
-				Minefield[r][c] = new JButton("");
+				Minefield[r][c] = new MineState();
+				Minefield[r][c].button = new JButton("");
+				Minefield[r][c].setMines();
 
-				setMines(Minefield[r][c]);
+				Minefield[r][c].button.addMouseListener(new MouseHandler(r, c));
 
-				Minefield[r][c].addMouseListener(new MouseHandler(r, c));
-
-				add(Minefield[r][c]);
+				add(Minefield[r][c].button);
 			}
 		}
 	}
