@@ -1,5 +1,6 @@
 package main.dataclicker.gui;
 
+import main.dataclicker.minigames.dataSnake.gui.Game;
 import main.dataclicker.upgrades.Upgrades_Template;
 
 import java.awt.*;
@@ -297,6 +298,8 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
+				//Game dataSnake = new Game("DataSnake", 800, 800);
+				//dataSnake.start();
 			}
 		});
 

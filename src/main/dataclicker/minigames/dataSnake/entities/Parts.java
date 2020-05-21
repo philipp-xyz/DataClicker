@@ -1,9 +1,5 @@
 package main.dataclicker.minigames.dataSnake.entities;
 
-
-
-import main.dataclicker.minigames.dataSnake.gui.Game;
-
 import java.awt.*;
 
 public class Parts {

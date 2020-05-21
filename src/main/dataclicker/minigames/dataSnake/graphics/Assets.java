@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 
+
     private static final int width = 32, height = 32;
 
     public static BufferedImage data, tail, grassTile, grassTileBorder;
@@ -17,6 +18,7 @@ public class Assets {
         SpriteSheet tailSheet = new SpriteSheet(ImageLoader.loadImage("/tail.png"));
         SpriteSheet grassWithBorder = new SpriteSheet(ImageLoader.loadImage("/tile_border.png"));
         SpriteSheet grassSheet = new SpriteSheet(ImageLoader.loadImage("/tile.png"));
+
 
         //Data
         data = dataSheet.crop(0, 0, width, height);

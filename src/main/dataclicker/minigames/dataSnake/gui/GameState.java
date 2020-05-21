@@ -54,7 +54,6 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics g) {
-
         grid(g);
         drawHead(g);
         drawTail(g);
@@ -63,19 +62,15 @@ public class GameState extends State {
     }
 
     public void grid(Graphics g) {
-
-        //g.setColor(Color.DARK_GRAY);
         for(int i = 0; i < 25; i++) {
             for(int j = 0; j < 25; j++) {
                 //g.drawRect(i * 32, j * 32, 32, 32);
-                //g.drawImage(Assets.grassTile, i * 32, j * 32, null);
                 g.drawImage(Assets.grassTileBorder, i * 32, j * 32, null);
             }
         }
     }
 
     public void drawHead(Graphics g) {
-
         if(Snake.head.getDirection() == Direction.W) {
             p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
             g.drawImage(Assets.head_W, p.x, p.y, null);
@@ -99,17 +94,11 @@ public class GameState extends State {
     }
 
     public void drawTail(Graphics g) {
-
-        g.setColor(Color.GREEN);
         for(int i = 0; i < Snake.tails.size(); i++) {
             p = Snake.ptc(Snake.tails.get(i).getX(), Snake.tails.get(i).getY());
             g.drawImage(Assets.tail, p.x, p.y, null);
         }
     }
-    //-----------------------------------
-
-
-
 
     protected void drawPickup(Graphics g) {
 
