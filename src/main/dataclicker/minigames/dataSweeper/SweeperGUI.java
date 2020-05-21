@@ -1,18 +1,21 @@
 package main.dataclicker.minigames.dataSweeper;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 public class SweeperGUI {
 	
-	public static int frameWidth = 666;  
-	public static int frameHeight = 850;
-	public static JFrame frame = new JFrame("Datasweeper");
+	public static int frameWidth = 515;  
+	public static int frameHeight = 350;
+	JFrame frame = new JFrame("Datasweeper");
+	
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	public static void sweeperInitialize() {
+	public void sweeperInitialize() {
 		frame.setSize(frameWidth, frameHeight);
 		frame.setResizable(true);
 		frame.setVisible(true);
@@ -25,7 +28,10 @@ public class SweeperGUI {
 		}
 		
 		SweeperBoard board = new SweeperBoard();
-		frame.setContentPane(board);
+		frame.getContentPane().add(board, BorderLayout.CENTER);
+		frame.getContentPane().add(board.overview, BorderLayout.NORTH);
+		board.overview.add(board.tries);
+		board.overview.add(board.minesLeft);
 		
 	}
 	

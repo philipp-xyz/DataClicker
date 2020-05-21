@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 
 import main.dataclicker.buyers.Buyers_Template;
 import main.dataclicker.dataSources.*;
+import main.dataclicker.minigames.dataSweeper.SweeperGUI;
 
 import javax.swing.JLabel;
 
@@ -296,7 +297,8 @@ public class GUI {
 		dataSource3Icon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-				main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
+				SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
+				sweeper.sweeperInitialize();
 			}
 		});
 
