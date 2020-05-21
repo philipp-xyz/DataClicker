@@ -87,12 +87,13 @@ public class GUI {
 	}
 
 	public String buyersText(Buyers_Template buyer) {
-		//return ("LvL: " + buyer.getLevel() + " " + buyer.getName() + " kauft " + buyer.getPrice() + " Daten fï¿½r "
-			//	+ buyer.getValue() + "ï¿½");
-		if(buyer.getName() == "Tonald Drump") {
+		// return ("LvL: " + buyer.getLevel() + " " + buyer.getName() + " kauft " +
+		// buyer.getPrice() + " Daten fï¿½r "
+		// + buyer.getValue() + "ï¿½");
+		if (buyer.getName() == "Tonald Drump") {
 			return (buyer.getName() + " kauft " + buyer.getPrice() + " Daten und gibt dir einmal alles Andere");
 		}
-		return (buyer.getName() + " kauft " + buyer.getPrice() + " Daten fuer "	+ buyer.getValue() +" Euro");
+		return (buyer.getName() + " kauft " + buyer.getPrice() + " Daten fuer " + buyer.getValue() + " Euro");
 	}
 
 	public String upgradesText(Upgrades_Template upgrade, DataSource_Template datasource) {
@@ -202,13 +203,12 @@ public class GUI {
 		frame.setBounds(100, 100, 1500, 786);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
 		JPanel playerRessourcesPanel = new JPanel(); // Anzeige von Daten & Geld welches der Spieler zur Zeit hat
 
-		//frame.setResizable(false);
-		
-		
-		//JPanel playerRessourcesPanel = new JPanel();  //Anzeige von Daten & Geld welches der Spieler zur Zeit hat
+		// frame.setResizable(false);
+
+		// JPanel playerRessourcesPanel = new JPanel(); //Anzeige von Daten & Geld
+		// welches der Spieler zur Zeit hat
 
 		FlowLayout fl_playerRessourcesPanel = (FlowLayout) playerRessourcesPanel.getLayout();
 		fl_playerRessourcesPanel.setVgap(50);
@@ -227,9 +227,9 @@ public class GUI {
 		gbl_dataSources.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		dataSources.setLayout(gbl_dataSources);
 
-
 		JButton dataSource1Icon = new JButton();
-		dataSource1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataFarm_logo_small.png")));
+		dataSource1Icon.setIcon(
+				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataFarm_logo_small.png")));
 		GridBagConstraints gbc_dataSource1Icon = new GridBagConstraints();
 		gbc_dataSource1Icon.fill = GridBagConstraints.BOTH;
 		gbc_dataSource1Icon.insets = new Insets(0, 0, 5, 0);
@@ -255,7 +255,6 @@ public class GUI {
 			}
 		});
 
-
 		JButton dataSource2Icon = new JButton();
 		dataSource2Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/databook_logo_small.png")));
@@ -274,33 +273,6 @@ public class GUI {
 		gbc_dataSource2.gridy = 1;
 		dataSources.add(dataSource2, gbc_dataSource2);
 		dataSource2.setToolTipText("<html>" + dataSourceToolTip(dataBook) + "<html>");
-
-
-		Timer everySecond = new Timer();		//erstellt einen Timer der jede Sekunde eine Aufgabe vollf�hrt
-		everySecond.schedule(new TimerTask() {
-			public void run() {
-				dataFarm.collectDataPerSecond();
-				dataBook.collectDataPerSecond();
-				dataGewinnspiele.collectDataPerSecond();
-				dataHub.collectDataPerSecond();
-				dataPirate.collectDataPerSecond();
-				dataScout24.collectDataPerSecond();
-				dataSearch.collectDataPerSecond();
-				dataGewinnspiele.collectDataPerSecond();
-				whatsData.collectDataPerSecond();
-				playerRessources.setText(playerRessources());
-			}
-		}, 0, 1000);
-		
-		/*JButton dataSource2 = new JButton(dataSourcesText(dataBook));
-		dataSources.add(dataSource2);
-		dataSource2.setToolTipText("<html>"+dataSourceToolTip(dataBook)+"<html>");
-		 try {
-			    dataSource2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("../res/textures/databook_logo_small.png"))));
-			  } catch (Exception ex) {
-			    System.out.println(ex);
-			  }*/
-		 
 
 		dataSource2.addActionListener(new ActionListener() {
 			@Override
@@ -347,8 +319,8 @@ public class GUI {
 		});
 
 		JButton dataSource4Icon = new JButton();
-		dataSource4Icon.setIcon(
-				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataHub_logo_small.png")));
+		dataSource4Icon
+				.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataHub_logo_small.png")));
 		GridBagConstraints gbc_dataSource4Icon = new GridBagConstraints();
 		gbc_dataSource4Icon.fill = GridBagConstraints.BOTH;
 		gbc_dataSource4Icon.insets = new Insets(0, 0, 5, 0);
@@ -512,207 +484,207 @@ public class GUI {
 		JPanel buyersPanel = new JPanel();
 		frame.getContentPane().add(buyersPanel, BorderLayout.WEST);
 		GridBagLayout gbl_buyersPanel = new GridBagLayout();
-		gbl_buyersPanel.columnWidths = new int[] {80, 80, 0};
-		gbl_buyersPanel.rowHeights = new int[]{60, 60, 60, 60, 60, 60, 60, 60, 0};
-		gbl_buyersPanel.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_buyersPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_buyersPanel.columnWidths = new int[] { 80, 80, 0 };
+		gbl_buyersPanel.rowHeights = new int[] { 60, 60, 60, 60, 60, 60, 60, 60, 0 };
+		gbl_buyersPanel.columnWeights = new double[] { 0.0, 0.0, Double.MIN_VALUE };
+		gbl_buyersPanel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		buyersPanel.setLayout(gbl_buyersPanel);
-		
-				JButton buyer1 = new JButton(buyersText(vegtables));
-				GridBagConstraints gbc_buyer1 = new GridBagConstraints();
-				gbc_buyer1.fill = GridBagConstraints.BOTH;
-				gbc_buyer1.insets = new Insets(0, 0, 5, 5);
-				gbc_buyer1.gridx = 0;
-				gbc_buyer1.gridy = 0;
-				buyersPanel.add(buyer1, gbc_buyer1);
-				buyer1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent click) {
-						vegtables.buy();
-						playerRessources.setText(playerRessources());
-						buyer1.setText(buyersText(vegtables));
-					}
-				});
-						
-						JButton buyer1Icon = new JButton("");
-						buyer1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-						GridBagConstraints gbc_buyer1Icon = new GridBagConstraints();
-						gbc_buyer1Icon.insets = new Insets(0, 0, 5, 0);
-						gbc_buyer1Icon.gridx = 1;
-						gbc_buyer1Icon.gridy = 0;
-						buyersPanel.add(buyer1Icon, gbc_buyer1Icon);
-				
-						JButton buyer2 = new JButton(buyersText(mobile));
-						GridBagConstraints gbc_buyer2 = new GridBagConstraints();
-						gbc_buyer2.fill = GridBagConstraints.BOTH;
-						gbc_buyer2.insets = new Insets(0, 0, 5, 5);
-						gbc_buyer2.gridx = 0;
-						gbc_buyer2.gridy = 1;
-						buyersPanel.add(buyer2, gbc_buyer2);
-						buyer2.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent click) {
-								mobile.buy();
-								playerRessources.setText(playerRessources());
-								buyer2.setText(buyersText(mobile));
-							}
-						});
-				
-						JButton buyer2Icon = new JButton("");
-						buyer2Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-						GridBagConstraints gbc_buyer2Icon = new GridBagConstraints();
-						gbc_buyer2Icon.insets = new Insets(0, 0, 5, 0);
-						gbc_buyer2Icon.gridx = 1;
-						gbc_buyer2Icon.gridy = 1;
-						buyersPanel.add(buyer2Icon, gbc_buyer2Icon);
-		
-				JButton buyer3 = new JButton(buyersText(tech));
-				GridBagConstraints gbc_buyer3 = new GridBagConstraints();
-				gbc_buyer3.fill = GridBagConstraints.BOTH;
-				gbc_buyer3.insets = new Insets(0, 0, 5, 5);
-				gbc_buyer3.gridx = 0;
-				gbc_buyer3.gridy = 2;
-				buyersPanel.add(buyer3, gbc_buyer3);
-				buyer3.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent click) {
-						tech.buy();
-						playerRessources.setText(playerRessources());
-						buyer3.setText(buyersText(tech));
-					}
-				});
-				
-				JButton buyer3Icon = new JButton("");
-				buyer3Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-				GridBagConstraints gbc_buyer3Icon = new GridBagConstraints();
-				gbc_buyer3Icon.insets = new Insets(0, 0, 5, 0);
-				gbc_buyer3Icon.gridx = 1;
-				gbc_buyer3Icon.gridy = 2;
-				buyersPanel.add(buyer3Icon, gbc_buyer3Icon);
-						
-								JButton buyer4 = new JButton(buyersText(eSport));
-								GridBagConstraints gbc_buyer4 = new GridBagConstraints();
-								gbc_buyer4.fill = GridBagConstraints.BOTH;
-								gbc_buyer4.insets = new Insets(0, 0, 5, 5);
-								gbc_buyer4.gridx = 0;
-								gbc_buyer4.gridy = 3;
-								buyersPanel.add(buyer4, gbc_buyer4);
-								buyer4.addActionListener(new ActionListener() {
-									public void actionPerformed(ActionEvent click) {
-										eSport.buy();
-										playerRessources.setText(playerRessources());
-										buyer4.setText(buyersText(eSport));
-									}
-								});
-						
-						JButton buyer4Icon = new JButton("");
-						buyer4Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-						GridBagConstraints gbc_buyer4Icon = new GridBagConstraints();
-						gbc_buyer4Icon.insets = new Insets(0, 0, 5, 0);
-						gbc_buyer4Icon.gridx = 1;
-						gbc_buyer4Icon.gridy = 3;
-						buyersPanel.add(buyer4Icon, gbc_buyer4Icon);
-				
-						JButton buyer5 = new JButton(buyersText(party));
-						GridBagConstraints gbc_buyer5 = new GridBagConstraints();
-						gbc_buyer5.fill = GridBagConstraints.BOTH;
-						gbc_buyer5.insets = new Insets(0, 0, 5, 5);
-						gbc_buyer5.gridx = 0;
-						gbc_buyer5.gridy = 4;
-						buyersPanel.add(buyer5, gbc_buyer5);
-						buyer5.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent click) {
-								party.buy();
-								playerRessources.setText(playerRessources());
-								buyer5.setText(buyersText(party));
-							}
-						});
-						
-						JButton buyer5Icon = new JButton("");
-						buyer5Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-						GridBagConstraints gbc_buyer5Icon = new GridBagConstraints();
-						gbc_buyer5Icon.insets = new Insets(0, 0, 5, 0);
-						gbc_buyer5Icon.gridx = 1;
-						gbc_buyer5Icon.gridy = 4;
-						buyersPanel.add(buyer5Icon, gbc_buyer5Icon);
-				
-						JButton buyer6 = new JButton(buyersText(nsa));
-						GridBagConstraints gbc_buyer6 = new GridBagConstraints();
-						gbc_buyer6.fill = GridBagConstraints.BOTH;
-						gbc_buyer6.insets = new Insets(0, 0, 5, 5);
-						gbc_buyer6.gridx = 0;
-						gbc_buyer6.gridy = 5;
-						buyersPanel.add(buyer6, gbc_buyer6);
-						buyer6.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent click) {
-								nsa.buy();
-								playerRessources.setText(playerRessources());
-								buyer6.setText(buyersText(nsa));
-							}
-						});
-				
-				JButton buyer6Icon = new JButton("");
-				buyer6Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-				GridBagConstraints gbc_buyer6Icon = new GridBagConstraints();
-				gbc_buyer6Icon.insets = new Insets(0, 0, 5, 0);
-				gbc_buyer6Icon.gridx = 1;
-				gbc_buyer6Icon.gridy = 5;
-				buyersPanel.add(buyer6Icon, gbc_buyer6Icon);
-		
-				JButton buyer7 = new JButton(buyersText(krake));
-				GridBagConstraints gbc_buyer7 = new GridBagConstraints();
-				gbc_buyer7.fill = GridBagConstraints.BOTH;
-				gbc_buyer7.insets = new Insets(0, 0, 5, 5);
-				gbc_buyer7.gridx = 0;
-				gbc_buyer7.gridy = 6;
-				buyersPanel.add(buyer7, gbc_buyer7);
-				buyer7.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent click) {
-						krake.buy();
-						playerRessources.setText(playerRessources());
-						buyer7.setText(buyersText(krake));
-					}
-				});
-				
-				JButton buyer7Icon = new JButton("");
-				buyer7Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-				GridBagConstraints gbc_buyer7Icon = new GridBagConstraints();
-				gbc_buyer7Icon.insets = new Insets(0, 0, 5, 0);
-				gbc_buyer7Icon.gridx = 1;
-				gbc_buyer7Icon.gridy = 6;
-				buyersPanel.add(buyer7Icon, gbc_buyer7Icon);
-		
-				JButton buyer8 = new JButton(buyersText(drump));
-				GridBagConstraints gbc_buyer8 = new GridBagConstraints();
-				gbc_buyer8.insets = new Insets(0, 0, 0, 5);
-				gbc_buyer8.fill = GridBagConstraints.BOTH;
-				gbc_buyer8.gridx = 0;
-				gbc_buyer8.gridy = 7;
-				buyersPanel.add(buyer8, gbc_buyer8);
-				
-				JButton buyer8Icon = new JButton("");
-				buyer8Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-				GridBagConstraints gbc_buyer8Icon = new GridBagConstraints();
-				gbc_buyer8Icon.gridx = 1;
-				gbc_buyer8Icon.gridy = 7;
-				buyersPanel.add(buyer8Icon, gbc_buyer8Icon);
-				buyer8.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent click) {
-						nsa.buy();
-						krake.buy();
-						mobile.buy();
-						eSport.buy();
-						tech.buy();
-						vegtables.buy();
-						drump.buy();
-						playerRessources.setText(playerRessources());
-						buyer1.setText(buyersText(nsa));
-						buyer2.setText(buyersText(krake));
-						buyer3.setText(buyersText(mobile));
-						buyer4.setText(buyersText(party));
-						buyer5.setText(buyersText(eSport));
-						buyer6.setText(buyersText(tech));
-						buyer7.setText(buyersText(vegtables));
-						buyer8.setText(buyersText(drump));
-					}
-				});
+
+		JButton buyer1 = new JButton(buyersText(vegtables));
+		GridBagConstraints gbc_buyer1 = new GridBagConstraints();
+		gbc_buyer1.fill = GridBagConstraints.BOTH;
+		gbc_buyer1.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer1.gridx = 0;
+		gbc_buyer1.gridy = 0;
+		buyersPanel.add(buyer1, gbc_buyer1);
+		buyer1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				vegtables.buy();
+				playerRessources.setText(playerRessources());
+				buyer1.setText(buyersText(vegtables));
+			}
+		});
+
+		JButton buyer1Icon = new JButton("");
+		buyer1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer1Icon = new GridBagConstraints();
+		gbc_buyer1Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer1Icon.gridx = 1;
+		gbc_buyer1Icon.gridy = 0;
+		buyersPanel.add(buyer1Icon, gbc_buyer1Icon);
+
+		JButton buyer2 = new JButton(buyersText(mobile));
+		GridBagConstraints gbc_buyer2 = new GridBagConstraints();
+		gbc_buyer2.fill = GridBagConstraints.BOTH;
+		gbc_buyer2.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer2.gridx = 0;
+		gbc_buyer2.gridy = 1;
+		buyersPanel.add(buyer2, gbc_buyer2);
+		buyer2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				mobile.buy();
+				playerRessources.setText(playerRessources());
+				buyer2.setText(buyersText(mobile));
+			}
+		});
+
+		JButton buyer2Icon = new JButton("");
+		buyer2Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer2Icon = new GridBagConstraints();
+		gbc_buyer2Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer2Icon.gridx = 1;
+		gbc_buyer2Icon.gridy = 1;
+		buyersPanel.add(buyer2Icon, gbc_buyer2Icon);
+
+		JButton buyer3 = new JButton(buyersText(tech));
+		GridBagConstraints gbc_buyer3 = new GridBagConstraints();
+		gbc_buyer3.fill = GridBagConstraints.BOTH;
+		gbc_buyer3.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer3.gridx = 0;
+		gbc_buyer3.gridy = 2;
+		buyersPanel.add(buyer3, gbc_buyer3);
+		buyer3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				tech.buy();
+				playerRessources.setText(playerRessources());
+				buyer3.setText(buyersText(tech));
+			}
+		});
+
+		JButton buyer3Icon = new JButton("");
+		buyer3Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer3Icon = new GridBagConstraints();
+		gbc_buyer3Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer3Icon.gridx = 1;
+		gbc_buyer3Icon.gridy = 2;
+		buyersPanel.add(buyer3Icon, gbc_buyer3Icon);
+
+		JButton buyer4 = new JButton(buyersText(eSport));
+		GridBagConstraints gbc_buyer4 = new GridBagConstraints();
+		gbc_buyer4.fill = GridBagConstraints.BOTH;
+		gbc_buyer4.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer4.gridx = 0;
+		gbc_buyer4.gridy = 3;
+		buyersPanel.add(buyer4, gbc_buyer4);
+		buyer4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				eSport.buy();
+				playerRessources.setText(playerRessources());
+				buyer4.setText(buyersText(eSport));
+			}
+		});
+
+		JButton buyer4Icon = new JButton("");
+		buyer4Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer4Icon = new GridBagConstraints();
+		gbc_buyer4Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer4Icon.gridx = 1;
+		gbc_buyer4Icon.gridy = 3;
+		buyersPanel.add(buyer4Icon, gbc_buyer4Icon);
+
+		JButton buyer5 = new JButton(buyersText(party));
+		GridBagConstraints gbc_buyer5 = new GridBagConstraints();
+		gbc_buyer5.fill = GridBagConstraints.BOTH;
+		gbc_buyer5.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer5.gridx = 0;
+		gbc_buyer5.gridy = 4;
+		buyersPanel.add(buyer5, gbc_buyer5);
+		buyer5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				party.buy();
+				playerRessources.setText(playerRessources());
+				buyer5.setText(buyersText(party));
+			}
+		});
+
+		JButton buyer5Icon = new JButton("");
+		buyer5Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer5Icon = new GridBagConstraints();
+		gbc_buyer5Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer5Icon.gridx = 1;
+		gbc_buyer5Icon.gridy = 4;
+		buyersPanel.add(buyer5Icon, gbc_buyer5Icon);
+
+		JButton buyer6 = new JButton(buyersText(nsa));
+		GridBagConstraints gbc_buyer6 = new GridBagConstraints();
+		gbc_buyer6.fill = GridBagConstraints.BOTH;
+		gbc_buyer6.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer6.gridx = 0;
+		gbc_buyer6.gridy = 5;
+		buyersPanel.add(buyer6, gbc_buyer6);
+		buyer6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				nsa.buy();
+				playerRessources.setText(playerRessources());
+				buyer6.setText(buyersText(nsa));
+			}
+		});
+
+		JButton buyer6Icon = new JButton("");
+		buyer6Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer6Icon = new GridBagConstraints();
+		gbc_buyer6Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer6Icon.gridx = 1;
+		gbc_buyer6Icon.gridy = 5;
+		buyersPanel.add(buyer6Icon, gbc_buyer6Icon);
+
+		JButton buyer7 = new JButton(buyersText(krake));
+		GridBagConstraints gbc_buyer7 = new GridBagConstraints();
+		gbc_buyer7.fill = GridBagConstraints.BOTH;
+		gbc_buyer7.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer7.gridx = 0;
+		gbc_buyer7.gridy = 6;
+		buyersPanel.add(buyer7, gbc_buyer7);
+		buyer7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				krake.buy();
+				playerRessources.setText(playerRessources());
+				buyer7.setText(buyersText(krake));
+			}
+		});
+
+		JButton buyer7Icon = new JButton("");
+		buyer7Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer7Icon = new GridBagConstraints();
+		gbc_buyer7Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer7Icon.gridx = 1;
+		gbc_buyer7Icon.gridy = 6;
+		buyersPanel.add(buyer7Icon, gbc_buyer7Icon);
+
+		JButton buyer8 = new JButton(buyersText(drump));
+		GridBagConstraints gbc_buyer8 = new GridBagConstraints();
+		gbc_buyer8.insets = new Insets(0, 0, 0, 5);
+		gbc_buyer8.fill = GridBagConstraints.BOTH;
+		gbc_buyer8.gridx = 0;
+		gbc_buyer8.gridy = 7;
+		buyersPanel.add(buyer8, gbc_buyer8);
+
+		JButton buyer8Icon = new JButton("");
+		buyer8Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer8Icon = new GridBagConstraints();
+		gbc_buyer8Icon.gridx = 1;
+		gbc_buyer8Icon.gridy = 7;
+		buyersPanel.add(buyer8Icon, gbc_buyer8Icon);
+		buyer8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				nsa.buy();
+				krake.buy();
+				mobile.buy();
+				eSport.buy();
+				tech.buy();
+				vegtables.buy();
+				drump.buy();
+				playerRessources.setText(playerRessources());
+				buyer1.setText(buyersText(nsa));
+				buyer2.setText(buyersText(krake));
+				buyer3.setText(buyersText(mobile));
+				buyer4.setText(buyersText(party));
+				buyer5.setText(buyersText(eSport));
+				buyer6.setText(buyersText(tech));
+				buyer7.setText(buyersText(vegtables));
+				buyer8.setText(buyersText(drump));
+			}
+		});
 
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);
@@ -742,8 +714,7 @@ public class GUI {
 				upgradesPanel.remove(upgrade2);
 			}
 		});
-		
-		
+
 		JButton upgrade3 = new JButton(upgradesText(miniGames, dataBook));
 		upgradesPanel.add(upgrade3);
 		upgrade3.setToolTipText("<html>" + upgradesToolTip(miniGames, dataBook));
@@ -756,8 +727,7 @@ public class GUI {
 				upgradesPanel.remove(upgrade3);
 			}
 		});
-		
-		
+
 		JButton upgrade4 = new JButton(upgradesText(gruppenInDeinerNaehe, dataBook));
 		upgradesPanel.add(upgrade4);
 		upgrade4.setToolTipText("<html>" + upgradesToolTip(gruppenInDeinerNaehe, dataBook));
@@ -770,7 +740,7 @@ public class GUI {
 				upgradesPanel.remove(upgrade2);
 			}
 		});
-		
+
 		JButton upgrade5 = new JButton(upgradesText(karperbrief, dataPirate));
 		upgradesPanel.add(upgrade4);
 		upgrade5.setToolTipText("<html>" + upgradesToolTip(karperbrief, dataPirate));
@@ -783,7 +753,7 @@ public class GUI {
 				upgradesPanel.remove(upgrade5);
 			}
 		});
-		
+
 		JButton upgrade6 = new JButton(upgradesText(einNeuesSchiff, dataPirate));
 		upgradesPanel.add(upgrade6);
 		upgrade6.setToolTipText("<html>" + upgradesToolTip(einNeuesSchiff, dataPirate));
@@ -808,7 +778,7 @@ public class GUI {
 				upgradesPanel.remove(upgrade7);
 			}
 		});
-		
+
 		JButton upgrade8 = new JButton(upgradesText(twoWayLiveChat, dataHub));
 		upgradesPanel.add(upgrade8);
 		upgrade8.setToolTipText("<html>" + upgradesToolTip(twoWayLiveChat, dataHub));
@@ -918,7 +888,7 @@ public class GUI {
 			}
 		});
 
-		/*Timer everySecond = new Timer(); // erstellt einen Timer der jede Sekunde eine Aufgabe vollfï¿½hrt
+		Timer everySecond = new Timer(); // erstellt einen Timer der jede Sekunde eine Aufgabe vollfï¿½hrt
 		everySecond.schedule(new TimerTask() {
 			public void run() {
 				dataFarm.collectDataPerSecond();
@@ -932,9 +902,9 @@ public class GUI {
 				whatsData.collectDataPerSecond();
 				playerRessources.setText(playerRessources());
 			}
-		}, 0, 1000);*/
-		
-		Timer upgradeVisibility = new Timer();  
+		}, 0, 1000);
+
+		Timer upgradeVisibility = new Timer();
 		upgradeVisibility.schedule(new TimerTask() {
 			public void run() {
 				zuchtBot.checkUpgrade(dataFarm, 2, upgrade1);
@@ -953,10 +923,10 @@ public class GUI {
 				werbung.checkUpgrade(dataSearch, 5, upgrade14);
 				statusModul.checkUpgrade(whatsData, 2, upgrade15);
 				faceScanner.checkUpgrade(whatsData, 2, upgrade16);
-				
+
 			}
 		}, 0, 1000);
-		
+
 	}
 
 }

@@ -6,40 +6,28 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import main.dataclicker.gui.GUI;
+import main.dataclicker.player.Player;
 
+@SuppressWarnings("serial")
 public class SweeperBoard extends JPanel {
 
+	
 	private final int ROWS = 10; // Y
 	private final int COLUMNS = 10; // X
-	private int numOfMines;
-	private double probability;
-	private int minesLeft;
 	private MineState Minefield[][];
-	private boolean hasMine = false;
-	private JButton cell;
-
+	private int data; //data die der Spieler nach dem Spiel bekommt
+	
+	
+	
 	public SweeperBoard() {
 		setLayout(new GridLayout(10, 10));
 		Minefield = new MineState[ROWS][COLUMNS];
 		buildButtonField();
 	}
-
-	// Adds one to the total number of mines.
-	public void addMine() {
-		numOfMines++;
-	}
-
-	// Removes one from the total number of mines.
-	public void removeMine() {
-		numOfMines--;
-	}
-
-	// Assigns a JButton the value of true or false, which represents whether or not
-	// it
 	
 
 	public class MouseHandler extends MouseAdapter {
@@ -70,8 +58,15 @@ public class SweeperBoard extends JPanel {
 		}
 		
 		if(!button[row][col].isFlagged) {
-			button[row][col].button.setText("F");
+			button[row][col].button.setIcon(
+				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/DataSweeper/11.png")));
 			button[row][col].isFlagged = true;
+			if(button[row][col].isMine) {
+				MineState.numOfMines--;
+				if(MineState.numOfMines <= 0) {
+					gameOver();
+				}
+			}
 		}
 	}
 
@@ -94,6 +89,11 @@ public class SweeperBoard extends JPanel {
 		//fall für button = mine
 		if (button[row][col].isMine) {
 			nearMines = -1;
+			int explodedMines = MineState.getExplodedMines() +1;
+			MineState.setExplodedMines(explodedMines);
+			if(explodedMines >= 3) {
+				gameOver();
+			}
 			button[row][col].button.setIcon(
 					new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/DataSweeper/9.png")));
 		}
@@ -110,7 +110,10 @@ public class SweeperBoard extends JPanel {
 					}
 				}
 			}
-			button[row][col].button.setText(""+nearMines);
+			//button[row][col].button.setText(""+nearMines);
+			button[row][col].button.setIcon(new ImageIcon
+					(GUI.class.getResource("/main/dataclicker/res/textures/DataSweeper/"+nearMines+".png")));
+		
 		}
 		button[row][col].isSwept = true;
 		if(nearMines == 0) {
@@ -138,5 +141,22 @@ public class SweeperBoard extends JPanel {
 				add(Minefield[r][c].button);
 			}
 		}
+	}
+	
+	
+	public void gameOver() {
+		JTextField gameOver = new JTextField("GAME OVER", 20);
+		SweeperGUI.frame.add(gameOver);
+		for (int r = 0; r < ROWS; r++) {
+			for (int c = 0; c < COLUMNS; c++) {
+				Minefield[r][c].secureData();
+				Minefield[r][c].button.setEnabled(false);
+				
+			}
+		}
+		data = MineState.getSecuredData();
+		JTextField dataGotten = new JTextField("Erbeutete Daten:"+data);
+		SweeperGUI.frame.add(dataGotten);
+		Player.setDataAmount(Player.getDataAmount()+data);
 	}
 }
