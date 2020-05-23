@@ -298,14 +298,11 @@ public class GUI {
 		dataSource3Icon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-<<<<<<< HEAD
-				main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
-				//Game dataSnake = new Game("DataSnake", 800, 800);
-				//dataSnake.start();
-=======
-				SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
-				sweeper.sweeperInitialize();
->>>>>>> master
+				//main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
+				Game dataSnake = new Game("DataSnake", 800, 800);
+				dataSnake.start();
+				//SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
+				//sweeper.sweeperInitialize();
 			}
 		});
 
