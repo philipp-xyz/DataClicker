@@ -2,6 +2,10 @@ package main.dataclicker.gui;
 
 import main.dataclicker.minigames.dataSnake.gui.Game;
 import main.dataclicker.upgrades.Upgrades_Template;
+<<<<<<< Updated upstream
+=======
+//import main.dataclicker.minigames.dataSweeper.*;
+>>>>>>> Stashed changes
 
 import java.awt.*;
 import javax.swing.JFrame;
@@ -298,6 +302,7 @@ public class GUI {
 		dataSource3Icon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 				main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
 				//Game dataSnake = new Game("DataSnake", 800, 800);
@@ -306,6 +311,9 @@ public class GUI {
 				SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
 				sweeper.sweeperInitialize();
 >>>>>>> master
+=======
+			//	main.dataclicker.minigames.dataSweeper.SweeperGUI.createSweeper();
+>>>>>>> Stashed changes
 			}
 		});
 
