@@ -2,6 +2,7 @@ package main.dataclicker.minigames.dataSnake.gui;
 
 
 import main.dataclicker.minigames.dataSnake.Handler;
+import main.dataclicker.minigames.dataSnake.graphics.Assets;
 
 import javax.swing.*;
 import java.awt.*;
@@ -57,8 +58,8 @@ public class Gui {
         @Override
         public void windowClosing(WindowEvent e) {
             int confirm = JOptionPane.showOptionDialog(
-                    null, "Are You Sure to Close Application?",
-                    "Exit Confirmation", JOptionPane.YES_NO_OPTION,
+                    null,"Sind Sie sich sicher das Sie die Anwendung wirklich beenden wollen?",
+                    "Halt! Stop! JETZT REDE ICH!!!", JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE, null, null, null);
             if (confirm == 0) {
                 handler.getGame().stop();

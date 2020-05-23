@@ -15,9 +15,6 @@ public class EndState extends State {
     private boolean input = true;
     public boolean dataAdded = false;
 
-    private Player player;
-
-
     public EndState(Handler handler) {
         super(handler);
     }
@@ -32,7 +29,6 @@ public class EndState extends State {
 
     @Override
     public void render(Graphics g) {
-
         background(g);
         foreground(g);
 
@@ -45,18 +41,13 @@ public class EndState extends State {
                 && handler.getMouseManager().getMouseY() <= restartButton.y + restartButton.height) {
 
             input = false;
-            System.out.println(input + " 1");
-
-            System.out.println(handler.getMouseManager().isLeftPressed());
-            System.out.println("data" + dataAdded);
 
             if(handler.getMouseManager().isLeftPressed() && dataAdded == false) {
                 State.setState(handler.getGame().gameState);
-                player.setDataAmount(Player.getDataAmount() + Snake.score);
+                Player.setDataAmount(Player.getDataAmount() + Snake.score);
                 Snake.score = 0;
                 dataAdded = true;
                 input = true;
-                System.out.println(input + " 2");
 
             }
         }
@@ -76,13 +67,12 @@ public class EndState extends State {
 
     private void foreground(Graphics g) {
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial", Font.BOLD, 60));
-        g.drawString("Data: " + Snake.score, 50, 400);
+        g.setFont(new Font("Arial", Font.BOLD, 50));
+        g.drawString("Data: " + Snake.score, 50, 350);
+        g.drawString("Gesamt: " + Player.getDataAmount(), 50, 410);
 
-        g.drawString("Gesamt: " + player.getDataAmount(), 300, 400); //How I get dataAmount??
-
-        g.setColor(Color.RED);
-        g.fillRect(handler.getWidth()/2-125, handler.getHeight()/2 + 50, 250, 75);
+        /*g.setColor(Color.RED);
+        g.fillRect(handler.getWidth()/2-125, handler.getHeight()/2 + 50, 250, 75);*/
 
         g.drawImage(Assets.startButton, handler.getWidth() / 2 - 125 - 2 * scale, restartButton.y + restartButton.height - 75 - scale * 2, null);
 

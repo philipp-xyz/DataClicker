@@ -7,7 +7,7 @@ public class Assets {
 
     private static final int width = 32, height = 32;
 
-    public static BufferedImage data, tail, grassTile, grassTileBorder, menu_background, menu_background1, startButton, logo;
+    public static BufferedImage data, tail, grassTile, grassTileBorder, menu_background, menu_background1, startButton, logo, keys;
     public static BufferedImage head_W, head_A, head_S, head_D;
 
 
@@ -22,6 +22,7 @@ public class Assets {
         SpriteSheet menuBack1 = new SpriteSheet(ImageLoader.loadImage("/menu_background1.png"));
         SpriteSheet start = new SpriteSheet(ImageLoader.loadImage("/start.png"));
         SpriteSheet dataSnakeLogo = new SpriteSheet(ImageLoader.loadImage("/logo1.png"));
+        SpriteSheet tasten = new SpriteSheet(ImageLoader.loadImage("/tasten.png"));
 
 
         //Logo
@@ -29,6 +30,9 @@ public class Assets {
 
         //Start Button
         startButton = start.crop(0, 0, 250, 75);
+
+        //Tasten
+        keys = tasten.crop(0, 0, 87, 57);
 
         //Data
         data = dataSheet.crop(0, 0, width, height);

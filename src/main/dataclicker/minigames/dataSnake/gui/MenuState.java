@@ -1,7 +1,6 @@
 package main.dataclicker.minigames.dataSnake.gui;
 
 import main.dataclicker.minigames.dataSnake.Handler;
-import main.dataclicker.minigames.dataSnake.entities.Snake;
 import main.dataclicker.minigames.dataSnake.graphics.Assets;
 
 import java.awt.*;
@@ -11,13 +10,7 @@ public class MenuState extends State{
 
     public Font menuFont = new Font("Arial", Font.BOLD, 20);
 
-    String pFont = "/Connection.otf";
-    private Font pixelFont;
-
-
     private int scale;
-
-    private boolean ready = false;
     public boolean input = true;
 
     private Rectangle startButton = new Rectangle(handler.getWidth()/2-125, handler.getHeight()/2+50, 250, 75);
@@ -48,7 +41,6 @@ public class MenuState extends State{
                 && handler.getMouseManager().getMouseY() <= startButton.y + startButton.height) {
 
             input = false;
-            //ready = true;
 
             if(handler.getMouseManager().isLeftPressed()) {
                 State.setState(handler.getGame().gameState);
@@ -74,24 +66,16 @@ public class MenuState extends State{
         /*g.setColor(Color.RED);
         g.fillRect(handler.getWidth()/2-125, handler.getHeight()/2 + 50, 250, 75);*/
 
-        /*g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial", Font.BOLD, 60 + scale));*/
-
-        //g.drawString("Start", handler.getWidth() / 2 - 75 - 2 * scale, startButton.y + startButton.height - 18);
         g.drawImage(Assets.startButton, handler.getWidth() / 2 - 125 - 2 * scale, startButton.y + startButton.height - 75 - scale * 2, null);
+
+        g.drawImage(Assets.keys, handler.getWidth()/2 - 40, handler.getHeight()/2 + 250, null);
+
     }
 
     public void background(Graphics g) {
         g.drawImage(Assets.menu_background1, 0, 0, null);
 
     }
-
-    /*public void restart() {
-        input = true;
-        //ready = false;
-        Snake.score = 0;
-    }*/
-
 
 
 }

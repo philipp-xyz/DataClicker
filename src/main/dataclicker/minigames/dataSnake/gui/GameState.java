@@ -18,8 +18,6 @@ public class GameState extends State {
     @Override
     public void tick() {
 
-        //Hardcore modus maybe yes maybe no?
-
         try {
             Thread.sleep(100);
 
@@ -35,8 +33,6 @@ public class GameState extends State {
                 State.setState(handler.getGame().endState);
                 Snake.head.setX(10);
                 Snake.head.setY(10);
-
-                //Snake.score = 0;
             }
 
         } catch (InterruptedException e) {
