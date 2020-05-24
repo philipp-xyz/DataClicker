@@ -1,5 +1,6 @@
 package main.dataclicker.gui;
 
+import main.dataclicker.minigames.dataSnake.graphics.Assets;
 import main.dataclicker.minigames.dataSnake.gui.Game;
 import main.dataclicker.upgrades.Upgrades_Template;
 
@@ -323,7 +324,7 @@ public class GUI {
 				dataSource3.setToolTipText("<html>" + dataSourceToolTip(dataPirate) + "<html>");
 			}
 		});
-
+		
 		JButton dataSource4Icon = new JButton();
 		dataSource4Icon
 				.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataHub_logo_small.png")));

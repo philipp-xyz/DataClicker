@@ -13,16 +13,16 @@ public class Assets {
 
     public static void init() {
 
-        SpriteSheet dataSheet = new SpriteSheet(ImageLoader.loadImage("/data.png"));
-        SpriteSheet headSheet = new SpriteSheet(ImageLoader.loadImage("/headSheet.png"));
-        SpriteSheet tailSheet = new SpriteSheet(ImageLoader.loadImage("/tail.png"));
-        SpriteSheet grassWithBorder = new SpriteSheet(ImageLoader.loadImage("/tile_border.png"));
-        SpriteSheet grassSheet = new SpriteSheet(ImageLoader.loadImage("/tile.png"));
-        SpriteSheet menuBack = new SpriteSheet(ImageLoader.loadImage("/menu_background.png"));
-        SpriteSheet menuBack1 = new SpriteSheet(ImageLoader.loadImage("/menu_background1.png"));
-        SpriteSheet start = new SpriteSheet(ImageLoader.loadImage("/start.png"));
-        SpriteSheet dataSnakeLogo = new SpriteSheet(ImageLoader.loadImage("/logo1.png"));
-        SpriteSheet tasten = new SpriteSheet(ImageLoader.loadImage("/tasten.png"));
+        SpriteSheet dataSheet = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/dataDataSnake.png"));
+        SpriteSheet headSheet = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/headSheet.png"));
+        SpriteSheet tailSheet = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/tail.png"));
+        SpriteSheet grassWithBorder = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/tile_border.png"));
+        SpriteSheet grassSheet = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/tile.png"));
+        SpriteSheet menuBack = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/menu_background.png"));
+        SpriteSheet menuBack1 = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/menu_background1.png"));
+        SpriteSheet start = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/start.png"));
+        SpriteSheet dataSnakeLogo = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/logo1.png"));
+        SpriteSheet tasten = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/tasten.png"));
 
 
         //Logo
