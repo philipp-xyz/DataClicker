@@ -17,7 +17,7 @@ public class SweeperGUI {
 	 */
 	public void sweeperInitialize() {
 		frame.setSize(frameWidth, frameHeight);
-		frame.setResizable(true);
+		frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // close operation can be made to add data/money?
 		
