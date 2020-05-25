@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9eeec205-8c3c-43b6-bc9a-eed5d172f495" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/Connection.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/PIXEARG_.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/dataDataSnake.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/headSheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/menu_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/menu_background1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/start.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/tail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/tasten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/tile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataclicker/res/textures/tile_border.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resDataSnake/PIXEARG_.TTF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resDataSnake/data.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resDataSnake/headSheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resDataSnake/tail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resDataSnake/tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resDataSnake/tile_border.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dataclicker/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/gui/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Collision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Parts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Parts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/entities/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/Assets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/graphics/ImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/EndState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/EndState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/MenuState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +57,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/dataclicker/res/textures" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18965517" />
@@ -51,7 +74,7 @@
       <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Application.GUI">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.dataclicker.gui.GUI" />
       <module name="DataClicker" />
@@ -106,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Gui" />
       </list>
@@ -155,42 +178,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="587" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589641073183" />
-    <state width="1877" height="187" key="GridCell.Tab.0.bottom" timestamp="1590083308440">
+    <state width="931" height="346" key="GridCell.Tab.0.bottom" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590083308440" />
+    <state width="931" height="346" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
     <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
-    <state width="1877" height="187" key="GridCell.Tab.0.center" timestamp="1590083308440">
+    <state width="931" height="346" key="GridCell.Tab.0.center" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590083308440" />
+    <state width="931" height="346" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
     <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
-    <state width="1877" height="187" key="GridCell.Tab.0.left" timestamp="1590083308440">
+    <state width="931" height="346" key="GridCell.Tab.0.left" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590083308440" />
+    <state width="931" height="346" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
     <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
-    <state width="1877" height="187" key="GridCell.Tab.0.right" timestamp="1590083308440">
+    <state width="931" height="346" key="GridCell.Tab.0.right" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590083308440" />
+    <state width="931" height="346" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
     <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589384008474" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1589643915185">
+    <state width="931" height="346" key="GridCell.Tab.1.bottom" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643915185" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1589643915185">
+    <state width="931" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
+    <state width="931" height="346" key="GridCell.Tab.1.center" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643915185" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1589643915185">
+    <state width="931" height="346" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
+    <state width="931" height="346" key="GridCell.Tab.1.left" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643915185" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1589643915185">
+    <state width="931" height="346" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
+    <state width="931" height="346" key="GridCell.Tab.1.right" timestamp="1590406588742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1589643915185" />
+    <state width="931" height="346" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590406588742" />
     <state x="1178" y="222" key="RollbackChangesDialog" timestamp="1588882131678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

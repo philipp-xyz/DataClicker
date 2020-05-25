@@ -1,8 +1,14 @@
 package main.dataclicker.minigames.dataSnake.gui;
 
 
+import main.dataclicker.minigames.dataSnake.Handler;
+import main.dataclicker.minigames.dataSnake.graphics.Assets;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 public class Gui {
 
@@ -12,10 +18,15 @@ public class Gui {
     private String title;
     private int width, height;
 
-    public Gui(String title, int width, int height) {
+    private Handler handler;
+
+
+    public Gui(String title, int width, int height, Handler handler) {
         this.title = title;
         this.width = width;
         this.height = height;
+
+        this.handler = handler;
 
         init();
 
@@ -24,10 +35,11 @@ public class Gui {
     public void init() {
         frame = new JFrame(title);
         frame.setSize(width, height);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.setResizable(true);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+        frame.addWindowListener(exitListener);
         //frame.setLayout(new GridLayout(1, 1, 0, 0));
 
         canvas = new Canvas();
@@ -41,6 +53,22 @@ public class Gui {
 
     }
 
+    WindowListener exitListener = new WindowAdapter() {
+
+        @Override
+        public void windowClosing(WindowEvent e) {
+            int confirm = JOptionPane.showOptionDialog(
+                    null,"Sind Sie sich sicher das Sie die Anwendung wirklich beenden wollen?",
+                    "Halt! Stop! JETZT REDE ICH!!!", JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (confirm == 0) {
+                handler.getGame().stop();
+                frame.dispose();
+            }
+        }
+    };
+
+
     public Canvas getCanvas() {
         return canvas;
     }
@@ -48,5 +76,6 @@ public class Gui {
     public JFrame getFrame() {
         return frame;
     }
+
 
 }
