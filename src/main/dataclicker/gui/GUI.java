@@ -125,7 +125,7 @@ public class GUI {
 		// Buyer
 		vegtables = new Buyers_Template("Obst und Daten", 10, 50);
 		mobile = new Buyers_Template("Mobile-Data", 50, 200);
-		tech = new Buyers_Template("Data Tech", 1000, 250);
+		tech = new Buyers_Template("Data Tech", 1000, 400);
 		eSport = new Buyers_Template("Data eSport", 2000, 750);
 		party = new Buyers_Template("deutsche Daten Partei", 5555, 1337);
 		nsa = new Buyers_Template("NSA", 10000, 2000);
@@ -299,10 +299,8 @@ public class GUI {
 		dataPirateIcon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-				Game dataSnake = new Game("DataSnake", 800, 800);
-				dataSnake.start();
-				//SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
-				//sweeper.sweeperInitialize();
+				SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
+				sweeper.sweeperInitialize();
 			}
 		});
 
@@ -655,6 +653,12 @@ public class GUI {
 		gbc_buyer7Icon.gridx = 1;
 		gbc_buyer7Icon.gridy = 6;
 		buyersPanel.add(buyerKrakeIcon, gbc_buyer7Icon);
+		buyerKrakeIcon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				Game dataSnake = new Game("DataSnake", 800, 800);
+				dataSnake.start();
+			}
+		});
 
 		JButton buyerDrump = new JButton(buyersText(drump));
 		GridBagConstraints gbc_buyer8 = new GridBagConstraints();
@@ -700,10 +704,11 @@ public class GUI {
 		upgradeZuchtBotButton.setVisible(false);
 		upgradeZuchtBotButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				zuchtBot.purchaseUpgrade(dataFarm);
+				if(zuchtBot.purchaseUpgrade(dataFarm)) {
 				playerRessources.setText(playerRessources());
 				dataFarmButton.setText("<html>" + dataSourcesText(dataFarm));
 				upgradesPanel.remove(upgradeZuchtBotButton); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
+				}
 			}
 		});
 

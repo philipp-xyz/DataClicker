@@ -40,7 +40,7 @@ public class DataSource_Template {
     }
 
     public int getDataPerSecond() {
-        return dataPerSecond * dataMultiplier;
+        return dataPerSecond;
     }
 
     public void setDataPerSecond(int dataPerSecond) {
@@ -117,7 +117,7 @@ public class DataSource_Template {
     public void increaseDataPerSecond() {
         int dataPerSecond = getDataPerSecond();
         int initDataPerSecond = getInitialDataPerSecond();
-        dataPerSecond = (dataPerSecond + initDataPerSecond) * dataMultiplier; 
+        dataPerSecond = dataPerSecond + initDataPerSecond * dataMultiplier; 
         setDataPerSecond(dataPerSecond);
     }
 
