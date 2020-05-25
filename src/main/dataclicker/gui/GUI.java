@@ -653,8 +653,8 @@ public class GUI {
 		gbc_buyer7Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer7Icon.gridx = 1;
 		gbc_buyer7Icon.gridy = 6;
-		buyersPanel.add(buyerKrakeIcon, gbc_buyer7Icon);
-		buyerKrakeIcon.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer7Icon, gbc_buyer7Icon);
+		buyer7Icon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				Game dataSnake = new Game("DataSnake", 800, 800);
 				dataSnake.start();
@@ -707,8 +707,8 @@ public class GUI {
 			public void actionPerformed(ActionEvent click) {
 				if(zuchtBot.purchaseUpgrade(dataFarm)) {
 				playerRessources.setText(playerRessources());
-				dataFarmButton.setText("<html>" + dataSourcesText(dataFarm));
-				upgradesPanel.remove(upgradeZuchtBotButton); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
+				dataSource1.setText("<html>" + dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade1); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
 				}
 			}
 		});
@@ -835,7 +835,7 @@ public class GUI {
 				callCenterSupport.purchaseUpgrade(dataScout24);
 				playerRessources.setText(playerRessources());
 				dataSource6.setText("<html>" + dataSourcesText(dataScout24));
-				upgradesPanel.remove(upgrade10);
+				upgradesPanel.remove(upgrade11);
 			}
 		});
 		JButton upgrade12 = new JButton(upgradesText(onlineAusfuellformular, dataScout24));
