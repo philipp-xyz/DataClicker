@@ -746,7 +746,7 @@ public class GUI {
 				gruppenInDeinerNaehe.purchaseUpgrade(dataBook);
 				playerRessources.setText(playerRessources());
 				dataSource2.setText("<html>" + dataSourcesText(dataBook));
-				upgradesPanel.remove(upgrade2);
+				upgradesPanel.remove(upgrade4);
 			}
 		});
 
