@@ -20,10 +20,8 @@ public class Collision {
             Snake.pickUp.reset();
             Snake.addTail();
 
-            /*Snake.score += 100;
-            if(Snake.score > Snake.bestScore) {
-                Snake.bestScore = Snake.score;
-            }*/
+            Snake.score += 100;
+            System.out.println(Snake.score);
         }
     }
 }

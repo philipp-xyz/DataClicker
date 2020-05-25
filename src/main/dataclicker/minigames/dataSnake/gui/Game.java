@@ -44,16 +44,18 @@ public class Game implements Runnable {
     }
 
     public void init() {
-        gui = new Gui(title, width, height);
+
+
+        Assets.init();
+
+        handler = new Handler(this);
+
+        gui = new Gui(title, width, height, handler);
         gui.getFrame().addKeyListener(keyManager);
         gui.getFrame().addMouseListener(mouseManager);
         gui.getFrame().addMouseMotionListener(mouseManager);
         gui.getCanvas().addMouseListener(mouseManager);
         gui.getCanvas().addMouseMotionListener(mouseManager);
-
-        Assets.init();
-
-        handler = new Handler(this);
 
         gameState = new GameState(handler);
         menuState = new MenuState(handler);
@@ -65,9 +67,11 @@ public class Game implements Runnable {
 
     private void tick() {
 
-        if (State.getState() != null) {
+        if (State.getState() != null && gui.getFrame() != null) {
             State.getState().tick();
         }
+
+
 
     }
 
