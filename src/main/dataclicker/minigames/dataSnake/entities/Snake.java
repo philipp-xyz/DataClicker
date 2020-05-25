@@ -9,8 +9,6 @@ public class Snake {
     public static ArrayList<Tail> tails = new ArrayList<>();
     public static PickUp pickUp = new PickUp();
 
-    public static int score = 0;
-
     public static boolean waitToMove = false;
 
     public static void addTail() {

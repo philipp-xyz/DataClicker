@@ -1,6 +1,5 @@
 package main.dataclicker.gui;
 
-import main.dataclicker.minigames.dataSnake.graphics.Assets;
 import main.dataclicker.minigames.dataSnake.gui.Game;
 import main.dataclicker.upgrades.Upgrades_Template;
 <<<<<<< Updated upstream
@@ -137,14 +136,14 @@ public class GUI {
 		drump = new Buyers_Template("Tonald Drump", 1000000, 0);
 
 		// Datasources
-		dataFarm = new DataSource_Template("Daten-Farm", "Qualitaetsdaten aus Freilandhaltung", 1, 10, 1.15, 0);
-		dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 100);
-		dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 300);
-		dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 550);
-		dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 850);
-		dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 1300);
-		dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 18000);
-		whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 24000);
+		dataFarm = new DataSource_Template("Daten-Farm", "QualitÃ¤tsdaten aus Freilandhaltung", 2, 10, 1.15, 0);
+		dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000);
+		dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 3000);
+		dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 6000);
+		dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 8000);
+		dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 12000);
+		dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 20000);
+		whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 25000);
 
 		// upgrades
 		zuchtBot = new Upgrades_Template("Zucht-Bot",
@@ -234,76 +233,75 @@ public class GUI {
 		gbl_dataSources.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		dataSources.setLayout(gbl_dataSources);
 
-		JButton dataFarmIcon = new JButton();
-		dataFarmIcon.setIcon(
+		JButton dataSource1Icon = new JButton();
+		dataSource1Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataFarm_logo_small.png")));
-		GridBagConstraints gbc_dataFarm1Icon = new GridBagConstraints();
-		gbc_dataFarm1Icon.fill = GridBagConstraints.BOTH;
-		gbc_dataFarm1Icon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataFarm1Icon.gridx = 0;
-		gbc_dataFarm1Icon.gridy = 0;
-		dataSources.add(dataFarmIcon, gbc_dataFarm1Icon);
+		GridBagConstraints gbc_dataSource1Icon = new GridBagConstraints();
+		gbc_dataSource1Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource1Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource1Icon.gridx = 0;
+		gbc_dataSource1Icon.gridy = 0;
+		dataSources.add(dataSource1Icon, gbc_dataSource1Icon);
 
-		JButton dataFarmButton = new JButton("<html>" + dataSourcesText(dataFarm));
-		GridBagConstraints gbc_dataFarmButton = new GridBagConstraints();
-		gbc_dataFarmButton.fill = GridBagConstraints.BOTH;
-		gbc_dataFarmButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataFarmButton.gridx = 1;
-		gbc_dataFarmButton.gridy = 0;
-		dataSources.add(dataFarmButton, gbc_dataFarmButton);
-		dataFarmButton.setToolTipText("<html>" + dataSourceToolTip(dataFarm) + "<html>");
-		dataFarmButton.addActionListener(new ActionListener() {
+		JButton dataSource1 = new JButton("<html>" + dataSourcesText(dataFarm));
+		GridBagConstraints gbc_dataSource1 = new GridBagConstraints();
+		gbc_dataSource1.fill = GridBagConstraints.BOTH;
+		gbc_dataSource1.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource1.gridx = 1;
+		gbc_dataSource1.gridy = 0;
+		dataSources.add(dataSource1, gbc_dataSource1);
+		dataSource1.setToolTipText("<html>" + dataSourceToolTip(dataFarm) + "<html>");
+		dataSource1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataFarm.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataFarmButton.setText("<html>" + dataSourcesText(dataFarm));
-				dataFarmButton.setToolTipText("<html>" + dataSourceToolTip(dataFarm) + "/<html>");
+				dataSource1.setText("<html>" + dataSourcesText(dataFarm));
+				dataSource1.setToolTipText("<html>" + dataSourceToolTip(dataFarm) + "/<html>");
 			}
 		});
 
-		JButton dataBookIcon = new JButton();
-		dataBookIcon.setIcon(
+		JButton dataSource2Icon = new JButton();
+		dataSource2Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/databook_logo_small.png")));
-		GridBagConstraints gbc_dataBookIcon = new GridBagConstraints();
-		gbc_dataBookIcon.fill = GridBagConstraints.BOTH;
-		gbc_dataBookIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataBookIcon.gridx = 0;
-		gbc_dataBookIcon.gridy = 1;
-		dataSources.add(dataBookIcon, gbc_dataBookIcon);
+		GridBagConstraints gbc_dataSource2Icon = new GridBagConstraints();
+		gbc_dataSource2Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource2Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource2Icon.gridx = 0;
+		gbc_dataSource2Icon.gridy = 1;
+		dataSources.add(dataSource2Icon, gbc_dataSource2Icon);
 
-		JButton dataBookButton = new JButton("<html>" + dataSourcesText(dataBook));
-		GridBagConstraints gbc_dataBookButton = new GridBagConstraints();
-		gbc_dataBookButton.fill = GridBagConstraints.BOTH;
-		gbc_dataBookButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataBookButton.gridx = 1;
-		gbc_dataBookButton.gridy = 1;
-		dataSources.add(dataBookButton, gbc_dataBookButton);
-		dataBookButton.setToolTipText("<html>" + dataSourceToolTip(dataBook) + "<html>");
+		JButton dataSource2 = new JButton("<html>" + dataSourcesText(dataBook));
+		GridBagConstraints gbc_dataSource2 = new GridBagConstraints();
+		gbc_dataSource2.fill = GridBagConstraints.BOTH;
+		gbc_dataSource2.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource2.gridx = 1;
+		gbc_dataSource2.gridy = 1;
+		dataSources.add(dataSource2, gbc_dataSource2);
+		dataSource2.setToolTipText("<html>" + dataSourceToolTip(dataBook) + "<html>");
 
-		dataBookButton.addActionListener(new ActionListener() {
+		dataSource2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataBook.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataBookButton.setText("<html>" + dataSourcesText(dataBook));
-				dataBookButton.setToolTipText("<html>" + dataSourceToolTip(dataBook) + "<html>");
+				dataSource2.setText("<html>" + dataSourcesText(dataBook));
+				dataSource2.setToolTipText("<html>" + dataSourceToolTip(dataBook) + "<html>");
 			}
 		});
 
-		JButton dataPirateIcon = new JButton();
-		dataPirateIcon.setIcon(
+		JButton dataSource3Icon = new JButton();
+		dataSource3Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataPirate_logo_small.png")));
-		GridBagConstraints gbc_dataPirateIcon = new GridBagConstraints();
-		gbc_dataPirateIcon.fill = GridBagConstraints.BOTH;
-		gbc_dataPirateIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataPirateIcon.gridx = 0;
-		gbc_dataPirateIcon.gridy = 2;
-		dataSources.add(dataPirateIcon, gbc_dataPirateIcon);
-		dataPirateIcon.addActionListener(new ActionListener() {
+		GridBagConstraints gbc_dataSource3Icon = new GridBagConstraints();
+		gbc_dataSource3Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource3Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource3Icon.gridx = 0;
+		gbc_dataSource3Icon.gridy = 2;
+		dataSources.add(dataSource3Icon, gbc_dataSource3Icon);
+		dataSource3Icon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 				main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
@@ -328,168 +326,151 @@ public class GUI {
 		dataSources.add(dataSource3, gbc_dataSource3);
 		dataSource3.setToolTipText("<html>" + dataSourceToolTip(dataPirate) + "<html>");
 		dataSource3.addActionListener(new ActionListener() {
-=======
-				Game dataSnake = new Game("DataSnake", 800, 800);
-				dataSnake.start();
-				//SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
-				//sweeper.sweeperInitialize();
-			}
-		});
-
-		JButton dataPirateButton = new JButton("<html>" + dataSourcesText(dataPirate));
-		GridBagConstraints gbc_dataPirateButton = new GridBagConstraints();
-		gbc_dataPirateButton.fill = GridBagConstraints.BOTH;
-		gbc_dataPirateButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataPirateButton.gridx = 1;
-		gbc_dataPirateButton.gridy = 2;
-		dataSources.add(dataPirateButton, gbc_dataPirateButton);
-		dataPirateButton.setToolTipText("<html>" + dataSourceToolTip(dataPirate) + "<html>");
-		dataPirateButton.addActionListener(new ActionListener() {
->>>>>>> master
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataPirate.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataPirateButton.setText("<html>" + dataSourcesText(dataPirate));
-				dataPirateButton.setToolTipText("<html>" + dataSourceToolTip(dataPirate) + "<html>");
+				dataSource3.setText("<html>" + dataSourcesText(dataPirate));
+				dataSource3.setToolTipText("<html>" + dataSourceToolTip(dataPirate) + "<html>");
 			}
 		});
-		JButton dataHubIcon = new JButton();
-		dataHubIcon
-				.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataHub_logo_small.png")));
-		GridBagConstraints gbc_dataHubIcon = new GridBagConstraints();
-		gbc_dataHubIcon.fill = GridBagConstraints.BOTH;
-		gbc_dataHubIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataHubIcon.gridx = 0;
-		gbc_dataHubIcon.gridy = 3;
-		dataSources.add(dataHubIcon, gbc_dataHubIcon);
 
-		JButton dataHubButton = new JButton("<html>" + dataSourcesText(dataHub));
-		GridBagConstraints gbc_dataHubButton = new GridBagConstraints();
-		gbc_dataHubButton.fill = GridBagConstraints.BOTH;
-		gbc_dataHubButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataHubButton.gridx = 1;
-		gbc_dataHubButton.gridy = 3;
-		dataSources.add(dataHubButton, gbc_dataHubButton);
-		dataHubButton.setToolTipText("<html>" + dataSourceToolTip(dataHub) + "<html>");
-		dataHubButton.addActionListener(new ActionListener() {
+		JButton dataSource4Icon = new JButton();
+		dataSource4Icon
+				.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataHub_logo_small.png")));
+		GridBagConstraints gbc_dataSource4Icon = new GridBagConstraints();
+		gbc_dataSource4Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource4Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource4Icon.gridx = 0;
+		gbc_dataSource4Icon.gridy = 3;
+		dataSources.add(dataSource4Icon, gbc_dataSource4Icon);
+
+		JButton dataSource4 = new JButton("<html>" + dataSourcesText(dataHub));
+		GridBagConstraints gbc_dataSource4 = new GridBagConstraints();
+		gbc_dataSource4.fill = GridBagConstraints.BOTH;
+		gbc_dataSource4.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource4.gridx = 1;
+		gbc_dataSource4.gridy = 3;
+		dataSources.add(dataSource4, gbc_dataSource4);
+		dataSource4.setToolTipText("<html>" + dataSourceToolTip(dataHub) + "<html>");
+		dataSource4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataHub.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataHubButton.setText("<html>" + dataSourcesText(dataHub));
-				dataHubButton.setToolTipText("<html>" + dataSourceToolTip(dataHub) + "<html>");
+				dataSource4.setText("<html>" + dataSourcesText(dataHub));
+				dataSource4.setToolTipText("<html>" + dataSourceToolTip(dataHub) + "<html>");
 			}
 		});
 
-		JButton dataGewinnspieleIcon = new JButton();
-		dataGewinnspieleIcon.setIcon(
+		JButton dataSource5Icon = new JButton();
+		dataSource5Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/gewinnspiel_logo_small.png")));
-		GridBagConstraints gbc_dataGewinnspieleIcon = new GridBagConstraints();
-		gbc_dataGewinnspieleIcon.fill = GridBagConstraints.BOTH;
-		gbc_dataGewinnspieleIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataGewinnspieleIcon.gridx = 0;
-		gbc_dataGewinnspieleIcon.gridy = 4;
-		dataSources.add(dataGewinnspieleIcon, gbc_dataGewinnspieleIcon);
+		GridBagConstraints gbc_dataSource5Icon = new GridBagConstraints();
+		gbc_dataSource5Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource5Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource5Icon.gridx = 0;
+		gbc_dataSource5Icon.gridy = 4;
+		dataSources.add(dataSource5Icon, gbc_dataSource5Icon);
 
-		JButton dataGewinnspieleButton = new JButton("<html>" + dataSourcesText(dataGewinnspiele));
-		GridBagConstraints gbc_dataGewinnspieleButton = new GridBagConstraints();
-		gbc_dataGewinnspieleButton.fill = GridBagConstraints.BOTH;
-		gbc_dataGewinnspieleButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataGewinnspieleButton.gridx = 1;
-		gbc_dataGewinnspieleButton.gridy = 4;
-		dataSources.add(dataGewinnspieleButton, gbc_dataGewinnspieleButton);
-		dataGewinnspieleButton.setToolTipText("<html>" + dataSourceToolTip(dataGewinnspiele) + "<html>");
-		dataGewinnspieleButton.addActionListener(new ActionListener() {
+		JButton dataSource5 = new JButton("<html>" + dataSourcesText(dataGewinnspiele));
+		GridBagConstraints gbc_dataSource5 = new GridBagConstraints();
+		gbc_dataSource5.fill = GridBagConstraints.BOTH;
+		gbc_dataSource5.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource5.gridx = 1;
+		gbc_dataSource5.gridy = 4;
+		dataSources.add(dataSource5, gbc_dataSource5);
+		dataSource5.setToolTipText("<html>" + dataSourceToolTip(dataGewinnspiele) + "<html>");
+		dataSource5.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataGewinnspiele.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataGewinnspieleButton.setText("<html>" + dataSourcesText(dataGewinnspiele));
-				dataGewinnspieleButton.setToolTipText("<html>" + dataSourceToolTip(dataGewinnspiele) + "<html>");
+				dataSource5.setText("<html>" + dataSourcesText(dataGewinnspiele));
+				dataSource5.setToolTipText("<html>" + dataSourceToolTip(dataGewinnspiele) + "<html>");
 			}
 		});
 
-		JButton dataScoutIcon = new JButton();
-		dataScoutIcon.setIcon(
+		JButton dataSource6Icon = new JButton();
+		dataSource6Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataScout_logo_small.png")));
-		GridBagConstraints gbc_dataScoutIcon = new GridBagConstraints();
-		gbc_dataScoutIcon.fill = GridBagConstraints.BOTH;
-		gbc_dataScoutIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataScoutIcon.gridx = 0;
-		gbc_dataScoutIcon.gridy = 5;
-		dataSources.add(dataScoutIcon, gbc_dataScoutIcon);
+		GridBagConstraints gbc_dataSource6Icon = new GridBagConstraints();
+		gbc_dataSource6Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource6Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource6Icon.gridx = 0;
+		gbc_dataSource6Icon.gridy = 5;
+		dataSources.add(dataSource6Icon, gbc_dataSource6Icon);
 
-		JButton dataScoutButton = new JButton("<html>" + dataSourcesText(dataScout24));
-		GridBagConstraints gbc_dataScoutButton = new GridBagConstraints();
-		gbc_dataScoutButton.fill = GridBagConstraints.BOTH;
-		gbc_dataScoutButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataScoutButton.gridx = 1;
-		gbc_dataScoutButton.gridy = 5;
-		dataSources.add(dataScoutButton, gbc_dataScoutButton);
-		dataScoutButton.setToolTipText("<html>" + dataSourceToolTip(dataScout24) + "<html>");
-		dataScoutButton.addActionListener(new ActionListener() {
+		JButton dataSource6 = new JButton("<html>" + dataSourcesText(dataScout24));
+		GridBagConstraints gbc_dataSource6 = new GridBagConstraints();
+		gbc_dataSource6.fill = GridBagConstraints.BOTH;
+		gbc_dataSource6.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource6.gridx = 1;
+		gbc_dataSource6.gridy = 5;
+		dataSources.add(dataSource6, gbc_dataSource6);
+		dataSource6.setToolTipText("<html>" + dataSourceToolTip(dataScout24) + "<html>");
+		dataSource6.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataScout24.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataScoutButton.setText("<html>" + dataSourcesText(dataScout24));
-				dataScoutButton.setToolTipText("<html>" + dataSourceToolTip(dataScout24) + "<html>");
+				dataSource6.setText("<html>" + dataSourcesText(dataScout24));
+				dataSource6.setToolTipText("<html>" + dataSourceToolTip(dataScout24) + "<html>");
 			}
 		});
 
-		JButton dataSearchIcon = new JButton();
-		dataSearchIcon
+		JButton dataSource7Icon = new JButton();
+		dataSource7Icon
 				.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/doogle_logo_small.png")));
-		GridBagConstraints gbc_dataSearchIcon = new GridBagConstraints();
-		gbc_dataSearchIcon.fill = GridBagConstraints.BOTH;
-		gbc_dataSearchIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_dataSearchIcon.gridx = 0;
-		gbc_dataSearchIcon.gridy = 6;
-		dataSources.add(dataSearchIcon, gbc_dataSearchIcon);
+		GridBagConstraints gbc_dataSource7Icon = new GridBagConstraints();
+		gbc_dataSource7Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource7Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource7Icon.gridx = 0;
+		gbc_dataSource7Icon.gridy = 6;
+		dataSources.add(dataSource7Icon, gbc_dataSource7Icon);
 
-		JButton dataSearchButton = new JButton("<html>" + dataSourcesText(dataSearch));
-		GridBagConstraints gbc_dataSearchButton = new GridBagConstraints();
-		gbc_dataSearchButton.fill = GridBagConstraints.BOTH;
-		gbc_dataSearchButton.insets = new Insets(0, 0, 5, 0);
-		gbc_dataSearchButton.gridx = 1;
-		gbc_dataSearchButton.gridy = 6;
-		dataSources.add(dataSearchButton, gbc_dataSearchButton);
-		dataSearchButton.setToolTipText("<html>" + dataSourceToolTip(dataSearch) + "<html>");
-		dataSearchButton.addActionListener(new ActionListener() {
+		JButton dataSource7 = new JButton("<html>" + dataSourcesText(dataSearch));
+		GridBagConstraints gbc_dataSource7 = new GridBagConstraints();
+		gbc_dataSource7.fill = GridBagConstraints.BOTH;
+		gbc_dataSource7.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource7.gridx = 1;
+		gbc_dataSource7.gridy = 6;
+		dataSources.add(dataSource7, gbc_dataSource7);
+		dataSource7.setToolTipText("<html>" + dataSourceToolTip(dataSearch) + "<html>");
+		dataSource7.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				dataSearch.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				dataSearchButton.setText("<html>" + dataSourcesText(dataSearch));
-				dataSearchButton.setToolTipText("<html>" + dataSourceToolTip(dataSearch) + "<html>");
+				dataSource7.setText("<html>" + dataSourcesText(dataSearch));
+				dataSource7.setToolTipText("<html>" + dataSourceToolTip(dataSearch) + "<html>");
 			}
 		});
 
-		JButton whatsDataIcon = new JButton();
-		whatsDataIcon.setIcon(
+		JButton dataSource8Icon = new JButton();
+		dataSource8Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/whatsData_logo_small.png")));
-		GridBagConstraints gbc_whatsDataIcon = new GridBagConstraints();
-		gbc_whatsDataIcon.fill = GridBagConstraints.BOTH;
-		gbc_whatsDataIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_whatsDataIcon.gridx = 0;
-		gbc_whatsDataIcon.gridy = 7;
-		dataSources.add(whatsDataIcon, gbc_whatsDataIcon);
+		GridBagConstraints gbc_dataSource8Icon = new GridBagConstraints();
+		gbc_dataSource8Icon.fill = GridBagConstraints.BOTH;
+		gbc_dataSource8Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_dataSource8Icon.gridx = 0;
+		gbc_dataSource8Icon.gridy = 7;
+		dataSources.add(dataSource8Icon, gbc_dataSource8Icon);
 
-		JButton whatsDataButton = new JButton("<html>" + dataSourcesText(whatsData));
-		GridBagConstraints gbc_whatsDataButton = new GridBagConstraints();
-		gbc_whatsDataButton.fill = GridBagConstraints.BOTH;
-		gbc_whatsDataButton.gridx = 1;
-		gbc_whatsDataButton.gridy = 7;
-		dataSources.add(whatsDataButton, gbc_whatsDataButton);
-		whatsDataButton.setToolTipText("<html>" + dataSourceToolTip(whatsData) + "<html>");
-		whatsDataButton.addActionListener(new ActionListener() {
+		JButton dataSource8 = new JButton("<html>" + dataSourcesText(whatsData));
+		GridBagConstraints gbc_dataSource8 = new GridBagConstraints();
+		gbc_dataSource8.fill = GridBagConstraints.BOTH;
+		gbc_dataSource8.gridx = 1;
+		gbc_dataSource8.gridy = 7;
+		dataSources.add(dataSource8, gbc_dataSource8);
+		dataSource8.setToolTipText("<html>" + dataSourceToolTip(whatsData) + "<html>");
+		dataSource8.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
 				whatsData.purchaseDataSource();
 				playerRessources.setText(playerRessources());
-				whatsDataButton.setText("<html>" + dataSourcesText(whatsData));
-				whatsDataButton.setToolTipText("<html>" + dataSourceToolTip(whatsData) + "<html>");
+				dataSource8.setText("<html>" + dataSourcesText(whatsData));
+				dataSource8.setToolTipText("<html>" + dataSourceToolTip(whatsData) + "<html>");
 			}
 		});
 
@@ -526,182 +507,182 @@ public class GUI {
 		gbl_buyersPanel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		buyersPanel.setLayout(gbl_buyersPanel);
 
-		JButton vegetableButton = new JButton(buyersText(vegtables));
-		GridBagConstraints gbc_vegetableButton = new GridBagConstraints();
-		gbc_vegetableButton.fill = GridBagConstraints.BOTH;
-		gbc_vegetableButton.insets = new Insets(0, 0, 5, 5);
-		gbc_vegetableButton.gridx = 0;
-		gbc_vegetableButton.gridy = 0;
-		buyersPanel.add(vegetableButton, gbc_vegetableButton);
-		vegetableButton.addActionListener(new ActionListener() {
+		JButton buyer1 = new JButton(buyersText(vegtables));
+		GridBagConstraints gbc_buyer1 = new GridBagConstraints();
+		gbc_buyer1.fill = GridBagConstraints.BOTH;
+		gbc_buyer1.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer1.gridx = 0;
+		gbc_buyer1.gridy = 0;
+		buyersPanel.add(buyer1, gbc_buyer1);
+		buyer1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				vegtables.buy();
 				playerRessources.setText(playerRessources());
-				vegetableButton.setText(buyersText(vegtables));
+				buyer1.setText(buyersText(vegtables));
 			}
 		});
 
-		JButton vegetableIcon = new JButton("");
-		vegetableIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
-		GridBagConstraints gbc_vegetableIcon = new GridBagConstraints();
-		gbc_vegetableIcon.insets = new Insets(0, 0, 5, 0);
-		gbc_vegetableIcon.gridx = 1;
-		gbc_vegetableIcon.gridy = 0;
-		buyersPanel.add(vegetableIcon, gbc_vegetableIcon);
+		JButton buyer1Icon = new JButton("");
+		buyer1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		GridBagConstraints gbc_buyer1Icon = new GridBagConstraints();
+		gbc_buyer1Icon.insets = new Insets(0, 0, 5, 0);
+		gbc_buyer1Icon.gridx = 1;
+		gbc_buyer1Icon.gridy = 0;
+		buyersPanel.add(buyer1Icon, gbc_buyer1Icon);
 
-		JButton buyerMobile = new JButton(buyersText(mobile));
-		GridBagConstraints gbc_buyerMobile = new GridBagConstraints();
-		gbc_buyerMobile.fill = GridBagConstraints.BOTH;
-		gbc_buyerMobile.insets = new Insets(0, 0, 5, 5);
-		gbc_buyerMobile.gridx = 0;
-		gbc_buyerMobile.gridy = 1;
-		buyersPanel.add(buyerMobile, gbc_buyerMobile);
-		buyerMobile.addActionListener(new ActionListener() {
+		JButton buyer2 = new JButton(buyersText(mobile));
+		GridBagConstraints gbc_buyer2 = new GridBagConstraints();
+		gbc_buyer2.fill = GridBagConstraints.BOTH;
+		gbc_buyer2.insets = new Insets(0, 0, 5, 5);
+		gbc_buyer2.gridx = 0;
+		gbc_buyer2.gridy = 1;
+		buyersPanel.add(buyer2, gbc_buyer2);
+		buyer2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				mobile.buy();
 				playerRessources.setText(playerRessources());
-				buyerMobile.setText(buyersText(mobile));
+				buyer2.setText(buyersText(mobile));
 			}
 		});
 
-		JButton buyerMobileIcon = new JButton("");
-		buyerMobileIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer2Icon = new JButton("");
+		buyer2Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer2Icon = new GridBagConstraints();
 		gbc_buyer2Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer2Icon.gridx = 1;
 		gbc_buyer2Icon.gridy = 1;
-		buyersPanel.add(buyerMobileIcon, gbc_buyer2Icon);
+		buyersPanel.add(buyer2Icon, gbc_buyer2Icon);
 
-		JButton buyerTech = new JButton(buyersText(tech));
+		JButton buyer3 = new JButton(buyersText(tech));
 		GridBagConstraints gbc_buyer3 = new GridBagConstraints();
 		gbc_buyer3.fill = GridBagConstraints.BOTH;
 		gbc_buyer3.insets = new Insets(0, 0, 5, 5);
 		gbc_buyer3.gridx = 0;
 		gbc_buyer3.gridy = 2;
-		buyersPanel.add(buyerTech, gbc_buyer3);
-		buyerTech.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer3, gbc_buyer3);
+		buyer3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				tech.buy();
 				playerRessources.setText(playerRessources());
-				buyerTech.setText(buyersText(tech));
+				buyer3.setText(buyersText(tech));
 			}
 		});
 
-		JButton buyerTechIcon = new JButton("");
-		buyerTechIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer3Icon = new JButton("");
+		buyer3Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer3Icon = new GridBagConstraints();
 		gbc_buyer3Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer3Icon.gridx = 1;
 		gbc_buyer3Icon.gridy = 2;
-		buyersPanel.add(buyerTechIcon, gbc_buyer3Icon);
+		buyersPanel.add(buyer3Icon, gbc_buyer3Icon);
 
-		JButton buyerESport = new JButton(buyersText(eSport));
+		JButton buyer4 = new JButton(buyersText(eSport));
 		GridBagConstraints gbc_buyer4 = new GridBagConstraints();
 		gbc_buyer4.fill = GridBagConstraints.BOTH;
 		gbc_buyer4.insets = new Insets(0, 0, 5, 5);
 		gbc_buyer4.gridx = 0;
 		gbc_buyer4.gridy = 3;
-		buyersPanel.add(buyerESport, gbc_buyer4);
-		buyerESport.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer4, gbc_buyer4);
+		buyer4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				eSport.buy();
 				playerRessources.setText(playerRessources());
-				buyerESport.setText(buyersText(eSport));
+				buyer4.setText(buyersText(eSport));
 			}
 		});
 
-		JButton buyerESportIcon = new JButton("");
-		buyerESportIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer4Icon = new JButton("");
+		buyer4Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer4Icon = new GridBagConstraints();
 		gbc_buyer4Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer4Icon.gridx = 1;
 		gbc_buyer4Icon.gridy = 3;
-		buyersPanel.add(buyerESportIcon, gbc_buyer4Icon);
+		buyersPanel.add(buyer4Icon, gbc_buyer4Icon);
 
-		JButton buyerParty = new JButton(buyersText(party));
+		JButton buyer5 = new JButton(buyersText(party));
 		GridBagConstraints gbc_buyer5 = new GridBagConstraints();
 		gbc_buyer5.fill = GridBagConstraints.BOTH;
 		gbc_buyer5.insets = new Insets(0, 0, 5, 5);
 		gbc_buyer5.gridx = 0;
 		gbc_buyer5.gridy = 4;
-		buyersPanel.add(buyerParty, gbc_buyer5);
-		buyerParty.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer5, gbc_buyer5);
+		buyer5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				party.buy();
 				playerRessources.setText(playerRessources());
-				buyerParty.setText(buyersText(party));
+				buyer5.setText(buyersText(party));
 			}
 		});
 
-		JButton buyerPartyIcon = new JButton("");
-		buyerPartyIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer5Icon = new JButton("");
+		buyer5Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer5Icon = new GridBagConstraints();
 		gbc_buyer5Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer5Icon.gridx = 1;
 		gbc_buyer5Icon.gridy = 4;
-		buyersPanel.add(buyerPartyIcon, gbc_buyer5Icon);
+		buyersPanel.add(buyer5Icon, gbc_buyer5Icon);
 
-		JButton buyerNsa = new JButton(buyersText(nsa));
+		JButton buyer6 = new JButton(buyersText(nsa));
 		GridBagConstraints gbc_buyer6 = new GridBagConstraints();
 		gbc_buyer6.fill = GridBagConstraints.BOTH;
 		gbc_buyer6.insets = new Insets(0, 0, 5, 5);
 		gbc_buyer6.gridx = 0;
 		gbc_buyer6.gridy = 5;
-		buyersPanel.add(buyerNsa, gbc_buyer6);
-		buyerNsa.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer6, gbc_buyer6);
+		buyer6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				nsa.buy();
 				playerRessources.setText(playerRessources());
-				buyerNsa.setText(buyersText(nsa));
+				buyer6.setText(buyersText(nsa));
 			}
 		});
 
-		JButton buyerNsaIcon = new JButton("");
-		buyerNsaIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer6Icon = new JButton("");
+		buyer6Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer6Icon = new GridBagConstraints();
 		gbc_buyer6Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer6Icon.gridx = 1;
 		gbc_buyer6Icon.gridy = 5;
-		buyersPanel.add(buyerNsaIcon, gbc_buyer6Icon);
+		buyersPanel.add(buyer6Icon, gbc_buyer6Icon);
 
-		JButton buyerKrake = new JButton(buyersText(krake));
+		JButton buyer7 = new JButton(buyersText(krake));
 		GridBagConstraints gbc_buyer7 = new GridBagConstraints();
 		gbc_buyer7.fill = GridBagConstraints.BOTH;
 		gbc_buyer7.insets = new Insets(0, 0, 5, 5);
 		gbc_buyer7.gridx = 0;
 		gbc_buyer7.gridy = 6;
-		buyersPanel.add(buyerKrake, gbc_buyer7);
-		buyerKrake.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer7, gbc_buyer7);
+		buyer7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				krake.buy();
 				playerRessources.setText(playerRessources());
-				buyerKrake.setText(buyersText(krake));
+				buyer7.setText(buyersText(krake));
 			}
 		});
 
-		JButton buyerKrakeIcon = new JButton("");
-		buyerKrakeIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer7Icon = new JButton("");
+		buyer7Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer7Icon = new GridBagConstraints();
 		gbc_buyer7Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer7Icon.gridx = 1;
 		gbc_buyer7Icon.gridy = 6;
-		buyersPanel.add(buyerKrakeIcon, gbc_buyer7Icon);
+		buyersPanel.add(buyer7Icon, gbc_buyer7Icon);
 
-		JButton buyerDrump = new JButton(buyersText(drump));
+		JButton buyer8 = new JButton(buyersText(drump));
 		GridBagConstraints gbc_buyer8 = new GridBagConstraints();
 		gbc_buyer8.insets = new Insets(0, 0, 0, 5);
 		gbc_buyer8.fill = GridBagConstraints.BOTH;
 		gbc_buyer8.gridx = 0;
 		gbc_buyer8.gridy = 7;
-		buyersPanel.add(buyerDrump, gbc_buyer8);
+		buyersPanel.add(buyer8, gbc_buyer8);
 
-		JButton buyerDrumpIcon = new JButton("");
-		buyerDrumpIcon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		JButton buyer8Icon = new JButton("");
+		buyer8Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
 		GridBagConstraints gbc_buyer8Icon = new GridBagConstraints();
 		gbc_buyer8Icon.gridx = 1;
 		gbc_buyer8Icon.gridy = 7;
-		buyersPanel.add(buyerDrumpIcon, gbc_buyer8Icon);
-		buyerDrump.addActionListener(new ActionListener() {
+		buyersPanel.add(buyer8Icon, gbc_buyer8Icon);
+		buyer8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				nsa.buy();
 				krake.buy();
@@ -711,216 +692,216 @@ public class GUI {
 				vegtables.buy();
 				drump.buy();
 				playerRessources.setText(playerRessources());
-				vegetableButton.setText(buyersText(nsa));
-				buyerMobile.setText(buyersText(krake));
-				buyerTech.setText(buyersText(mobile));
-				buyerESport.setText(buyersText(party));
-				buyerParty.setText(buyersText(eSport));
-				buyerNsa.setText(buyersText(tech));
-				buyerKrake.setText(buyersText(vegtables));
-				buyerDrump.setText(buyersText(drump));
+				buyer1.setText(buyersText(nsa));
+				buyer2.setText(buyersText(krake));
+				buyer3.setText(buyersText(mobile));
+				buyer4.setText(buyersText(party));
+				buyer5.setText(buyersText(eSport));
+				buyer6.setText(buyersText(tech));
+				buyer7.setText(buyersText(vegtables));
+				buyer8.setText(buyersText(drump));
 			}
 		});
 
 		JPanel upgradesPanel = new JPanel();
 		frame.getContentPane().add(upgradesPanel, BorderLayout.SOUTH);
 
-		JButton upgradeZuchtBotButton = new JButton(upgradesText(zuchtBot, dataFarm));
-		upgradesPanel.add(upgradeZuchtBotButton);
-		upgradeZuchtBotButton.setToolTipText("<html>" + upgradesToolTip(zuchtBot, dataFarm));
-		upgradeZuchtBotButton.setVisible(false);
-		upgradeZuchtBotButton.addActionListener(new ActionListener() {
+		JButton upgrade1 = new JButton(upgradesText(zuchtBot, dataFarm));
+		upgradesPanel.add(upgrade1);
+		upgrade1.setToolTipText("<html>" + upgradesToolTip(zuchtBot, dataFarm));
+		upgrade1.setVisible(false);
+		upgrade1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				zuchtBot.purchaseUpgrade(dataFarm);
 				playerRessources.setText(playerRessources());
-				dataFarmButton.setText("<html>" + dataSourcesText(dataFarm));
-				upgradesPanel.remove(upgradeZuchtBotButton); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
+				dataSource1.setText("<html>" + dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgrade1); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
 			}
 		});
 
-		JButton upgradeDatenFutterButton = new JButton(upgradesText(datenFutter, dataFarm));
-		upgradesPanel.add(upgradeDatenFutterButton);
-		upgradeDatenFutterButton.setToolTipText("<html>" + upgradesToolTip(datenFutter, dataFarm));
-		upgradeDatenFutterButton.setVisible(false);
-		upgradeDatenFutterButton.addActionListener(new ActionListener() {
+		JButton upgrade2 = new JButton(upgradesText(datenFutter, dataFarm));
+		upgradesPanel.add(upgrade2);
+		upgrade2.setToolTipText("<html>" + upgradesToolTip(datenFutter, dataFarm));
+		upgrade2.setVisible(false);
+		upgrade2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				datenFutter.purchaseUpgrade(dataFarm);
 				playerRessources.setText(playerRessources());
-				dataFarmButton.setText("<html>" + dataSourcesText(dataFarm)); // double rewrite??
-				upgradesPanel.remove(upgradeDatenFutterButton);
+				dataSource1.setText("<html>" + dataSourcesText(dataFarm)); // double rewrite??
+				upgradesPanel.remove(upgrade2);
 			}
 		});
 
-		JButton upgradeMiniGamesButton = new JButton(upgradesText(miniGames, dataBook));
-		upgradesPanel.add(upgradeMiniGamesButton);
-		upgradeMiniGamesButton.setToolTipText("<html>" + upgradesToolTip(miniGames, dataBook));
-		upgradeMiniGamesButton.setVisible(false);
-		upgradeMiniGamesButton.addActionListener(new ActionListener() {
+		JButton upgrade3 = new JButton(upgradesText(miniGames, dataBook));
+		upgradesPanel.add(upgrade3);
+		upgrade3.setToolTipText("<html>" + upgradesToolTip(miniGames, dataBook));
+		upgrade3.setVisible(false);
+		upgrade3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				datenFutter.purchaseUpgrade(dataBook);
 				playerRessources.setText(playerRessources());
-				dataBookButton.setText("<html>" + dataSourcesText(dataBook));
-				upgradesPanel.remove(upgradeMiniGamesButton);
+				dataSource2.setText("<html>" + dataSourcesText(dataBook));
+				upgradesPanel.remove(upgrade3);
 			}
 		});
 
-		JButton upgradeGruppeButton = new JButton(upgradesText(gruppenInDeinerNaehe, dataBook));
-		upgradesPanel.add(upgradeGruppeButton);
-		upgradeGruppeButton.setToolTipText("<html>" + upgradesToolTip(gruppenInDeinerNaehe, dataBook));
-		upgradeGruppeButton.setVisible(false);
-		upgradeGruppeButton.addActionListener(new ActionListener() {
+		JButton upgrade4 = new JButton(upgradesText(gruppenInDeinerNaehe, dataBook));
+		upgradesPanel.add(upgrade4);
+		upgrade4.setToolTipText("<html>" + upgradesToolTip(gruppenInDeinerNaehe, dataBook));
+		upgrade4.setVisible(false);
+		upgrade4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				gruppenInDeinerNaehe.purchaseUpgrade(dataBook);
 				playerRessources.setText(playerRessources());
-				dataBookButton.setText("<html>" + dataSourcesText(dataBook));
-				upgradesPanel.remove(upgradeDatenFutterButton);
+				dataSource2.setText("<html>" + dataSourcesText(dataBook));
+				upgradesPanel.remove(upgrade2);
 			}
 		});
 
-		JButton upgradeKarperBriefButton = new JButton(upgradesText(karperbrief, dataPirate));
-		upgradesPanel.add(upgradeGruppeButton);
-		upgradeKarperBriefButton.setToolTipText("<html>" + upgradesToolTip(karperbrief, dataPirate));
-		upgradeKarperBriefButton.setVisible(false);
-		upgradeKarperBriefButton.addActionListener(new ActionListener() {
+		JButton upgrade5 = new JButton(upgradesText(karperbrief, dataPirate));
+		upgradesPanel.add(upgrade4);
+		upgrade5.setToolTipText("<html>" + upgradesToolTip(karperbrief, dataPirate));
+		upgrade5.setVisible(false);
+		upgrade5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				karperbrief.purchaseUpgrade(dataPirate);
 				playerRessources.setText(playerRessources());
-				dataPirateButton.setText("<html>" + dataSourcesText(dataPirate));
-				upgradesPanel.remove(upgradeKarperBriefButton);
+				dataSource3.setText("<html>" + dataSourcesText(dataPirate));
+				upgradesPanel.remove(upgrade5);
 			}
 		});
 
-		JButton upgradeSchiffButton = new JButton(upgradesText(einNeuesSchiff, dataPirate));
-		upgradesPanel.add(upgradeSchiffButton);
-		upgradeSchiffButton.setToolTipText("<html>" + upgradesToolTip(einNeuesSchiff, dataPirate));
-		upgradeSchiffButton.setVisible(false);
-		upgradeSchiffButton.addActionListener(new ActionListener() {
+		JButton upgrade6 = new JButton(upgradesText(einNeuesSchiff, dataPirate));
+		upgradesPanel.add(upgrade6);
+		upgrade6.setToolTipText("<html>" + upgradesToolTip(einNeuesSchiff, dataPirate));
+		upgrade6.setVisible(false);
+		upgrade6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				einNeuesSchiff.purchaseUpgrade(dataPirate);
 				playerRessources.setText(playerRessources());
-				dataPirateButton.setText("<html>" + dataSourcesText(dataPirate));
-				upgradesPanel.remove(upgradeSchiffButton);
+				dataSource3.setText("<html>" + dataSourcesText(dataPirate));
+				upgradesPanel.remove(upgrade6);
 			}
 		});
-		JButton upgradeMarktplatzButton = new JButton(upgradesText(einNeuerMarktplatz, dataHub));
-		upgradesPanel.add(upgradeMarktplatzButton);
-		upgradeMarktplatzButton.setVisible(false);
-		upgradeMarktplatzButton.setToolTipText("<html>" + upgradesToolTip(einNeuerMarktplatz, dataHub));
-		upgradeMarktplatzButton.addActionListener(new ActionListener() {
+		JButton upgrade7 = new JButton(upgradesText(einNeuerMarktplatz, dataHub));
+		upgradesPanel.add(upgrade7);
+		upgrade7.setVisible(false);
+		upgrade7.setToolTipText("<html>" + upgradesToolTip(einNeuerMarktplatz, dataHub));
+		upgrade7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				einNeuerMarktplatz.purchaseUpgrade(dataHub);
 				playerRessources.setText(playerRessources());
-				dataHubButton.setText("<html>" + dataSourcesText(dataHub));
-				upgradesPanel.remove(upgradeMarktplatzButton);
+				dataSource4.setText("<html>" + dataSourcesText(dataHub));
+				upgradesPanel.remove(upgrade7);
 			}
 		});
 
-		JButton upgradeLiveChatButton = new JButton(upgradesText(twoWayLiveChat, dataHub));
-		upgradesPanel.add(upgradeLiveChatButton);
-		upgradeLiveChatButton.setToolTipText("<html>" + upgradesToolTip(twoWayLiveChat, dataHub));
-		upgradeLiveChatButton.setVisible(false);
-		upgradeLiveChatButton.addActionListener(new ActionListener() {
+		JButton upgrade8 = new JButton(upgradesText(twoWayLiveChat, dataHub));
+		upgradesPanel.add(upgrade8);
+		upgrade8.setToolTipText("<html>" + upgradesToolTip(twoWayLiveChat, dataHub));
+		upgrade8.setVisible(false);
+		upgrade8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				twoWayLiveChat.purchaseUpgrade(dataHub);
 				playerRessources.setText(playerRessources());
-				dataHubButton.setText("<html>" + dataSourcesText(dataHub));
-				upgradesPanel.remove(upgradeLiveChatButton);
+				dataSource4.setText("<html>" + dataSourcesText(dataHub));
+				upgradesPanel.remove(upgrade8);
 			}
 		});
-		JButton upgradeOfflineButton = new JButton(upgradesText(offlineEinbindung, dataGewinnspiele));
-		upgradesPanel.add(upgradeOfflineButton);
-		upgradeOfflineButton.setToolTipText("<html>" + upgradesToolTip(offlineEinbindung, dataGewinnspiele));
-		upgradeOfflineButton.setVisible(false);
-		upgradeOfflineButton.addActionListener(new ActionListener() {
+		JButton upgrade9 = new JButton(upgradesText(offlineEinbindung, dataGewinnspiele));
+		upgradesPanel.add(upgrade9);
+		upgrade9.setToolTipText("<html>" + upgradesToolTip(offlineEinbindung, dataGewinnspiele));
+		upgrade9.setVisible(false);
+		upgrade9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				offlineEinbindung.purchaseUpgrade(dataGewinnspiele);
 				playerRessources.setText(playerRessources());
-				dataGewinnspieleButton.setText("<html>" + dataSourcesText(dataGewinnspiele));
-				upgradesPanel.remove(upgradeOfflineButton);
+				dataSource5.setText("<html>" + dataSourcesText(dataGewinnspiele));
+				upgradesPanel.remove(upgrade9);
 			}
 		});
-		JButton upgradeBelohnungButton = new JButton(upgradesText(waehlDeineBelohnung, dataGewinnspiele));
-		upgradesPanel.add(upgradeBelohnungButton);
-		upgradeBelohnungButton.setToolTipText("<html>" + upgradesToolTip(waehlDeineBelohnung, dataGewinnspiele));
-		upgradeBelohnungButton.setVisible(false);
-		upgradeBelohnungButton.addActionListener(new ActionListener() {
+		JButton upgrade10 = new JButton(upgradesText(waehlDeineBelohnung, dataGewinnspiele));
+		upgradesPanel.add(upgrade10);
+		upgrade10.setToolTipText("<html>" + upgradesToolTip(waehlDeineBelohnung, dataGewinnspiele));
+		upgrade10.setVisible(false);
+		upgrade10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				waehlDeineBelohnung.purchaseUpgrade(dataGewinnspiele);
 				playerRessources.setText(playerRessources());
-				dataGewinnspieleButton.setText("<html>" + dataSourcesText(dataGewinnspiele));
-				upgradesPanel.remove(upgradeBelohnungButton);
+				dataSource5.setText("<html>" + dataSourcesText(dataGewinnspiele));
+				upgradesPanel.remove(upgrade10);
 			}
 		});
-		JButton upgradeCallCenterButton = new JButton(upgradesText(callCenterSupport, dataScout24));
-		upgradesPanel.add(upgradeCallCenterButton);
-		upgradeCallCenterButton.setToolTipText("<html>" + upgradesToolTip(callCenterSupport, dataScout24));
-		upgradeCallCenterButton.setVisible(false);
-		upgradeBelohnungButton.addActionListener(new ActionListener() {
+		JButton upgrade11 = new JButton(upgradesText(callCenterSupport, dataScout24));
+		upgradesPanel.add(upgrade11);
+		upgrade11.setToolTipText("<html>" + upgradesToolTip(callCenterSupport, dataScout24));
+		upgrade11.setVisible(false);
+		upgrade10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				callCenterSupport.purchaseUpgrade(dataScout24);
 				playerRessources.setText(playerRessources());
-				dataScoutButton.setText("<html>" + dataSourcesText(dataScout24));
-				upgradesPanel.remove(upgradeBelohnungButton);
+				dataSource6.setText("<html>" + dataSourcesText(dataScout24));
+				upgradesPanel.remove(upgrade10);
 			}
 		});
-		JButton upgradeFormularButton = new JButton(upgradesText(onlineAusfuellformular, dataScout24));
-		upgradesPanel.add(upgradeFormularButton);
-		upgradeFormularButton.setToolTipText("<html>" + upgradesToolTip(onlineAusfuellformular, dataScout24));
-		upgradeFormularButton.setVisible(false);
-		upgradeFormularButton.addActionListener(new ActionListener() {
+		JButton upgrade12 = new JButton(upgradesText(onlineAusfuellformular, dataScout24));
+		upgradesPanel.add(upgrade12);
+		upgrade12.setToolTipText("<html>" + upgradesToolTip(onlineAusfuellformular, dataScout24));
+		upgrade12.setVisible(false);
+		upgrade12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				onlineAusfuellformular.purchaseUpgrade(dataScout24);
 				playerRessources.setText(playerRessources());
-				dataScoutButton.setText("<html>" + dataSourcesText(dataScout24));
-				upgradesPanel.remove(upgradeFormularButton);
+				dataSource6.setText("<html>" + dataSourcesText(dataScout24));
+				upgradesPanel.remove(upgrade12);
 			}
 		});
-		JButton upgradeStatusModulButton = new JButton(upgradesText(statusModul, whatsData));
-		upgradesPanel.add(upgradeStatusModulButton);
-		upgradeStatusModulButton.setToolTipText("<html>" + upgradesToolTip(statusModul, whatsData));
-		upgradeStatusModulButton.setVisible(false);
-		upgradeStatusModulButton.addActionListener(new ActionListener() {
+		JButton upgrade13 = new JButton(upgradesText(statusModul, whatsData));
+		upgradesPanel.add(upgrade13);
+		upgrade13.setToolTipText("<html>" + upgradesToolTip(statusModul, whatsData));
+		upgrade13.setVisible(false);
+		upgrade13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				statusModul.purchaseUpgrade(whatsData);
 				playerRessources.setText(playerRessources());
-				dataSearchButton.setText("<html>" + dataSourcesText(whatsData));
-				upgradesPanel.remove(upgradeStatusModulButton);
+				dataSource7.setText("<html>" + dataSourcesText(whatsData));
+				upgradesPanel.remove(upgrade13);
 			}
 		});
-		JButton upgradeFaceScannerButton = new JButton(upgradesText(faceScanner, whatsData));
-		upgradesPanel.add(upgradeFaceScannerButton);
-		upgradeFaceScannerButton.setToolTipText("<html>" + upgradesToolTip(faceScanner, whatsData));
-		upgradeFaceScannerButton.setVisible(false);
-		upgradeFaceScannerButton.addActionListener(new ActionListener() {
+		JButton upgrade14 = new JButton(upgradesText(faceScanner, whatsData));
+		upgradesPanel.add(upgrade14);
+		upgrade14.setToolTipText("<html>" + upgradesToolTip(faceScanner, whatsData));
+		upgrade14.setVisible(false);
+		upgrade14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				faceScanner.purchaseUpgrade(whatsData);
 				playerRessources.setText(playerRessources());
-				dataSearchButton.setText("<html>" + dataSourcesText(whatsData));
-				upgradesPanel.remove(upgradeFaceScannerButton);
+				dataSource7.setText("<html>" + dataSourcesText(whatsData));
+				upgradesPanel.remove(upgrade14);
 			}
 		});
-		JButton upgradeSucheButton = new JButton(upgradesText(personalisierteSuche, dataSearch));
-		upgradesPanel.add(upgradeSucheButton);
-		upgradeSucheButton.setVisible(false);
-		upgradeSucheButton.setToolTipText("<html>" + upgradesToolTip(personalisierteSuche, dataSearch));
-		upgradeSucheButton.addActionListener(new ActionListener() {
+		JButton upgrade15 = new JButton(upgradesText(personalisierteSuche, dataSearch));
+		upgradesPanel.add(upgrade15);
+		upgrade15.setVisible(false);
+		upgrade15.setToolTipText("<html>" + upgradesToolTip(personalisierteSuche, dataSearch));
+		upgrade15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				personalisierteSuche.purchaseUpgrade(dataSearch);
 				playerRessources.setText(playerRessources());
-				whatsDataButton.setText("<html>" + dataSourcesText(dataSearch));
-				upgradesPanel.remove(upgradeSucheButton);
+				dataSource8.setText("<html>" + dataSourcesText(dataSearch));
+				upgradesPanel.remove(upgrade15);
 			}
 		});
-		JButton upgradeWerbungButton = new JButton(upgradesText(werbung, dataSearch));
-		upgradesPanel.add(upgradeWerbungButton);
-		upgradeWerbungButton.setToolTipText("<html>" + upgradesToolTip(werbung, dataSearch));
-		upgradeWerbungButton.setVisible(false);
-		upgradeWerbungButton.addActionListener(new ActionListener() {
+		JButton upgrade16 = new JButton(upgradesText(werbung, dataSearch));
+		upgradesPanel.add(upgrade16);
+		upgrade16.setToolTipText("<html>" + upgradesToolTip(werbung, dataSearch));
+		upgrade16.setVisible(false);
+		upgrade16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				werbung.purchaseUpgrade(dataSearch);
 				playerRessources.setText(playerRessources());
-				whatsDataButton.setText("<html>" + dataSourcesText(dataSearch));
-				upgradesPanel.remove(upgradeWerbungButton);
+				dataSource8.setText("<html>" + dataSourcesText(dataSearch));
+				upgradesPanel.remove(upgrade16);
 			}
 		});
 
@@ -939,46 +920,26 @@ public class GUI {
 				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
-		
-		Timer dataSourceVisibility = new Timer();
-		dataSourceVisibility.schedule(new TimerTask() {
-			public void run() {
-				dataBook.toggleVisibility(dataBookButton);
-				dataBook.toggleVisibility(dataBookIcon);
-				dataPirate.toggleVisibility(dataPirateButton);
-				dataPirate.toggleVisibility(dataPirateIcon);
-				dataHub.toggleVisibility(dataHubButton);
-				dataHub.toggleVisibility(dataHubIcon);
-				dataGewinnspiele.toggleVisibility(dataGewinnspieleButton);
-				dataGewinnspiele.toggleVisibility(dataGewinnspieleIcon);
-				dataScout24.toggleVisibility(dataScoutButton);
-				dataScout24.toggleVisibility(dataScoutIcon);
-				dataSearch.toggleVisibility(dataSearchButton);
-				dataSearch.toggleVisibility(dataSearchIcon);
-				whatsData.toggleVisibility(whatsDataButton);
-				whatsData.toggleVisibility(whatsDataIcon);
-			}
-		}, 0, 1000);
 
 		Timer upgradeVisibility = new Timer();
 		upgradeVisibility.schedule(new TimerTask() {
 			public void run() {
-				zuchtBot.checkUpgrade(dataFarm, 2, upgradeZuchtBotButton);
-				datenFutter.checkUpgrade(dataFarm, 5, upgradeDatenFutterButton);
-				miniGames.checkUpgrade(dataBook, 2, upgradeMiniGamesButton);
-				gruppenInDeinerNaehe.checkUpgrade(dataBook, 5, upgradeGruppeButton);
-				karperbrief.checkUpgrade(dataPirate, 2, upgradeKarperBriefButton);
-				einNeuesSchiff.checkUpgrade(dataPirate, 5, upgradeSchiffButton);
-				einNeuerMarktplatz.checkUpgrade(dataHub, 2, upgradeMarktplatzButton);
-				twoWayLiveChat.checkUpgrade(dataHub, 5, upgradeLiveChatButton);
-				offlineEinbindung.checkUpgrade(dataGewinnspiele, 2, upgradeOfflineButton);
-				waehlDeineBelohnung.checkUpgrade(dataGewinnspiele, 5, upgradeBelohnungButton);
-				callCenterSupport.checkUpgrade(dataScout24, 2, upgradeCallCenterButton);
-				onlineAusfuellformular.checkUpgrade(dataScout24, 5, upgradeFormularButton);
-				personalisierteSuche.checkUpgrade(dataSearch, 2, upgradeStatusModulButton);
-				werbung.checkUpgrade(dataSearch, 5, upgradeFaceScannerButton);
-				statusModul.checkUpgrade(whatsData, 2, upgradeSucheButton);
-				faceScanner.checkUpgrade(whatsData, 2, upgradeWerbungButton);
+				zuchtBot.checkUpgrade(dataFarm, 2, upgrade1);
+				datenFutter.checkUpgrade(dataFarm, 5, upgrade2);
+				miniGames.checkUpgrade(dataBook, 2, upgrade3);
+				gruppenInDeinerNaehe.checkUpgrade(dataBook, 5, upgrade4);
+				karperbrief.checkUpgrade(dataPirate, 2, upgrade5);
+				einNeuesSchiff.checkUpgrade(dataPirate, 5, upgrade6);
+				einNeuerMarktplatz.checkUpgrade(dataHub, 2, upgrade7);
+				twoWayLiveChat.checkUpgrade(dataHub, 5, upgrade8);
+				offlineEinbindung.checkUpgrade(dataGewinnspiele, 2, upgrade9);
+				waehlDeineBelohnung.checkUpgrade(dataGewinnspiele, 5, upgrade10);
+				callCenterSupport.checkUpgrade(dataScout24, 2, upgrade11);
+				onlineAusfuellformular.checkUpgrade(dataScout24, 5, upgrade12);
+				personalisierteSuche.checkUpgrade(dataSearch, 2, upgrade13);
+				werbung.checkUpgrade(dataSearch, 5, upgrade14);
+				statusModul.checkUpgrade(whatsData, 2, upgrade15);
+				faceScanner.checkUpgrade(whatsData, 2, upgrade16);
 
 			}
 		}, 0, 1000);

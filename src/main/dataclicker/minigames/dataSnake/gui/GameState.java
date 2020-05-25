@@ -18,21 +18,32 @@ public class GameState extends State {
     @Override
     public void tick() {
 
+        //Hardcore modus?
+
         try {
             Thread.sleep(100);
 
             Snake.move();
             Snake.waitToMove = false;
 
-            handler.getGame().endState.dataAdded = false;
 
             Collision.collidePickup();
 
-            if(Collision.collideSelf() || Collision.collideWall()) {
+            if(Collision.collideSelf()) {
                 Snake.tails.clear();
-                State.setState(handler.getGame().endState);
                 Snake.head.setX(10);
                 Snake.head.setY(10);
+
+                //Snake.score = 0;
+            }
+
+            if(Collision.collideWall()) {
+                Snake.tails.clear();
+                //State.setState(handler.getGame().endState);
+                Snake.head.setX(10);
+                Snake.head.setY(10);
+
+                //Snake.score = 0;
             }
 
         } catch (InterruptedException e) {

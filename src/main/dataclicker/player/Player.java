@@ -19,7 +19,7 @@ public class Player {
     }
 
     public static int getDataPerClick() {
-        return dataPerClick * getClickMultiplier();
+        return dataPerClick;
     }
 
     public static void setDataPerClick(int dataPerClick) {
