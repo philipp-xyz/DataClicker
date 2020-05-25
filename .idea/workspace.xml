@@ -66,12 +66,13 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="main.dataclicker.minigames.dataSnake.entities" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\res" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\resDataSnake" />
       <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\src\main\dataclicker\res\textures" />
+      <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\res" />
     </key>
   </component>
   <component name="RunManager" selected="Application.GUI">
