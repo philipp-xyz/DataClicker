@@ -146,25 +146,25 @@ public class GUI {
 		zuchtBot = new Upgrades_Template("Zucht-Bot",
 				"Zieht die Daten vom klein auf an und macht diese Loyal wie keine anderen", 20, 2, dataFarm);
 		datenFutter = new Upgrades_Template("Daten-Futter",
-				"Fï¿½ttere deine Daten-Sprï¿½ï¿½linge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
+				"Fuettere deine Daten-Sproesslinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
 				100, 4, dataFarm);
 		miniGames = new Upgrades_Template("Mini Games",
-				"Fï¿½ttere deine Daten-Sprï¿½ï¿½linge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
+				"Fuettere deine Daten-Sproesslinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
 				100, 2, dataBook);
-		gruppenInDeinerNaehe = new Upgrades_Template("Gruppen-In-Deiner-Nï¿½he",
-				"Wir erstellen gruppen in grï¿½ï¿½eren Stï¿½dten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]",
+		gruppenInDeinerNaehe = new Upgrades_Template("Gruppen-In-Deiner-Naehe",
+				"Wir erstellen gruppen in groesseren Staedten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]",
 				500, 4, dataBook);
 		karperbrief = new Upgrades_Template("Karperbrief",
-				"Verschaff deinem Piraten exclusiven zutritt zu legalen gewï¿½ssern", 200, 2, dataPirate);
+				"Verschaff deinem Piraten exclusiven zutritt zu legalen gewaessern", 200, 2, dataPirate);
 		einNeuesSchiff = new Upgrades_Template("Ein neues Schiff",
 				"Auch ein online Pirat profitiert von einem neuen Schiff (PC) mit welchem er gefï¿½hrlichere Gewï¿½sser besser und schneller erreichen kann",
 				1000, 4, dataPirate);
 		einNeuerMarktplatz = new Upgrades_Template("Ein neuer Marktplatz",
-				"Verschï¿½nere dein Datenhub mit einer schï¿½neren Frontseite", 300, 2, dataHub);
+				"Verschoenere dein Datenhub mit einer schoeneren Frontseite", 300, 2, dataHub);
 		twoWayLiveChat = new Upgrades_Template("Two way Livechat",
 				"woher sollen die denn wissen das wir auch ihre Live-Chat seite aufzeichnen", 1200, 4, dataHub);
 		offlineEinbindung = new Upgrades_Template("Offline Einbindung",
-				"Lass die spieler richtig mitfiebern und gib ihnen die mï¿½glichkeit sich per Post mit rï¿½cksende beleg zu bewerben",
+				"Lass die spieler richtig mitfiebern und gib ihnen die moeglichkeit sich per Post mit rï¿½cksende beleg zu bewerben",
 				400, 2, dataGewinnspiele);
 		waehlDeineBelohnung = new Upgrades_Template("Waehl deine Belohnung",
 				"Lassen wir unsere Mitspieler doch einfach schon im vorhinaus entscheiden welchen von 50 Gewinnen sie am besten finden, selbst diese Information ist in unserer Welt Bares !",
