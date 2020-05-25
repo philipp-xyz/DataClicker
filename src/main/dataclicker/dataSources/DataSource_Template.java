@@ -115,7 +115,7 @@ public class DataSource_Template {
     public void increaseDataPerSecond() {
         int dataPerSecond = getDataPerSecond();
         int initDataPerSecond = getInitialDataPerSecond();
-        dataPerSecond = (dataPerSecond + initDataPerSecond) * dataMultiplier; 
+        dataPerSecond = dataPerSecond + initDataPerSecond * dataMultiplier; 
         setDataPerSecond(dataPerSecond);
     }
 

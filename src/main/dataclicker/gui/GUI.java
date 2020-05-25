@@ -125,7 +125,7 @@ public class GUI {
 		// Buyer
 		vegtables = new Buyers_Template("Obst und Daten", 10, 50);
 		mobile = new Buyers_Template("Mobile-Data", 50, 200);
-		tech = new Buyers_Template("Data Tech", 1000, 250);
+		tech = new Buyers_Template("Data Tech", 1000, 400);
 		eSport = new Buyers_Template("Data eSport", 2000, 750);
 		party = new Buyers_Template("deutsche Daten Partei", 5555, 1337);
 		nsa = new Buyers_Template("NSA", 10000, 2000);
@@ -146,25 +146,25 @@ public class GUI {
 		zuchtBot = new Upgrades_Template("Zucht-Bot",
 				"Zieht die Daten vom klein auf an und macht diese Loyal wie keine anderen", 20, 2, dataFarm);
 		datenFutter = new Upgrades_Template("Daten-Futter",
-				"Fï¿½ttere deine Daten-Sprï¿½ï¿½linge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
+				"Fuettere deine Daten-Sproesslinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
 				100, 4, dataFarm);
 		miniGames = new Upgrades_Template("Mini Games",
-				"Fï¿½ttere deine Daten-Sprï¿½ï¿½linge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
+				"Fuettere deine Daten-Sproesslinge hiermit und sie werden im Eiltempo zu inkriminierenden Datenpaketen",
 				100, 2, dataBook);
-		gruppenInDeinerNaehe = new Upgrades_Template("Gruppen-In-Deiner-Nï¿½he",
-				"Wir erstellen gruppen in grï¿½ï¿½eren Stï¿½dten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]",
+		gruppenInDeinerNaehe = new Upgrades_Template("Gruppen-In-Deiner-Naehe",
+				"Wir erstellen gruppen in groesseren Staedten und die Benutzer melden sich bei denen und zeigen uns was Sie gerne offline machen wie z.B. Yoga oder Rollenspielen]",
 				500, 4, dataBook);
 		karperbrief = new Upgrades_Template("Karperbrief",
-				"Verschaff deinem Piraten exclusiven zutritt zu legalen gewï¿½ssern", 200, 2, dataPirate);
+				"Verschaff deinem Piraten exclusiven zutritt zu legalen gewaessern", 200, 2, dataPirate);
 		einNeuesSchiff = new Upgrades_Template("Ein neues Schiff",
 				"Auch ein online Pirat profitiert von einem neuen Schiff (PC) mit welchem er gefï¿½hrlichere Gewï¿½sser besser und schneller erreichen kann",
 				1000, 4, dataPirate);
 		einNeuerMarktplatz = new Upgrades_Template("Ein neuer Marktplatz",
-				"Verschï¿½nere dein Datenhub mit einer schï¿½neren Frontseite", 300, 2, dataHub);
+				"Verschoenere dein Datenhub mit einer schoeneren Frontseite", 300, 2, dataHub);
 		twoWayLiveChat = new Upgrades_Template("Two way Livechat",
 				"woher sollen die denn wissen das wir auch ihre Live-Chat seite aufzeichnen", 1200, 4, dataHub);
 		offlineEinbindung = new Upgrades_Template("Offline Einbindung",
-				"Lass die spieler richtig mitfiebern und gib ihnen die mï¿½glichkeit sich per Post mit rï¿½cksende beleg zu bewerben",
+				"Lass die spieler richtig mitfiebern und gib ihnen die moeglichkeit sich per Post mit rï¿½cksende beleg zu bewerben",
 				400, 2, dataGewinnspiele);
 		waehlDeineBelohnung = new Upgrades_Template("Waehl deine Belohnung",
 				"Lassen wir unsere Mitspieler doch einfach schon im vorhinaus entscheiden welchen von 50 Gewinnen sie am besten finden, selbst diese Information ist in unserer Welt Bares !",
@@ -299,13 +299,8 @@ public class GUI {
 		dataSource3Icon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent click) {
-				//main.dataclicker.minigames.dataSweeper.SweeperGUI.sweeperInitialize();
-				Game dataSnake = new Game("DataSnake", 800, 800);
-				dataSnake.start();
-				//SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
-				//sweeper.sweeperInitialize();
-
-			//	main.dataclicker.minigames.dataSweeper.SweeperGUI.createSweeper();
+				SweeperGUI sweeper = new main.dataclicker.minigames.dataSweeper.SweeperGUI();
+				sweeper.sweeperInitialize();
 			}
 		});
 
@@ -658,7 +653,13 @@ public class GUI {
 		gbc_buyer7Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer7Icon.gridx = 1;
 		gbc_buyer7Icon.gridy = 6;
-		buyersPanel.add(buyer7Icon, gbc_buyer7Icon);
+		buyersPanel.add(buyerKrakeIcon, gbc_buyer7Icon);
+		buyerKrakeIcon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				Game dataSnake = new Game("DataSnake", 800, 800);
+				dataSnake.start();
+			}
+		});
 
 		JButton buyer8 = new JButton(buyersText(drump));
 		GridBagConstraints gbc_buyer8 = new GridBagConstraints();
@@ -704,10 +705,11 @@ public class GUI {
 		upgrade1.setVisible(false);
 		upgrade1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				zuchtBot.purchaseUpgrade(dataFarm);
+				if(zuchtBot.purchaseUpgrade(dataFarm)) {
 				playerRessources.setText(playerRessources());
-				dataSource1.setText("<html>" + dataSourcesText(dataFarm));
-				upgradesPanel.remove(upgrade1); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
+				dataFarmButton.setText("<html>" + dataSourcesText(dataFarm));
+				upgradesPanel.remove(upgradeZuchtBotButton); // der button wird removed, da man Upgrades nur 1 mal erwerben kann
+				}
 			}
 		});
 

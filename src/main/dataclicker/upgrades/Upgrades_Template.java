@@ -80,14 +80,16 @@ public class Upgrades_Template {
 	
 	public void upgradeEffect(DataSource_Template dataSource)		
 	{
+			int firstdps = dataSource.getDataPerSecond();
 			dataSource.setDataMultiplier(getUpgradeMultiplier());
 			dataSource.updateDataPerSecond();
-			int datapersec = dataSource.getDataPerSecond();
-			Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond());
+			int seconddps = dataSource.getDataPerSecond();
+			int diffdps = seconddps - firstdps;
+			Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond()+diffdps);
 	}
 	
 	
-	public void purchaseUpgrade(DataSource_Template datasource) {
+	public boolean purchaseUpgrade(DataSource_Template datasource) {
 		if (Player.getMoneyAmount()>= getUpgradeCost()) {
 			
 			int playersMoney = Player.getMoneyAmount();
@@ -95,8 +97,9 @@ public class Upgrades_Template {
 			Player.setMoneyAmount(playersMoney);   
 			
 			upgradeEffect(datasource);
-
+			return true;
 		}
+		else return false;
 	}
 	
 	
