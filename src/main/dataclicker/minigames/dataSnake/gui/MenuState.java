@@ -48,7 +48,7 @@ public class MenuState extends State{
         }
 
         if(handler.getMouseManager().getMouseX() >= startButton.x && handler.getMouseManager().getMouseX() <= startButton.x + startButton.width
-        && handler.getMouseManager().getMouseY() >= startButton.y && handler.getMouseManager().getMouseY() <= startButton.y + startButton.height) {
+                && handler.getMouseManager().getMouseY() >= startButton.y && handler.getMouseManager().getMouseY() <= startButton.y + startButton.height) {
             if(scale <= 10) {
                 scale++;
             }

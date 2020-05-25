@@ -36,7 +36,7 @@ public class Gui {
         frame = new JFrame(title);
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        frame.setResizable(false);
+        frame.setResizable(true);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.addWindowListener(exitListener);
