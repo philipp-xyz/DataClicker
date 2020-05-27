@@ -123,24 +123,25 @@ public class GUI {
 			}
 		});
 		// Buyer
-		vegtables = new Buyers_Template("Obst und Daten", 10, 50);
-		mobile = new Buyers_Template("Mobile-Data", 50, 200);
-		tech = new Buyers_Template("Data Tech", 1000, 400);
-		eSport = new Buyers_Template("Data eSport", 2000, 750);
-		party = new Buyers_Template("deutsche Daten Partei", 5555, 1337);
+		vegtables = new Buyers_Template("Obst und Daten", 10, 25);
+		mobile = new Buyers_Template("Mobile-Data", 50, 125);
+		tech = new Buyers_Template("Data Tech", 150, 550);
+		eSport = new Buyers_Template("Data eSport", 500, 1000);
+		party = new Buyers_Template("deutsche Daten Partei", 1500, 1500);
 		nsa = new Buyers_Template("NSA", 10000, 2000);
 		krake = new Buyers_Template("Daten-Krake", 100000, 10000);
 		drump = new Buyers_Template("Tonald Drump", 1000000, 0);
 
 		// Datasources
-		dataFarm = new DataSource_Template("Daten-Farm", "QualitÃ¤tsdaten aus Freilandhaltung", 2, 10, 1.15, 0);
-		dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 2000);
-		dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 3000);
-		dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 6000);
-		dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 8000);
-		dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 12000);
-		dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 20000);
-		whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 25000);
+		dataFarm = new DataSource_Template("Daten-Farm", "Qualitaetsdaten aus Freilandhaltung", 1, 10, 1.15, 0);
+		dataBook = new DataSource_Template("Daten-Buch", "", 10, 50, 1.20, 10);
+		dataPirate = new DataSource_Template("Daten-Pirat", "", 15, 100, 1.40, 30);
+		dataHub = new DataSource_Template("Daten-Hub", "", 30, 150, 1.80, 50);
+		dataGewinnspiele = new DataSource_Template("Daten-Gewinnspiele", "", 40, 200, 2.0, 80);
+		dataScout24 = new DataSource_Template("Daten-Scout24", "", 50, 250, 2.25, 150);
+		dataSearch = new DataSource_Template("Daten-Suche", "", 55, 300, 2.50, 300);
+		whatsData = new DataSource_Template("Whats-Data", "", 60, 500, 3.0, 500);
+
 
 		// upgrades
 		zuchtBot = new Upgrades_Template("Zucht-Bot",
@@ -473,7 +474,7 @@ public class GUI {
 		frame.getContentPane().add(dataBankPanel, BorderLayout.CENTER);
 
 		JButton dataBank = new JButton("");
-		dataBank.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/databank_icon.png")));
+		dataBank.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/DatenbankV1.png")));
 		dataBank.addActionListener(new ActionListener() { // Ã¼berprÃ¼ft wann geclickt wird und was in dem Falle
 															// passiert
 			public void actionPerformed(ActionEvent click) {
@@ -510,7 +511,7 @@ public class GUI {
 		});
 
 		JButton buyer1Icon = new JButton("");
-		buyer1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer1Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/Obsthaendler_small.png")));
 		GridBagConstraints gbc_buyer1Icon = new GridBagConstraints();
 		gbc_buyer1Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer1Icon.gridx = 1;
@@ -533,7 +534,7 @@ public class GUI {
 		});
 
 		JButton buyer2Icon = new JButton("");
-		buyer2Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer2Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/mobile_data_small.png")));
 		GridBagConstraints gbc_buyer2Icon = new GridBagConstraints();
 		gbc_buyer2Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer2Icon.gridx = 1;
@@ -556,7 +557,7 @@ public class GUI {
 		});
 
 		JButton buyer3Icon = new JButton("");
-		buyer3Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer3Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/Data_Tech_small.png")));
 		GridBagConstraints gbc_buyer3Icon = new GridBagConstraints();
 		gbc_buyer3Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer3Icon.gridx = 1;
@@ -579,7 +580,7 @@ public class GUI {
 		});
 
 		JButton buyer4Icon = new JButton("");
-		buyer4Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer4Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_esport_small.png")));
 		GridBagConstraints gbc_buyer4Icon = new GridBagConstraints();
 		gbc_buyer4Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer4Icon.gridx = 1;
@@ -602,7 +603,7 @@ public class GUI {
 		});
 
 		JButton buyer5Icon = new JButton("");
-		buyer5Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer5Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/Deutsche_Daten_Partei_small.png")));
 		GridBagConstraints gbc_buyer5Icon = new GridBagConstraints();
 		gbc_buyer5Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer5Icon.gridx = 1;
@@ -625,7 +626,7 @@ public class GUI {
 		});
 
 		JButton buyer6Icon = new JButton("");
-		buyer6Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer6Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/NSA_small.png")));
 		GridBagConstraints gbc_buyer6Icon = new GridBagConstraints();
 		gbc_buyer6Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer6Icon.gridx = 1;
@@ -670,7 +671,7 @@ public class GUI {
 		buyersPanel.add(buyer8, gbc_buyer8);
 
 		JButton buyer8Icon = new JButton("");
-		buyer8Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_krake_small.png")));
+		buyer8Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/tonald_drump_small.png")));
 		GridBagConstraints gbc_buyer8Icon = new GridBagConstraints();
 		gbc_buyer8Icon.gridx = 1;
 		gbc_buyer8Icon.gridy = 7;
@@ -719,10 +720,11 @@ public class GUI {
 		upgrade2.setVisible(false);
 		upgrade2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				datenFutter.purchaseUpgrade(dataFarm);
+				if(datenFutter.purchaseUpgrade(dataFarm)) {
 				playerRessources.setText(playerRessources());
 				dataSource1.setText("<html>" + dataSourcesText(dataFarm)); // double rewrite??
 				upgradesPanel.remove(upgrade2);
+				}
 			}
 		});
 
@@ -732,10 +734,11 @@ public class GUI {
 		upgrade3.setVisible(false);
 		upgrade3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				datenFutter.purchaseUpgrade(dataBook);
+				if(datenFutter.purchaseUpgrade(dataBook)) {
 				playerRessources.setText(playerRessources());
 				dataSource2.setText("<html>" + dataSourcesText(dataBook));
 				upgradesPanel.remove(upgrade3);
+				}
 			}
 		});
 
@@ -745,10 +748,11 @@ public class GUI {
 		upgrade4.setVisible(false);
 		upgrade4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				gruppenInDeinerNaehe.purchaseUpgrade(dataBook);
+				if(gruppenInDeinerNaehe.purchaseUpgrade(dataBook)) {
 				playerRessources.setText(playerRessources());
 				dataSource2.setText("<html>" + dataSourcesText(dataBook));
 				upgradesPanel.remove(upgrade4);
+				}
 			}
 		});
 
@@ -758,10 +762,11 @@ public class GUI {
 		upgrade5.setVisible(false);
 		upgrade5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				karperbrief.purchaseUpgrade(dataPirate);
+				if(karperbrief.purchaseUpgrade(dataPirate)) {
 				playerRessources.setText(playerRessources());
 				dataSource3.setText("<html>" + dataSourcesText(dataPirate));
 				upgradesPanel.remove(upgrade5);
+				}
 			}
 		});
 
@@ -771,10 +776,11 @@ public class GUI {
 		upgrade6.setVisible(false);
 		upgrade6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				einNeuesSchiff.purchaseUpgrade(dataPirate);
+				if(einNeuesSchiff.purchaseUpgrade(dataPirate)) {
 				playerRessources.setText(playerRessources());
 				dataSource3.setText("<html>" + dataSourcesText(dataPirate));
 				upgradesPanel.remove(upgrade6);
+				}
 			}
 		});
 		JButton upgrade7 = new JButton(upgradesText(einNeuerMarktplatz, dataHub));
@@ -783,10 +789,11 @@ public class GUI {
 		upgrade7.setToolTipText("<html>" + upgradesToolTip(einNeuerMarktplatz, dataHub));
 		upgrade7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				einNeuerMarktplatz.purchaseUpgrade(dataHub);
+				if(einNeuerMarktplatz.purchaseUpgrade(dataHub)) {
 				playerRessources.setText(playerRessources());
 				dataSource4.setText("<html>" + dataSourcesText(dataHub));
 				upgradesPanel.remove(upgrade7);
+				}
 			}
 		});
 
@@ -796,10 +803,11 @@ public class GUI {
 		upgrade8.setVisible(false);
 		upgrade8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				twoWayLiveChat.purchaseUpgrade(dataHub);
+				if(twoWayLiveChat.purchaseUpgrade(dataHub)) {
 				playerRessources.setText(playerRessources());
 				dataSource4.setText("<html>" + dataSourcesText(dataHub));
 				upgradesPanel.remove(upgrade8);
+				}
 			}
 		});
 		JButton upgrade9 = new JButton(upgradesText(offlineEinbindung, dataGewinnspiele));
@@ -808,10 +816,11 @@ public class GUI {
 		upgrade9.setVisible(false);
 		upgrade9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				offlineEinbindung.purchaseUpgrade(dataGewinnspiele);
+				if(offlineEinbindung.purchaseUpgrade(dataGewinnspiele)) {
 				playerRessources.setText(playerRessources());
 				dataSource5.setText("<html>" + dataSourcesText(dataGewinnspiele));
 				upgradesPanel.remove(upgrade9);
+				}
 			}
 		});
 		JButton upgrade10 = new JButton(upgradesText(waehlDeineBelohnung, dataGewinnspiele));
@@ -820,10 +829,11 @@ public class GUI {
 		upgrade10.setVisible(false);
 		upgrade10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				waehlDeineBelohnung.purchaseUpgrade(dataGewinnspiele);
+				if(waehlDeineBelohnung.purchaseUpgrade(dataGewinnspiele)) {
 				playerRessources.setText(playerRessources());
 				dataSource5.setText("<html>" + dataSourcesText(dataGewinnspiele));
 				upgradesPanel.remove(upgrade10);
+				}
 			}
 		});
 		JButton upgrade11 = new JButton(upgradesText(callCenterSupport, dataScout24));
@@ -832,10 +842,11 @@ public class GUI {
 		upgrade11.setVisible(false);
 		upgrade10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				callCenterSupport.purchaseUpgrade(dataScout24);
+				if(callCenterSupport.purchaseUpgrade(dataScout24)) {
 				playerRessources.setText(playerRessources());
 				dataSource6.setText("<html>" + dataSourcesText(dataScout24));
 				upgradesPanel.remove(upgrade11);
+				}
 			}
 		});
 		JButton upgrade12 = new JButton(upgradesText(onlineAusfuellformular, dataScout24));
@@ -844,10 +855,11 @@ public class GUI {
 		upgrade12.setVisible(false);
 		upgrade12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				onlineAusfuellformular.purchaseUpgrade(dataScout24);
+				if(onlineAusfuellformular.purchaseUpgrade(dataScout24)) {
 				playerRessources.setText(playerRessources());
 				dataSource6.setText("<html>" + dataSourcesText(dataScout24));
 				upgradesPanel.remove(upgrade12);
+				}
 			}
 		});
 		JButton upgrade13 = new JButton(upgradesText(statusModul, whatsData));
@@ -856,10 +868,11 @@ public class GUI {
 		upgrade13.setVisible(false);
 		upgrade13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				statusModul.purchaseUpgrade(whatsData);
+				if(statusModul.purchaseUpgrade(whatsData)) {
 				playerRessources.setText(playerRessources());
 				dataSource7.setText("<html>" + dataSourcesText(whatsData));
 				upgradesPanel.remove(upgrade13);
+				}
 			}
 		});
 		JButton upgrade14 = new JButton(upgradesText(faceScanner, whatsData));
@@ -868,10 +881,11 @@ public class GUI {
 		upgrade14.setVisible(false);
 		upgrade14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				faceScanner.purchaseUpgrade(whatsData);
+				if(faceScanner.purchaseUpgrade(whatsData)) {
 				playerRessources.setText(playerRessources());
 				dataSource7.setText("<html>" + dataSourcesText(whatsData));
 				upgradesPanel.remove(upgrade14);
+				}
 			}
 		});
 		JButton upgrade15 = new JButton(upgradesText(personalisierteSuche, dataSearch));
@@ -880,10 +894,11 @@ public class GUI {
 		upgrade15.setToolTipText("<html>" + upgradesToolTip(personalisierteSuche, dataSearch));
 		upgrade15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				personalisierteSuche.purchaseUpgrade(dataSearch);
+				if(personalisierteSuche.purchaseUpgrade(dataSearch)) {
 				playerRessources.setText(playerRessources());
 				dataSource8.setText("<html>" + dataSourcesText(dataSearch));
 				upgradesPanel.remove(upgrade15);
+				}
 			}
 		});
 		JButton upgrade16 = new JButton(upgradesText(werbung, dataSearch));
@@ -892,10 +907,11 @@ public class GUI {
 		upgrade16.setVisible(false);
 		upgrade16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
-				werbung.purchaseUpgrade(dataSearch);
+				if(werbung.purchaseUpgrade(dataSearch)) {
 				playerRessources.setText(playerRessources());
 				dataSource8.setText("<html>" + dataSourcesText(dataSearch));
 				upgradesPanel.remove(upgrade16);
+				}
 			}
 		});
 
@@ -914,26 +930,68 @@ public class GUI {
 				playerRessources.setText(playerRessources());
 			}
 		}, 0, 1000);
+		
+		Timer dataSourceVisibility = new Timer();
+		dataSourceVisibility.schedule(new TimerTask() {
+			public void run() {
+				dataBook.toggleVisibility(dataSource2);
+				dataBook.toggleVisibility(dataSource2Icon);
+				dataPirate.toggleVisibility(dataSource3);
+				dataPirate.toggleVisibility(dataSource3Icon);
+				dataHub.toggleVisibility(dataSource4);
+				dataHub.toggleVisibility(dataSource4Icon);
+				dataGewinnspiele.toggleVisibility(dataSource5);
+				dataGewinnspiele.toggleVisibility(dataSource5Icon);
+				dataScout24.toggleVisibility(dataSource6);
+				dataScout24.toggleVisibility(dataSource6Icon);
+				dataSearch.toggleVisibility(dataSource7);
+				dataSearch.toggleVisibility(dataSource7Icon);
+				whatsData.toggleVisibility(dataSource8);
+				whatsData.toggleVisibility(dataSource8Icon);
+			}
+		}, 0, 1000);
+		
+		Timer buyerVisibility = new Timer();
+		buyerVisibility.schedule(new TimerTask() {
+			public void run() {
+				vegtables.toggleVisibility(buyer1);
+				mobile.toggleVisibility(buyer2);
+				tech.toggleVisibility(buyer3);
+				eSport.toggleVisibility(buyer4);
+				party.toggleVisibility(buyer5);
+				nsa.toggleVisibility(buyer6);
+				krake.toggleVisibility(buyer7);
+				drump.toggleVisibility(buyer8);
+				vegtables.toggleVisibility(buyer1Icon);
+				mobile.toggleVisibility(buyer2Icon);
+				tech.toggleVisibility(buyer3Icon);
+				eSport.toggleVisibility(buyer4Icon);
+				party.toggleVisibility(buyer5Icon);
+				nsa.toggleVisibility(buyer6Icon);
+				krake.toggleVisibility(buyer7Icon);
+				drump.toggleVisibility(buyer8Icon);
+			}
+		}, 0, 1000);
 
 		Timer upgradeVisibility = new Timer();
 		upgradeVisibility.schedule(new TimerTask() {
 			public void run() {
-				zuchtBot.checkUpgrade(dataFarm, 2, upgrade1);
-				datenFutter.checkUpgrade(dataFarm, 5, upgrade2);
-				miniGames.checkUpgrade(dataBook, 2, upgrade3);
-				gruppenInDeinerNaehe.checkUpgrade(dataBook, 5, upgrade4);
-				karperbrief.checkUpgrade(dataPirate, 2, upgrade5);
-				einNeuesSchiff.checkUpgrade(dataPirate, 5, upgrade6);
-				einNeuerMarktplatz.checkUpgrade(dataHub, 2, upgrade7);
-				twoWayLiveChat.checkUpgrade(dataHub, 5, upgrade8);
-				offlineEinbindung.checkUpgrade(dataGewinnspiele, 2, upgrade9);
-				waehlDeineBelohnung.checkUpgrade(dataGewinnspiele, 5, upgrade10);
-				callCenterSupport.checkUpgrade(dataScout24, 2, upgrade11);
-				onlineAusfuellformular.checkUpgrade(dataScout24, 5, upgrade12);
-				personalisierteSuche.checkUpgrade(dataSearch, 2, upgrade13);
-				werbung.checkUpgrade(dataSearch, 5, upgrade14);
-				statusModul.checkUpgrade(whatsData, 2, upgrade15);
-				faceScanner.checkUpgrade(whatsData, 2, upgrade16);
+				zuchtBot.checkUpgrade(dataFarm, 5, upgrade1);
+				datenFutter.checkUpgrade(dataFarm, 15, upgrade2);
+				miniGames.checkUpgrade(dataBook, 7, upgrade3);
+				gruppenInDeinerNaehe.checkUpgrade(dataBook, 20, upgrade4);
+				karperbrief.checkUpgrade(dataPirate, 9, upgrade5);
+				einNeuesSchiff.checkUpgrade(dataPirate, 25, upgrade6);
+				einNeuerMarktplatz.checkUpgrade(dataHub, 11, upgrade7);
+				twoWayLiveChat.checkUpgrade(dataHub, 35, upgrade8);
+				offlineEinbindung.checkUpgrade(dataGewinnspiele, 15, upgrade9);
+				waehlDeineBelohnung.checkUpgrade(dataGewinnspiele, 40, upgrade10);
+				callCenterSupport.checkUpgrade(dataScout24, 17, upgrade11);
+				onlineAusfuellformular.checkUpgrade(dataScout24, 50, upgrade12);
+				personalisierteSuche.checkUpgrade(dataSearch, 20, upgrade13);
+				werbung.checkUpgrade(dataSearch, 55, upgrade14);
+				statusModul.checkUpgrade(whatsData, 22, upgrade15);
+				faceScanner.checkUpgrade(whatsData, 75, upgrade16);
 
 			}
 		}, 0, 1000);

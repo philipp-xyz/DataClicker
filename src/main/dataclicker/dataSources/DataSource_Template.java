@@ -1,5 +1,7 @@
 package main.dataclicker.dataSources;
 
+import javax.swing.JButton;
+
 import main.dataclicker.player.Player;
 
 public class DataSource_Template {
@@ -105,7 +107,7 @@ public class DataSource_Template {
 
     public void increaseCurrentCost() {
         int currentCost = getCurrentCost();
-        if (costIncrease < 1.00) {   //Guckt nach ob der Anstieg auch wirklich groß genug ist, um den Preis zu erhöen (also mehr als 100% darstellt)
+        if (costIncrease < 1.00) {   //Guckt nach ob der Anstieg auch wirklich groï¿½ genug ist, um den Preis zu erhï¿½en (also mehr als 100% darstellt)
             costIncrease += 1.00;
         }
         currentCost = (int) (currentCost * costIncrease);
@@ -125,11 +127,11 @@ public class DataSource_Template {
         setDataPerSecond(dataPerSecond);
     }
     
-    public boolean toggleVisibility() {
-        if (Player.getDataAmount() >= requiredData) {
-            return true;
+    public void toggleVisibility(JButton button) {
+        if (Player.getCurrentDataPerSecond() >= requiredData) {
+            button.setEnabled(true);
         } else {
-            return false;
+        	 button.setEnabled(false);
         }
 
     }
@@ -156,7 +158,7 @@ public class DataSource_Template {
     		increaseDataPerSecond();		
     		int datapersec = getDataPerSecond();
     		Player.setCurrentDataPerSecond((Player.getCurrentDataPerSecond()+initialDataPerSecond*dataMultiplier));
-    		increaseCurrentCost();			//Kosten der nächsten Datenquelle werden erhöht
+    		increaseCurrentCost();			//Kosten der nï¿½chsten Datenquelle werden erhï¿½ht
     	}
     }
 }
