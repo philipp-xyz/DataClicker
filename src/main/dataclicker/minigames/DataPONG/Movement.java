@@ -5,7 +5,7 @@ import java.util.TimerTask;
 
 public class Movement {
 	public static int paddlespeed = 6; 
-	Timer move;
+	static Timer move;
 	public Movement() {
 		move = new Timer();
 		move.scheduleAtFixedRate(new TimerTask() {

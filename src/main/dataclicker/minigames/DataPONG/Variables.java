@@ -23,6 +23,7 @@ public class Variables {
 	
 	static boolean moveUp = false, moveDown = false;
 	static boolean moveUpopponent = false, moveDownopponent = false;
+	static boolean gameOver = false;
 	
 	static int balldirection_x = 1, balldirection_y = -1;	// moves to top-right dir. when started!
 	
@@ -34,9 +35,9 @@ public class Variables {
 	public Variables() {
 		
 		try {
-			pixelfont = Font.createFont(Font.TRUETYPE_FONT, new File("res/coders_crux.ttf")).deriveFont(125f);
+			pixelfont = Font.createFont(Font.TRUETYPE_FONT, new File("/main/dataclicker/res/coders_crux.ttf")).deriveFont(125f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("res/coders_crux.ttf"))); 
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("/main/dataclicker/res/coders_crux.ttf"))); 
 		} catch (FontFormatException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

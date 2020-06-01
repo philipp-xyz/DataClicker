@@ -35,6 +35,10 @@ public class Draw extends JLabel {
 		
 		g.fillRect(Variables.ballx, Variables.bally, 20, 20);
 			repaint();	
+			
+		if(Variables.gameOver == true) {
+			g.drawString("GAME OVER", Variables.screenwidth/2, Variables.screenheight/2);
+		}
 	}
 	
 

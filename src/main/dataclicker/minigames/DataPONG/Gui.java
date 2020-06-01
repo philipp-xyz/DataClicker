@@ -20,11 +20,13 @@ public class Gui {
 		Variables.jf1.addKeyListener(new KeyHandler());	// is responsible for the visible Input done by the user
 		Variables.jf1.requestFocus();
 		
-		Draw.labelDraw = new Draw();
+		
+		
+		Draw.labelDraw = new Draw(); //draw = JLabel
 		Draw.labelDraw.setBounds(0,0, Variables.screenwidth, Variables.screenheight);
 		Draw.labelDraw.setVisible(true);		
 		
-		Variables.jf1.getContentPane().add(Draw.labelDraw, BorderLayout.CENTER);	
+		Variables.jf1.add(Draw.labelDraw);	
 		
 		
 		
@@ -32,14 +34,11 @@ public class Gui {
 	}
 
 	static void gameOver() {		//
-		
+		Variables.gameOver = true;
 		Variables.speed = 0;
 		// add rewards for dataclicker 
 		
-		JLabel gameOver = new JLabel("GAMEOVER");
-		Variables.jf1.getContentPane().add(gameOver, BorderLayout.CENTER);
-		Movement.paddlespeed = 99999999;
-		
+		Movement.move.cancel();
 	
 		
 	}
