@@ -7,18 +7,24 @@ import java.util.TimerTask;
 
 public class Slotsmain {
 	
+	
+	
+	public static boolean run = true;
+
 	public static Container pane = new Container();
+	
 	public static void main(String[] args) {
-		
+	
+	
 		SlotGui.addComponentsToPane(pane);
-		SlotGui.createAndShowGUI();
+		SlotGui.createAndShowGUI(true);
 		
 		Random rdm = new Random();
 		
 		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask (){
 		    public void run() {
-		    	boolean run = true;
+		    	
 		    	int stop=0;
 		    	if (run==true) {	 
 		    	int Slot1 = rdm.nextInt(9)+1;
@@ -71,7 +77,9 @@ public class Slotsmain {
 		},1*1000, 200);	
 	}
 		
-			
+	 public static void setRun(boolean variable) {
+    	  run = variable;
+     }
 			
 			
 			

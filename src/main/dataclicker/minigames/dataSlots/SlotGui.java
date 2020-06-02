@@ -1,6 +1,10 @@
 package main.dataclicker.minigames.dataSlots;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JButton;
@@ -38,7 +42,7 @@ public class SlotGui {
 	
 	
 	
-	JFrame frame = new JFrame("DataSlots") ;
+	static JFrame frame = new JFrame("DataSlots") ;
 	GridBagLayout gbl_slots = new GridBagLayout(); 
 	
 	
@@ -92,34 +96,58 @@ public class SlotGui {
 	        
 	        JButton button = new JButton("Start Knopf");
 	        pane.add(button, BorderLayout.PAGE_END);
-	        
-	 }  
-	 		public static void refreshLabels() {
-	 			JLabel label2 = new JLabel(""+Gui_Slot1);
-		        label2.setPreferredSize(new Dimension(166, 50));
-		        Slotsmain.pane.add(label2, BorderLayout.LINE_START);
-		        
-		        JLabel label3 = new JLabel(""+Gui_Slot2);
-		        label3.setPreferredSize(new Dimension(166, 50));
-		        Slotsmain.pane.add(label3, BorderLayout.CENTER);
-		         
-		        JLabel label4 = new JLabel(""+Gui_Slot3);
-		        label4.setPreferredSize(new Dimension(166, 50));
-		        Slotsmain.pane.add(label4, BorderLayout.LINE_END);
-	 		}
-	        public static void createAndShowGUI() {
+	        button.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent click) {
+					Slotsmain.setRun(true);
+					}
+			
+	        }
+	 
+		
+	 		
+	 		
+	 		
+	        public static void createAndShowGUI(boolean help) {
 	            
-	            //Create and set up the window.
-	            JFrame frame = new JFrame("BorderLayoutDemo");
+	            if (help ==true) {
 	            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	            //Set up the content pane.
+	            
 	            addComponentsToPane(frame.getContentPane());
-	            //Use the content pane's default BorderLayout. No need for
-	            //setLayout(new BorderLayout());
-	            //Display the window.
+	          
 	            frame.pack();
 	            frame.setVisible(true);
+	            }
+	            if (help==false) {
+	            	addComponentsToPane(frame.getContentPane());
+	            	frame.setVisible(true);
+	            }
 	        }
+	        
+	        public static void refreshLabels() {
+		 		//	Timer dataSourceVisibility = new Timer();
+		 		//	dataSourceVisibility.schedule(new TimerTask() {
+		 				
+		 			JLabel label2 = new JLabel(""+Gui_Slot1);
+			        label2.setPreferredSize(new Dimension(166, 50));
+			        Slotsmain.pane.add(label2, BorderLayout.LINE_START);
+			        
+			        JLabel label3 = new JLabel(""+Gui_Slot2);
+			        label3.setPreferredSize(new Dimension(166, 50));
+			        Slotsmain.pane.add(label3, BorderLayout.CENTER);
+			         
+			        JLabel label4 = new JLabel(""+Gui_Slot3);
+			        label4.setPreferredSize(new Dimension(166, 50));
+			        Slotsmain.pane.add(label4, BorderLayout.LINE_END);
+			        
+			        Slotsmain.pane.revalidate();
+			        
+			        createAndShowGUI(false);
+				}
+		//	}, 0, 1000);
+	        
+	        
+	        
 	        public static void main(String[] args) {
 	            /* Use an appropriate Look and Feel */
 	            
@@ -130,7 +158,7 @@ public class SlotGui {
 	            //creating and showing this application's GUI.
 	            javax.swing.SwingUtilities.invokeLater(new Runnable() {
 	                public void run() {
-	                    createAndShowGUI();
+	                    createAndShowGUI(true);
 	                }
 	            });
 	        }
