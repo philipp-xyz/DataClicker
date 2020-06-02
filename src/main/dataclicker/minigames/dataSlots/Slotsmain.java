@@ -9,7 +9,9 @@ public class Slotsmain {
 	
 	
 	
-	public static boolean run = true;
+	public static boolean run = false;
+	public static boolean ran = false; //the check if the Slot machine just ran
+	
 
 	public static Container pane = new Container();
 	
@@ -26,7 +28,8 @@ public class Slotsmain {
 		    public void run() {
 		    	
 		    	int stop=0;
-		    	if (run==true) {	 
+		    	if (run==true) {
+		    		ran=true;
 		    	int Slot1 = rdm.nextInt(9)+1;
 				int Slot2 = rdm.nextInt(9)+1;
 				int Slot3 = rdm.nextInt(9)+1;
@@ -52,17 +55,22 @@ public class Slotsmain {
 				System.out.println("you lost");
 		    		 }
 		    	 
-		    	 else {
+		    	 if(ran==true && run ==false) {
 					
 		    		 while (stop <=2){
 		    		 int Slot2 = rdm.nextInt(9)+1;
 		    		 SlotGui.setGui_Slot2(Slot2);
+		    		 int Slot3 = rdm.nextInt(9)+1;
+	    			 SlotGui.setGui_Slot3(Slot3);
+	    			 
 		    		 SlotGui.refreshLabels();
+		    		 stop=stop+1; 
 		    		 }
-		    		 while (stop <=2){
+		    		 while (stop <=5){
 		    			 int Slot3 = rdm.nextInt(9)+1;
 		    			 SlotGui.setGui_Slot3(Slot3);
 		    			 SlotGui.refreshLabels();
+		    			 stop=stop+1; 
 		    		 }
 		    		
 		    		
@@ -80,7 +88,9 @@ public class Slotsmain {
 	 public static void setRun(boolean variable) {
     	  run = variable;
      }
-			
+	 public static boolean getRun() {
+			return run;
+		}
 			
 			
 		
