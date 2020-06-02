@@ -27,39 +27,39 @@ public class SlotGui {
 
 	
 
-	static int Gui_Slot1;
+	static int Gui_slot1;
 
-	public int getGui_Slot1() {
-		return Gui_Slot1;
+	public int getGui_slot1() {
+		return Gui_slot1;
 	}
 
-	public static void setGui_Slot1(int variable) {
-		Gui_Slot1 = variable;
+	public static void setGui_slot1(int variable) {
+		Gui_slot1 = variable;
 	}
 
-	static int Gui_Slot2;
+	static int Gui_slot2;
 
-	public int getGui_Slot2() {
-		return Gui_Slot2;
+	public int getGui_slot2() {
+		return Gui_slot2;
 	}
 
-	public static void setGui_Slot2(int variable) {
-		Gui_Slot2 = variable;
+	public static void setGui_slot2(int variable) {
+		Gui_slot2 = variable;
 	}
 
-	static int Gui_Slot3;
+	static int Gui_slot3;
 
-	public int getGui_Slot3() {
-		return Gui_Slot3;
+	public int getGui_slot3() {
+		return Gui_slot3;
 	}
 
-	public static void setGui_Slot3(int variable) {
-		Gui_Slot3 = variable;
+	public static void setGui_slot3(int variable) {
+		Gui_slot3 = variable;
 	}
-	public static   JLabel label2 = new JLabel(""+Gui_Slot1);
+	public static   JLabel label2 = new JLabel(""+Gui_slot1);
 	public static   JLabel label1= new JLabel("Win or Lose Label");
-	public static 	JLabel label3 = new JLabel(""+Gui_Slot2);
-	public static	JLabel label4 = new JLabel(""+Gui_Slot3);
+	public static 	JLabel label3 = new JLabel(""+Gui_slot2);
+	public static	JLabel label4 = new JLabel(""+Gui_slot3);
 	
 	
 	public static void addComponentsToPane(Container pane) {
@@ -86,7 +86,7 @@ public class SlotGui {
 	        
 	        
 	        JButton button = new JButton("Start Knopf");
-	        pane.add(button, BorderLayout.PAGE_END);
+	        pane.add(button, BorderLayout.SOUTH);
 	        button.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent click) {
@@ -125,19 +125,18 @@ public class SlotGui {
 		
 		
 		
-		label2.setText("" + Gui_Slot1);
+		label2.setText("" + Gui_slot1);
 		
 		Slotsmain.pane.add(label2, BorderLayout.LINE_START);
 
-		label3.setText("" + Gui_Slot2);
+		label3.setText("" + Gui_slot2);
 		
 		Slotsmain.pane.add(label3, BorderLayout.CENTER);
 
-		label4.setText("" + Gui_Slot3);
+		label4.setText("" + Gui_slot3);
 		
 		Slotsmain.pane.add(label4, BorderLayout.LINE_END);
 
-		
 
 		createAndShowGUI(false);
 	}

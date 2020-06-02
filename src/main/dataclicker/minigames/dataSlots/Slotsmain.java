@@ -14,6 +14,10 @@ public class Slotsmain {
 	
 
 	public static Container pane = new Container();
+
+	public static int slot1;
+	public static int slot2;
+	public static int slot3;
 	
 	public static void main(String[] args) {
 	
@@ -30,45 +34,31 @@ public class Slotsmain {
 		    	int stop=0;
 		    	if (run==true) {
 		    		ran=true;
-		    	int Slot1 = rdm.nextInt(9)+1;
-				int Slot2 = rdm.nextInt(9)+1;
-				int Slot3 = rdm.nextInt(9)+1;
+		    	 slot1 = rdm.nextInt(9)+1;
+				 slot2 = rdm.nextInt(9)+1;
+				 slot3 = rdm.nextInt(9)+1;
 				
-				SlotGui.setGui_Slot1(Slot1);
-				SlotGui.setGui_Slot2(Slot2);
-				SlotGui.setGui_Slot3(Slot3);
+				SlotGui.setGui_slot1(slot1);
+				SlotGui.setGui_slot2(slot2);
+				SlotGui.setGui_slot3(slot3);
 				SlotGui.refreshLabels();
 				
-				
-				if	(Slot1==7 && Slot3 ==7 && Slot2 ==7) {
-					System.out.println("Jackpot");}
-				else if (Slot1==7 && Slot2 ==7 || Slot2 == 7 && Slot3 ==7 || Slot1 ==7 && Slot3 == 7){
-					System.out.println("Huge Prize");
-				}
-				else if (Slot1==7 || Slot2 == 7 || Slot3 == 7){
-					System.out.println("Prize");
-				}
-				else if (Slot1 == Slot2 && Slot2== Slot3){
-					{System.out.println("You´ve won");}
-				
-				}
-				System.out.println("you lost");
-		    		 }
+		    	}
 		    	 
 		    	 if(ran==true && run ==false) {
 					
 		    		 while (stop <=2){
-		    		 int Slot2 = rdm.nextInt(9)+1;
-		    		 SlotGui.setGui_Slot2(Slot2);
-		    		 int Slot3 = rdm.nextInt(9)+1;
-	    			 SlotGui.setGui_Slot3(Slot3);
+		    		 int slot2 = rdm.nextInt(9)+1;
+		    		 SlotGui.setGui_slot2(slot2);
+		    		 int slot3 = rdm.nextInt(9)+1;
+	    			 SlotGui.setGui_slot3(slot3);
 	    			 
 		    		 SlotGui.refreshLabels();
 		    		 stop=stop+1; 
 		    		 }
 		    		 while (stop <=5){
-		    			 int Slot3 = rdm.nextInt(9)+1;
-		    			 SlotGui.setGui_Slot3(Slot3);
+		    			 int slot3 = rdm.nextInt(9)+1;
+		    			 SlotGui.setGui_slot3(slot3);
 		    			 SlotGui.refreshLabels();
 		    			 stop=stop+1; 
 		    		 }
@@ -79,7 +69,7 @@ public class Slotsmain {
 		    		 
 		    		 stop=stop+1; 
 		    	 }
-		    	if (stop >=10) timer.cancel();
+		    	//if (stop >=10) timer.cancel();
 		    		 
 		    }
 		},1*1000, 200);	
@@ -92,6 +82,21 @@ public class Slotsmain {
 			return run;
 		}
 			
+	 public static void checkWin(int slot1,int slot2, int slot3) {
+			if	(slot1==7 && slot3 ==7 && slot2 ==7) {
+				System.out.println("Jackpot");}
+			else if (slot1==7 && slot2 ==7 || slot2 == 7 && slot3 ==7 || slot1 ==7 && slot3 == 7){
+				System.out.println("Huge Prize");
+			}
+			else if (slot1==7 || slot2 == 7 || slot3 == 7){
+				System.out.println("Prize");
+			}
+			else if (slot1 == slot2 && slot2== slot3){
+				{System.out.println("You´ve won");}
+			
+			}
+			System.out.println("you lost");
+	 }
 			
 		
 			
