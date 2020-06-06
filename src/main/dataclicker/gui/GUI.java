@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import main.dataclicker.buyers.Buyers_Template;
 import main.dataclicker.dataSources.*;
 import main.dataclicker.minigames.dataSweeper.SweeperGUI;
+import main.dataclicker.minigames.dataSlots.Slotsmain;
 
 import javax.swing.JLabel;
 
@@ -586,6 +587,12 @@ public class GUI {
 		gbc_buyer4Icon.gridx = 1;
 		gbc_buyer4Icon.gridy = 3;
 		buyersPanel.add(buyer4Icon, gbc_buyer4Icon);
+		buyer4Icon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				Slotsmain slots = new main.dataclicker.minigames.dataSlots.Slotsmain();
+				slots.main(null);
+			}
+		});
 
 		JButton buyer5 = new JButton(buyersText(party));
 		GridBagConstraints gbc_buyer5 = new GridBagConstraints();
