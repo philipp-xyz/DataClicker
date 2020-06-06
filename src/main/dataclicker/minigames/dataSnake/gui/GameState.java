@@ -24,7 +24,7 @@ public class GameState extends State {
             Snake.move();
             Snake.waitToMove = false;
 
-            handler.getGame().endState.dataAdded = false;
+            handler.getGame().endState.moneyAdded = false;
 
             Collision.collidePickup();
 
@@ -79,7 +79,6 @@ public class GameState extends State {
             p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
             g.drawImage(Assets.head_D, p.x, p.y, null);
         }
-
     }
 
     public void drawTail(Graphics g) {

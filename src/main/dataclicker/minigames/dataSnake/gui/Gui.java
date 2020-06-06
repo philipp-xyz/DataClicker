@@ -1,8 +1,6 @@
 package main.dataclicker.minigames.dataSnake.gui;
 
-
 import main.dataclicker.minigames.dataSnake.Handler;
-import main.dataclicker.minigames.dataSnake.graphics.Assets;
 
 import javax.swing.*;
 import java.awt.*;

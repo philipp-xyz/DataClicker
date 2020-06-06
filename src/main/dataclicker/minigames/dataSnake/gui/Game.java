@@ -44,8 +44,6 @@ public class Game implements Runnable {
     }
 
     public void init() {
-
-
         Assets.init();
 
         handler = new Handler(this);
@@ -66,17 +64,12 @@ public class Game implements Runnable {
     }
 
     private void tick() {
-
         if (State.getState() != null && gui.getFrame() != null) {
             State.getState().tick();
         }
-
-
-
     }
 
     private void render() {
-
         bufferStrategy = gui.getCanvas().getBufferStrategy();
         if(bufferStrategy == null) {
             gui.getCanvas().createBufferStrategy(3);
@@ -92,7 +85,6 @@ public class Game implements Runnable {
 
         bufferStrategy.show();
         g.dispose();
-
     }
 
     public void run() {
@@ -145,10 +137,8 @@ public class Game implements Runnable {
         return keyManager;
     }
 
-
     public MouseManager getMouseManager() {
         return mouseManager;
     }
-
 
 }

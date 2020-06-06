@@ -13,7 +13,7 @@ public class EndState extends State {
 
     private int scale;
     private boolean input = true;
-    public boolean dataAdded = false;
+    public boolean moneyAdded = false;
 
     public EndState(Handler handler) {
         super(handler);
@@ -24,14 +24,12 @@ public class EndState extends State {
         if(input) {
             restartButton();
         }
-
     }
 
     @Override
     public void render(Graphics g) {
         background(g);
         foreground(g);
-
     }
 
     private void restartButton() {
@@ -42,11 +40,11 @@ public class EndState extends State {
 
             input = false;
 
-            if(handler.getMouseManager().isLeftPressed() && dataAdded == false) {
+            if(handler.getMouseManager().isLeftPressed() && moneyAdded == false) {
                 State.setState(handler.getGame().gameState);
-                Player.setDataAmount(Player.getDataAmount() + Snake.score);
+                Player.setMoneyAmount(Player.getMoneyAmount() + Snake.score);
                 Snake.score = 0;
-                dataAdded = true;
+                moneyAdded = true;
                 input = true;
 
             }
@@ -69,7 +67,7 @@ public class EndState extends State {
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", Font.BOLD, 50));
         g.drawString("Data: " + Snake.score, 50, 350);
-        g.drawString("Gesamt: " + Player.getDataAmount(), 50, 410);
+        g.drawString("Gesamt: " + Player.getMoneyAmount() + " Euro", 50, 410);
 
         /*g.setColor(Color.RED);
         g.fillRect(handler.getWidth()/2-125, handler.getHeight()/2 + 50, 250, 75);*/

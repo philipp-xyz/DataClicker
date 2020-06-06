@@ -37,7 +37,7 @@ public class Variables {
 		try {
 			pixelfont = Font.createFont(Font.TRUETYPE_FONT, new File("/main/dataclicker/res/coders_crux.ttf")).deriveFont(125f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("/main/dataclicker/res/coders_crux.ttf"))); 
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("/main/dataclicker/res/coders_crux.ttf")));
 		} catch (FontFormatException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

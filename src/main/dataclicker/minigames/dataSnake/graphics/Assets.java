@@ -24,7 +24,6 @@ public class Assets {
         SpriteSheet dataSnakeLogo = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/logo1.png"));
         SpriteSheet tasten = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/tasten.png"));
 
-
         //Logo
         logo = dataSnakeLogo.crop(0, 0, 700, 300);
 
@@ -44,7 +43,6 @@ public class Assets {
         //Menü
         menu_background = menuBack.crop(0, 0, 800, 800);
         menu_background1 = menuBack1.crop(0, 0, 800, 800);
-
 
         //Schlange
         head_W = headSheet.crop(0, 0, width, height);
