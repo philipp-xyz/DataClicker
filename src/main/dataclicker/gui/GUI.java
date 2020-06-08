@@ -216,7 +216,7 @@ public class GUI {
 		// welches der Spieler zur Zeit hat
 
 		FlowLayout fl_playerRessourcesPanel = (FlowLayout) playerRessourcesPanel.getLayout();
-		fl_playerRessourcesPanel.setVgap(50);
+		fl_playerRessourcesPanel.setVgap(10);			//Changed it since with my small screen the upgrades weren´t visible at a later point in game
 		frame.getContentPane().add(playerRessourcesPanel, BorderLayout.NORTH);
 
 		JLabel playerRessources = new JLabel(playerRessources());
@@ -764,7 +764,7 @@ public class GUI {
 		});
 
 		JButton upgrade5 = new JButton(upgradesText(karperbrief, dataPirate));
-		upgradesPanel.add(upgrade4);
+		upgradesPanel.add(upgrade5);
 		upgrade5.setToolTipText("<html>" + upgradesToolTip(karperbrief, dataPirate));
 		upgrade5.setVisible(false);
 		upgrade5.addActionListener(new ActionListener() {
@@ -847,7 +847,7 @@ public class GUI {
 		upgradesPanel.add(upgrade11);
 		upgrade11.setToolTipText("<html>" + upgradesToolTip(callCenterSupport, dataScout24));
 		upgrade11.setVisible(false);
-		upgrade10.addActionListener(new ActionListener() {
+		upgrade11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click) {
 				if(callCenterSupport.purchaseUpgrade(dataScout24)) {
 				playerRessources.setText(playerRessources());
