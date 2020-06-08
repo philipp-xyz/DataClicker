@@ -83,6 +83,7 @@ public class Upgrades_Template {
 			int firstdps = dataSource.getDataPerSecond();
 			dataSource.setDataMultiplier(getUpgradeMultiplier());
 			dataSource.updateDataPerSecond();
+			
 			int seconddps = dataSource.getDataPerSecond();
 			int diffdps = seconddps - firstdps;
 			Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond()+diffdps);
