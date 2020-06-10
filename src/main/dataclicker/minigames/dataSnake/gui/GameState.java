@@ -51,12 +51,13 @@ public class GameState extends State {
     }
 
     public void grid(Graphics g) {
-        for(int i = 0; i < 25; i++) {
+        g.drawImage(Assets.menu_background1, 0, 0, 800, 800, null);
+        /*for(int i = 0; i < 25; i++) {
             for(int j = 0; j < 25; j++) {
                 //g.drawRect(i * 32, j * 32, 32, 32);
-                g.drawImage(Assets.grassTileBorder, i * 32, j * 32, null);
+                g.drawImage(Assets.border, i * 32, j * 32, null);
             }
-        }
+        }*/
     }
 
     public void drawHead(Graphics g) {
