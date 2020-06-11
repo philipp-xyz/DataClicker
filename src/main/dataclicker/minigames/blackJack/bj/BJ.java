@@ -8,24 +8,28 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import main.dataclicker.*;
+import main.dataclicker.player.Player;
+
 public class BJ 
 {
-	public static void main(String[] args)
+	/*public static void main(String[] args)
 	{
 		new BJ("Black Jack", 800, 800);
 	}
-
+	*/
+	
 	private String title;
 	private int width;
 	private int height;
 	private JFrame frame;
 	private static int einsatz = 1;
-	private static int vermögen = 1000;
+	private static int vermÃ¶gen;
 	private boolean runde = true;
 	static JButton start = new JButton("Karten legen");
-	static JLabel kapital = new JLabel("Vermögen: " + vermögen + " Daten");
-	static JLabel eingesetzt = new JLabel("Einsatz: " + einsatz + " Daten");
-	static JButton erhöhen = new JButton("Einsatz erhöhen");
+	static JLabel kapital = new JLabel();
+	static JLabel eingesetzt = new JLabel("Einsatz: " + einsatz + " Euro");
+	static JButton erhÃ¶hen = new JButton("Einsatz erhÃ¶hen");
 	static JButton senken = new JButton("Einsatz senken");
 	static JButton karte = new JButton("Karte ziehen");
 	static JButton keineKarte = new JButton("keine Karte ziehen");
@@ -33,16 +37,19 @@ public class BJ
 	static JLabel label1 = new JLabel("Ihre Karten");
 	static JLabel label2 = new JLabel("Karten des Croupier");
 	static JLabel label3 = new JLabel("Der Croupier zieht bis er mindesten 17 hat");
-	private int s1 = 0;
+	//possible spieler karten
+	private int s1 = 0; 
 	private int s2 = 0;
 	private int s3 = 0;
 	private int s4 = 0;
 	private int s5 = 0;
+	//possible croupier karten
 	private int c1 = 0;
 	private int c2 = 0;
 	private int c3 = 0;
 	private int c4 = 0;
 	private int c5 = 0;
+	//??homestuck?? o no wait it's hilfs-karten to determine the suit
 	private int hs1;
 	private int hs2;
 	private int hs3;
@@ -73,13 +80,15 @@ public class BJ
 		this.width = width;
 		this.height = height;	
 		createDisplay();
+		vermÃ¶gen = Player.getMoneyAmount();
+		kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
 	}
 
 	private void createDisplay() 
 	{
 		frame = new JFrame(title);
 		frame.setSize(width, height);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
@@ -90,8 +99,8 @@ public class BJ
 		eingesetzt.setBounds(300, 375, 200, 25);
 		frame.add(kapital);
 		kapital.setBounds(300, 350, 200, 25);
-		frame.add(erhöhen);
-		erhöhen.setBounds(505, 400, 150, 50);
+		frame.add(erhÃ¶hen);
+		erhÃ¶hen.setBounds(505, 400, 150, 50);
 		frame.add(senken);
 		senken.setBounds(505, 450, 150, 50);
 		frame.add(karte);
@@ -132,7 +141,7 @@ public class BJ
 		frame.add(sieger);
 		sieger.setBounds(300, 300, 200, 50);
 		
-		erhöhen.addActionListener(new ActionListener()
+		erhÃ¶hen.addActionListener(new ActionListener()
 				{
 					public void actionPerformed(ActionEvent click)
 					{
@@ -150,7 +159,7 @@ public class BJ
 								einsatz = einsatz + 10;
 							else
 								einsatz = einsatz + 1;
-							eingesetzt.setText("Einsatz: " + einsatz + " Daten");
+							eingesetzt.setText("Einsatz: " + einsatz + " Euro");
 						}	
 					}
 				});
@@ -173,7 +182,7 @@ public class BJ
 						einsatz = einsatz - 10;
 					else
 						einsatz = einsatz - 1;
-					eingesetzt.setText("Einsatz: " + einsatz + " Daten");
+					eingesetzt.setText("Einsatz: " + einsatz + " Euro");
 				}	
 			}
 		});
@@ -182,11 +191,12 @@ public class BJ
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				if(runde && einsatz <= vermögen)
+				if(runde && einsatz <= vermÃ¶gen)
 				{
-					vermögen = vermögen - einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
-					erhöhen.setVisible(false);
+					vermÃ¶gen = vermÃ¶gen - einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
+					Player.setMoneyAmount(vermÃ¶gen);
+					erhÃ¶hen.setVisible(false);
 					senken.setVisible(false);
 					start.setText("Passen");
 					karte.setVisible(true);
@@ -225,13 +235,13 @@ public class BJ
 						s1 = 10;
 						hs1 = (int)(Math.random()*4);
 						if(hs1 == 0)
-							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hs1 == 1)
-							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hs1 == 2)
-							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hs1 == 3)
-							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							s1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(s1 == 11)
 					{
@@ -387,13 +397,13 @@ public class BJ
 						s2 = 10;
 						hs2 = (int)(Math.random()*4);
 						if(hs2 == 0)
-							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hs2 == 1)
-							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hs2 == 2)
-							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hs2 == 3)
-							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							s2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(s2 == 11)
 					{
@@ -548,13 +558,13 @@ public class BJ
 						c1 = 10;
 						hc1 = (int)(Math.random()*4);
 						if(hc1 == 0)
-							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc1 == 1)
-							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc1 == 2)
-							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc1 == 3)
-							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c1A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c1 == 11)
 					{
@@ -692,7 +702,7 @@ public class BJ
 					else if(c2 == 14)
 					{
 						c2 = 10;
-						c2Hilf = "König";
+						c2Hilf = "Kï¿½nig";
 					}
 					if(c2 == 11)
 						c2Hilf = "Ass";
@@ -701,8 +711,9 @@ public class BJ
 					{
 						sieger.setText("Sie gewinnen");
 						start.setText("Beenden");
-						vermögen = (int) (vermögen + 0.5 * einsatz);
-						kapital.setText("Vermögen: " + vermögen + " Daten");
+						vermÃ¶gen = (int) (vermÃ¶gen + 0.5 * einsatz);
+						kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
+						Player.setMoneyAmount(vermÃ¶gen);
 						if(c2Hilf == "Bube")
 						{
 							hc2 = (int)(Math.random()*4);
@@ -727,17 +738,17 @@ public class BJ
 							else if(hc2 == 3)
 								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzDame.png")));
 						}
-						else if(c2Hilf == "König")
+						else if(c2Hilf == "Kï¿½nig")
 						{
 							hc2 = (int)(Math.random()*4);
 							if(hc2 == 0)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 							else if(hc2 == 1)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 							else if(hc2 == 2)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 							else if(hc2 == 3)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 						}
 						else if(c2Hilf == "Ass")
 						{
@@ -864,8 +875,9 @@ public class BJ
 					{
 						sieger.setText("Unentschieden");
 						start.setText("Beenden");
-						vermögen = vermögen + einsatz;
-						kapital.setText("Vermögen: " + vermögen + " Daten");
+						vermÃ¶gen = vermÃ¶gen + einsatz;
+						kapital.setText("Vermï¿½gen: " + vermÃ¶gen + " Euro");
+						Player.setMoneyAmount(vermÃ¶gen);
 						if(c2Hilf == "Bube")
 						{
 							hc2 = (int)(Math.random()*4);
@@ -890,17 +902,17 @@ public class BJ
 							else if(hc2 == 3)
 								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzDame.png")));
 						}
-						else if(c2Hilf == "König")
+						else if(c2Hilf == "Kï¿½nig")
 						{
 							hc2 = (int)(Math.random()*4);
 							if(hc2 == 0)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 							else if(hc2 == 1)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 							else if(hc2 == 2)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 							else if(hc2 == 3)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 						}
 						else if(c2Hilf == "Ass")
 						{
@@ -1051,17 +1063,17 @@ public class BJ
 							else if(hc2 == 3)
 								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzDame.png")));
 						}
-						else if(c2Hilf == "König")
+						else if(c2Hilf == "Kï¿½nig")
 						{
 							hc2 = (int)(Math.random()*4);
 							if(hc2 == 0)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 							else if(hc2 == 1)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 							else if(hc2 == 2)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 							else if(hc2 == 3)
-								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+								c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 						}
 						else if(c2Hilf == "Ass")
 						{
@@ -1189,37 +1201,14 @@ public class BJ
 				}
 				else
 				{
-					erhöhen.setVisible(true);
-					senken.setVisible(true);
-					start.setText("Karten legen");
-					karte.setVisible(false);
-					keineKarte.setVisible(false);
-					verdoppeln.setVisible(false);
-					s1A.setIcon(null);
-					s2A.setIcon(null);
-					s3A.setIcon(null);
-					s4A.setIcon(null);
-					s5A.setIcon(null);
-					c1A.setIcon(null);
-					c2A.setIcon(null);
-					c3A.setIcon(null);
-					c4A.setIcon(null);
-					c5A.setIcon(null);
-					s1 = 0;
-					s2 = 0;
-					s3 = 0;
-					s4 = 0;
-					s5 = 0;
-					c1 = 0;
-					c2 = 0;
-					c3 = 0;
-					c4 = 0;
-					c5 = 0;
-					sieger.setText("");
-					runde = true;
+					
+					finish();
+					
 				}
 			}
 		});
+		
+		
 		
 		karte.addActionListener(new ActionListener()
 		{
@@ -1260,13 +1249,13 @@ public class BJ
 						s3 = 10;
 						hs3 = (int)(Math.random()*4);
 						if(hs3 == 0)
-							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hs3 == 1)
-							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hs3 == 2)
-							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hs3 == 3)
-							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(s3 == 11)
 					{
@@ -1423,13 +1412,13 @@ public class BJ
 						s4 = 10;
 						hs4 = (int)(Math.random()*4);
 						if(hs4 == 0)
-							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hs4 == 1)
-							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hs4 == 2)
-							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hs4 == 3)
-							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							s4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(s4 == 11)
 					{
@@ -1586,13 +1575,13 @@ public class BJ
 						s5 = 10;
 						hs5 = (int)(Math.random()*4);
 						if(hs5 == 0)
-							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hs5 == 1)
-							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hs5 == 2)
-							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hs5 == 3)
-							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							s5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(s5 == 11)
 					{
@@ -1718,7 +1707,7 @@ public class BJ
 				
 				if(s1 + s2 + s3 + s4 + s5 > 21)
 				{
-					sieger.setText("Sie haben sich überkauft");
+					sieger.setText("Sie haben sich ï¿½berkauft");
 					karte.setVisible(false);
 					keineKarte.setVisible(false);
 					start.setText("Beenden");
@@ -1757,17 +1746,17 @@ public class BJ
 					else if(hc2 == 3)
 						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzDame.png")));
 				}
-				else if(c2Hilf == "König")
+				else if(c2Hilf == "Kï¿½nig")
 				{
 					hc2 = (int)(Math.random()*4);
 					if(hc2 == 0)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 					else if(hc2 == 1)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 					else if(hc2 == 2)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 					else if(hc2 == 3)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 				}
 				else if(c2Hilf == "Ass")
 				{
@@ -1924,13 +1913,13 @@ public class BJ
 						c3 = 10;
 						hc3 = (int)(Math.random()*4);
 						if(hc3 == 0)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc3 == 1)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc3 == 2)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc3 == 3)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c3 == 11)
 					{
@@ -2087,13 +2076,13 @@ public class BJ
 						c4 = 10;
 						hc4 = (int)(Math.random()*4);
 						if(hc4 == 0)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc4 == 1)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc4 == 2)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc4 == 3)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c4 == 11)
 					{
@@ -2250,13 +2239,13 @@ public class BJ
 						c5 = 10;
 						hc5 = (int)(Math.random()*4);
 						if(hc5 == 0)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc5 == 1)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc5 == 2)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc5 == 3)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c5 == 11)
 					{
@@ -2382,10 +2371,11 @@ public class BJ
 				
 				if(c1 + c2 + c3 + c4 + c5 > 21)
 				{
-					sieger.setText("Croupier hat sich überkauft");
+					sieger.setText("Croupier hat sich ï¿½berkauft");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
+					vermÃ¶gen = vermÃ¶gen + 2 * einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
+					Player.setMoneyAmount(vermÃ¶gen);
 					
 				}
 				else if(c1 + c2 + c3 + c4 + c5 > s1 + s2 + s3 + s4 + s5)
@@ -2397,16 +2387,16 @@ public class BJ
 				{
 					sieger.setText("Unentschieden");
 					start.setText("Beenden");
-					vermögen = vermögen + einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
+					vermÃ¶gen = vermÃ¶gen + einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
 					c2A.setText(c2 + "");
 				}
 				else
 				{
 					sieger.setText("Sie gewinnen");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
+					vermÃ¶gen = vermÃ¶gen + 2 * einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
 				}
 			}
 		});
@@ -2452,13 +2442,13 @@ public class BJ
 					s3 = 10;
 					hs3 = (int)(Math.random()*4);
 					if(hs3 == 0)
-						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 					else if(hs3 == 1)
-						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 					else if(hs3 == 2)
-						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 					else if(hs3 == 3)
-						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+						s3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 				}
 				else if(s3 == 11)
 				{
@@ -2605,17 +2595,17 @@ public class BJ
 					else if(hc2 == 3)
 						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzDame.png")));
 				}
-				else if(c2Hilf == "König")
+				else if(c2Hilf == "Kï¿½nig")
 				{
 					hc2 = (int)(Math.random()*4);
 					if(hc2 == 0)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 					else if(hc2 == 1)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 					else if(hc2 == 2)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 					else if(hc2 == 3)
-						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+						c2A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 				}
 				else if(c2Hilf == "Ass")
 				{
@@ -2772,13 +2762,13 @@ public class BJ
 						c3 = 10;
 						hc3 = (int)(Math.random()*4);
 						if(hc3 == 0)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc3 == 1)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc3 == 2)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc3 == 3)
-							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c3A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c3 == 11)
 					{
@@ -2935,13 +2925,13 @@ public class BJ
 						c4 = 10;
 						hc4 = (int)(Math.random()*4);
 						if(hc4 == 0)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc4 == 1)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc4 == 2)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc4 == 3)
-							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c4A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c4 == 11)
 					{
@@ -3098,13 +3088,13 @@ public class BJ
 						c5 = 10;
 						hc5 = (int)(Math.random()*4);
 						if(hc5 == 0)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/HerzKï¿½nig.png")));
 						else if(hc5 == 1)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KaroKï¿½nig.png")));
 						else if(hc5 == 2)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/PikKï¿½nig.png")));
 						else if(hc5 == 3)
-							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKönig.png")));
+							c5A.setIcon(new ImageIcon(BJ.class.getResource("/main/dataclicker/minigames/blackJack/bilder/KreuzKï¿½nig.png")));
 					}
 					else if(c5 == 11)
 					{
@@ -3230,10 +3220,11 @@ public class BJ
 				
 				if(c1 + c2 + c3 + c4 + c5 > 21)
 				{
-					sieger.setText("Croupier hat sich überkauft");
+					sieger.setText("Croupier hat sich ï¿½berkauft");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
+					vermÃ¶gen = vermÃ¶gen + 2 * einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
+					Player.setMoneyAmount(vermÃ¶gen);
 					
 				}
 				else if(c1 + c2 + c3 + c4 + c5 > s1 + s2 + s3 + s4 + s5)
@@ -3245,18 +3236,51 @@ public class BJ
 				{
 					sieger.setText("Unentschieden");
 					start.setText("Beenden");
-					vermögen = vermögen + einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
+					vermÃ¶gen = vermÃ¶gen + einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
+					Player.setMoneyAmount(vermÃ¶gen);
 					c2A.setText(c2 + "");
 				}
 				else
 				{
 					sieger.setText("Sie gewinnen");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Daten");
+					vermÃ¶gen = vermÃ¶gen + 2 * einsatz;
+					kapital.setText("VermÃ¶gen: " + vermÃ¶gen + " Euro");
+					Player.setMoneyAmount(vermÃ¶gen);
 				}
 			}
 		});
+	}
+	public void finish() {
+		erhÃ¶hen.setVisible(true);
+		senken.setVisible(true);
+		start.setText("Karten legen");
+		karte.setVisible(false);
+		keineKarte.setVisible(false);
+		verdoppeln.setVisible(false);
+		
+		s1A.setIcon(null);
+		s2A.setIcon(null);
+		s3A.setIcon(null);
+		s4A.setIcon(null);
+		s5A.setIcon(null);
+		c1A.setIcon(null);
+		c2A.setIcon(null);
+		c3A.setIcon(null);
+		c4A.setIcon(null);
+		c5A.setIcon(null);
+		s1 = 0;
+		s2 = 0;
+		s3 = 0;
+		s4 = 0;
+		s5 = 0;
+		c1 = 0;
+		c2 = 0;
+		c3 = 0;
+		c4 = 0;
+		c5 = 0;
+		sieger.setText("");
+		runde = true;
 	}
 }
