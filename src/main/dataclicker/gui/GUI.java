@@ -215,7 +215,7 @@ public class GUI {
 		// welches der Spieler zur Zeit hat
 
 		FlowLayout fl_playerRessourcesPanel = (FlowLayout) playerRessourcesPanel.getLayout();
-		fl_playerRessourcesPanel.setVgap(50);
+		fl_playerRessourcesPanel.setVgap(10);
 		frame.getContentPane().add(playerRessourcesPanel, BorderLayout.NORTH);
 
 		JLabel playerRessources = new JLabel(playerRessources());
@@ -757,7 +757,7 @@ public class GUI {
 		});
 
 		JButton upgrade5 = new JButton(upgradesText(karperbrief, dataPirate));
-		upgradesPanel.add(upgrade4);
+		upgradesPanel.add(upgrade5);
 		upgrade5.setToolTipText("<html>" + upgradesToolTip(karperbrief, dataPirate));
 		upgrade5.setVisible(false);
 		upgrade5.addActionListener(new ActionListener() {
