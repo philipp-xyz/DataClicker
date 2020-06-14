@@ -24,12 +24,12 @@ public class BJ
 	private int height;
 	private JFrame frame;
 	private static int einsatz = 1;
-	private static int vermögen;
+	private static int vermoegen;
 	private boolean runde = true;
 	static JButton start = new JButton("Karten legen");
 	static JLabel kapital = new JLabel();
 	static JLabel eingesetzt = new JLabel("Einsatz: " + einsatz + " Euro");
-	static JButton erhöhen = new JButton("Einsatz erhöhen");
+	static JButton erhoehen = new JButton("Einsatz erhoehen");
 	static JButton senken = new JButton("Einsatz senken");
 	static JButton karte = new JButton("Karte ziehen");
 	static JButton keineKarte = new JButton("keine Karte ziehen");
@@ -80,8 +80,8 @@ public class BJ
 		this.width = width;
 		this.height = height;	
 		createDisplay();
-		vermögen = Player.getMoneyAmount();
-		kapital.setText("Vermögen: " + vermögen + " Euro");
+		vermoegen = Player.getMoneyAmount();
+		kapital.setText("vermoegen: " + vermoegen + " Euro");
 	}
 
 	private void createDisplay() 
@@ -99,8 +99,8 @@ public class BJ
 		eingesetzt.setBounds(300, 375, 200, 25);
 		frame.add(kapital);
 		kapital.setBounds(300, 350, 200, 25);
-		frame.add(erhöhen);
-		erhöhen.setBounds(505, 400, 150, 50);
+		frame.add(erhoehen);
+		erhoehen.setBounds(505, 400, 150, 50);
 		frame.add(senken);
 		senken.setBounds(505, 450, 150, 50);
 		frame.add(karte);
@@ -141,7 +141,7 @@ public class BJ
 		frame.add(sieger);
 		sieger.setBounds(300, 300, 200, 50);
 		
-		erhöhen.addActionListener(new ActionListener()
+		erhoehen.addActionListener(new ActionListener()
 				{
 					public void actionPerformed(ActionEvent click)
 					{
@@ -191,12 +191,12 @@ public class BJ
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				if(runde && einsatz <= vermögen)
+				if(runde && einsatz <= vermoegen)
 				{
-					vermögen = vermögen - einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
-					Player.setMoneyAmount(vermögen);
-					erhöhen.setVisible(false);
+					vermoegen = vermoegen - einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
+					Player.setMoneyAmount(vermoegen);
+					erhoehen.setVisible(false);
 					senken.setVisible(false);
 					start.setText("Passen");
 					karte.setVisible(true);
@@ -711,9 +711,9 @@ public class BJ
 					{
 						sieger.setText("Sie gewinnen");
 						start.setText("Beenden");
-						vermögen = (int) (vermögen + 0.5 * einsatz);
-						kapital.setText("Vermögen: " + vermögen + " Euro");
-						Player.setMoneyAmount(vermögen);
+						vermoegen = (int) (vermoegen + 0.5 * einsatz);
+						kapital.setText("vermoegen: " + vermoegen + " Euro");
+						Player.setMoneyAmount(vermoegen);
 						if(c2Hilf == "Bube")
 						{
 							hc2 = (int)(Math.random()*4);
@@ -875,9 +875,9 @@ public class BJ
 					{
 						sieger.setText("Unentschieden");
 						start.setText("Beenden");
-						vermögen = vermögen + einsatz;
-						kapital.setText("Verm�gen: " + vermögen + " Euro");
-						Player.setMoneyAmount(vermögen);
+						vermoegen = vermoegen + einsatz;
+						kapital.setText("Verm�gen: " + vermoegen + " Euro");
+						Player.setMoneyAmount(vermoegen);
 						if(c2Hilf == "Bube")
 						{
 							hc2 = (int)(Math.random()*4);
@@ -2373,9 +2373,9 @@ public class BJ
 				{
 					sieger.setText("Croupier hat sich �berkauft");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
-					Player.setMoneyAmount(vermögen);
+					vermoegen = vermoegen + 2 * einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
+					Player.setMoneyAmount(vermoegen);
 					
 				}
 				else if(c1 + c2 + c3 + c4 + c5 > s1 + s2 + s3 + s4 + s5)
@@ -2387,16 +2387,16 @@ public class BJ
 				{
 					sieger.setText("Unentschieden");
 					start.setText("Beenden");
-					vermögen = vermögen + einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
+					vermoegen = vermoegen + einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
 					c2A.setText(c2 + "");
 				}
 				else
 				{
 					sieger.setText("Sie gewinnen");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
+					vermoegen = vermoegen + 2 * einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
 				}
 			}
 		});
@@ -3222,9 +3222,9 @@ public class BJ
 				{
 					sieger.setText("Croupier hat sich �berkauft");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
-					Player.setMoneyAmount(vermögen);
+					vermoegen = vermoegen + 2 * einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
+					Player.setMoneyAmount(vermoegen);
 					
 				}
 				else if(c1 + c2 + c3 + c4 + c5 > s1 + s2 + s3 + s4 + s5)
@@ -3236,24 +3236,24 @@ public class BJ
 				{
 					sieger.setText("Unentschieden");
 					start.setText("Beenden");
-					vermögen = vermögen + einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
-					Player.setMoneyAmount(vermögen);
+					vermoegen = vermoegen + einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
+					Player.setMoneyAmount(vermoegen);
 					c2A.setText(c2 + "");
 				}
 				else
 				{
 					sieger.setText("Sie gewinnen");
 					start.setText("Beenden");
-					vermögen = vermögen + 2 * einsatz;
-					kapital.setText("Vermögen: " + vermögen + " Euro");
-					Player.setMoneyAmount(vermögen);
+					vermoegen = vermoegen + 2 * einsatz;
+					kapital.setText("vermoegen: " + vermoegen + " Euro");
+					Player.setMoneyAmount(vermoegen);
 				}
 			}
 		});
 	}
 	public void finish() {
-		erhöhen.setVisible(true);
+		erhoehen.setVisible(true);
 		senken.setVisible(true);
 		start.setText("Karten legen");
 		karte.setVisible(false);

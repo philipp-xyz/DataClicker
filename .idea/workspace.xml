@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9eeec205-8c3c-43b6-bc9a-eed5d172f495" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/dataSnake/gui/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataclicker/minigames/blackJack/bj/BJ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataclicker/minigames/blackJack/bj/BJ.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,7 @@
       <recent name="C:\Users\AsuraX\Desktop\Studium\WW1\DataClicker\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Application.GUI">
     <configuration name="BJ" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.dataclicker.minigames.blackJack.bj.BJ" />
       <module name="DataClicker" />
@@ -118,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.BJ" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
