@@ -967,7 +967,7 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(minigameDataSweeper.purchaseMGUpgrade(dataSource6Icon)) {
+				if(minigameDataPong.purchaseMGUpgrade(dataSource6Icon)) {
 					playerRessources.setText(playerRessources());
 					upgradesPanel.remove(upgradePong);
 				}
@@ -984,7 +984,7 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(minigameDataSweeper.purchaseMGUpgrade(buyer7Icon)) {
+				if(minigameDataSnake.purchaseMGUpgrade(buyer7Icon)) {
 					playerRessources.setText(playerRessources());
 					upgradesPanel.remove(upgradeSnake);
 				}
