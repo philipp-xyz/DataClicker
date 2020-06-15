@@ -386,6 +386,7 @@ public class GUI {
 		});
 
 		JButton dataSource6Icon = new JButton();
+		dataSource6Icon.setName("pong");
 		dataSource6Icon.setIcon(
 				new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/dataScout_logo_small.png")));
 		GridBagConstraints gbc_dataSource6Icon = new GridBagConstraints();
@@ -394,6 +395,8 @@ public class GUI {
 		gbc_dataSource6Icon.gridx = 0;
 		gbc_dataSource6Icon.gridy = 5;
 		dataSources.add(dataSource6Icon, gbc_dataSource6Icon);
+		
+		
 
 		JButton dataSource6 = new JButton("<html>" + dataSourcesText(dataScout24));
 		GridBagConstraints gbc_dataSource6 = new GridBagConstraints();
@@ -1064,6 +1067,7 @@ public class GUI {
 				minigameDataSweeper.checkMGUpgrade(upgradeSweeper);
 				minigameDataJack.checkMGUpgrade(upgradeBlackJack);
 				minigameDataSnake.checkMGUpgrade(upgradeSnake);
+				minigameDataPong.checkMGUpgrade(upgradePong);
 
 			}
 		}, 0, 1000);

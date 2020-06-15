@@ -125,6 +125,15 @@ public class Upgrades_Template {
 				}
 			});
 		}
+		
+		if(button.getName() == "pong") {
+			button.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent click) {
+					new main.dataclicker.minigames.DataPONG.Game();
+				}
+			});
+		}
 
 		if(button.getName() == "Snake") {
 			button.addActionListener(new ActionListener() {

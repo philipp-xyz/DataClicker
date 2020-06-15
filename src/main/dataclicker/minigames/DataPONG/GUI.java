@@ -8,7 +8,7 @@ public class GUI {
 
 		JFrame frame = new JFrame(title);
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setResizable(false);
 		
 		

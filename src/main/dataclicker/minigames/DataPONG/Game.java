@@ -9,6 +9,8 @@ import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.image.BufferStrategy;
 
+import main.dataclicker.player.Player;
+
 public class Game extends Canvas implements Runnable{
 
 	private static final long serialVersionUID = -668240625892092763L;
@@ -194,6 +196,8 @@ public class Game extends Canvas implements Runnable{
 	
 	
 	public void gameOver() {
+		int data = player.score * 250;
+		Player.setDataAmount(Player.getDataAmount()+data);
 		
 		try {
 			gameThread.join();
@@ -201,7 +205,6 @@ public class Game extends Canvas implements Runnable{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
 		
 		
 		
@@ -219,10 +222,10 @@ public class Game extends Canvas implements Runnable{
 	}
 	
 	
-	public static void main (String[] args) {
+	/*public static void main (String[] args) {
 		
 		new Game();
-	}
+	}*/
 
 
 
