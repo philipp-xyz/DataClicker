@@ -5,16 +5,15 @@ import main.dataclicker.minigames.dataSnake.graphics.Assets;
 
 import java.awt.*;
 
-
 public class MenuState extends State{
 
     public Font menuFont = new Font("Arial", Font.BOLD, 20);
+    private Font connection;
 
     private int scale;
     public boolean input = true;
 
-    private Rectangle startButton = new Rectangle(handler.getWidth()/2-125, handler.getHeight()/2+50, 250, 75);
-
+    private Rectangle startButton = new Rectangle(handler.getWidth() / 2 - 125, handler.getHeight() / 2 + 50, 250, 75);
 
     public MenuState(Handler handler) {
         super(handler);
@@ -25,7 +24,6 @@ public class MenuState extends State{
         if(input) {
             startButton();
         }
-
     }
 
     @Override
@@ -68,7 +66,7 @@ public class MenuState extends State{
 
         g.drawImage(Assets.startButton, handler.getWidth() / 2 - 125 - 2 * scale, startButton.y + startButton.height - 75 - scale * 2, null);
 
-        g.drawImage(Assets.keys, handler.getWidth()/2 - 40, handler.getHeight()/2 + 250, null);
+        g.drawImage(Assets.keys, handler.getWidth() / 2 - 40, handler.getHeight() / 2 + 250, null);
 
     }
 

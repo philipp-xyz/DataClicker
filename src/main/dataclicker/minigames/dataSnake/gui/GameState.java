@@ -24,7 +24,7 @@ public class GameState extends State {
             Snake.move();
             Snake.waitToMove = false;
 
-            handler.getGame().endState.dataAdded = false;
+            handler.getGame().endState.moneyAdded = false;
 
             Collision.collidePickup();
 
@@ -51,10 +51,11 @@ public class GameState extends State {
     }
 
     public void grid(Graphics g) {
+        g.drawImage(Assets.menu_background1, 0, 0, 800, 800, null);
         for(int i = 0; i < 25; i++) {
             for(int j = 0; j < 25; j++) {
                 //g.drawRect(i * 32, j * 32, 32, 32);
-                g.drawImage(Assets.grassTileBorder, i * 32, j * 32, null);
+                g.drawImage(Assets.border, i * 32, j * 32, null);
             }
         }
     }
@@ -79,7 +80,6 @@ public class GameState extends State {
             p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
             g.drawImage(Assets.head_D, p.x, p.y, null);
         }
-
     }
 
     public void drawTail(Graphics g) {

@@ -7,7 +7,7 @@ public class Assets {
 
     private static final int width = 32, height = 32;
 
-    public static BufferedImage data, tail, grassTile, grassTileBorder, menu_background, menu_background1, startButton, logo, keys;
+    public static BufferedImage data, tail, grassTile, grassTileBorder, menu_background, menu_background1, startButton, logo, keys, border;
     public static BufferedImage head_W, head_A, head_S, head_D;
 
 
@@ -23,7 +23,7 @@ public class Assets {
         SpriteSheet start = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/start.png"));
         SpriteSheet dataSnakeLogo = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/logo1.png"));
         SpriteSheet tasten = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/tasten.png"));
-
+        SpriteSheet tileBorder = new SpriteSheet(ImageLoader.loadImage("/main/dataclicker/res/textures/border.png"));
 
         //Logo
         logo = dataSnakeLogo.crop(0, 0, 700, 300);
@@ -40,11 +40,11 @@ public class Assets {
         //Hintergrund
         grassTile = grassSheet.crop(0, 0, width, height);
         grassTileBorder = grassWithBorder.crop(0, 0, width, height);
+        border = tileBorder.crop(0,0, width, height);
 
         //Menü
         menu_background = menuBack.crop(0, 0, 800, 800);
         menu_background1 = menuBack1.crop(0, 0, 800, 800);
-
 
         //Schlange
         head_W = headSheet.crop(0, 0, width, height);
