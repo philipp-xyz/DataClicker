@@ -199,6 +199,7 @@ public class GUI {
 		minigameDataJack = new Upgrades_Template("Black Jack!", "Klicke auf das Data-Tech icon um Geld durch Black Jack zugewinnen", 500);
 		minigameDataPong = new Upgrades_Template("Pong!", "Ab jetzt bietet DataScout24 auch Pong zum kennenlernen an! Klicke einfach auf das Icon", 1500);
 		minigameDataSweeper = new Upgrades_Template("Mine? Nein, Data-Sweeper!", "Die Datenpiraten brauchen hilfe um ihre Schätze zu sichern, klicke auf das Icon um ihnen zu helfen", 500);
+		minigameDataSlots = new Upgrades_Template("Neuer Esport-Craze!", "Slotmaschinen überrennen die E-Sports szene! Klicke auf das Icon um Mitlaeufer zu werden!", 1000);
 	}
 
 	/**
@@ -590,18 +591,14 @@ public class GUI {
 		});
 
 		JButton buyer4Icon = new JButton("");
+		buyer4Icon.setName("slots");
 		buyer4Icon.setIcon(new ImageIcon(GUI.class.getResource("/main/dataclicker/res/textures/data_esport_small.png")));
 		GridBagConstraints gbc_buyer4Icon = new GridBagConstraints();
 		gbc_buyer4Icon.insets = new Insets(0, 0, 5, 0);
 		gbc_buyer4Icon.gridx = 1;
 		gbc_buyer4Icon.gridy = 3;
 		buyersPanel.add(buyer4Icon, gbc_buyer4Icon);
-		buyer4Icon.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent click) {
-				Slotsmain slots = new main.dataclicker.minigames.dataSlots.Slotsmain();
-				slots.main(null);
-			}
-		});
+		
 
 		JButton buyer5 = new JButton(buyersText(party));
 		GridBagConstraints gbc_buyer5 = new GridBagConstraints();
@@ -767,11 +764,8 @@ public class GUI {
 			}
 		});
 
-<<<<<<< HEAD
-		JButton upgrade5 = new JButton(upgradesText(karperbrief, dataPirate));
-=======
+
 		JButton upgrade5 = new JButton(upgradesText(karperbrief));
->>>>>>> master
 		upgradesPanel.add(upgrade5);
 		upgrade5.setToolTipText("<html>" + upgradesToolTip(karperbrief, dataPirate));
 		upgrade5.setVisible(false);
@@ -997,6 +991,23 @@ public class GUI {
 			}
 			
 		});
+		
+		JButton upgradeSlots = new JButton(upgradesText(minigameDataSlots));
+		upgradeSlots.setName("Snake");
+		upgradesPanel.add(upgradeSlots);
+		upgradeSlots.setToolTipText(minigameDataSlots.getUpgradeDescription());
+		upgradeSlots.setVisible(false);
+		upgradeSlots.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(minigameDataSweeper.purchaseMGUpgrade(buyer4Icon)) {
+					playerRessources.setText(playerRessources());
+					upgradesPanel.remove(upgradeSlots);
+				}
+			}
+			
+		});
 
 		Timer everySecond = new Timer(); // erstellt einen Timer der jede Sekunde eine Aufgabe vollfï¿½hrt
 		everySecond.schedule(new TimerTask() {
@@ -1014,7 +1025,7 @@ public class GUI {
 			}
 		}, 0, 1000);
 
-	/*	Timer dataSourceVisibility = new Timer();
+		Timer dataSourceVisibility = new Timer();
 		dataSourceVisibility.schedule(new TimerTask() {
 			public void run() {
 				dataBook.toggleVisibility(dataSource2);
@@ -1033,7 +1044,7 @@ public class GUI {
 				whatsData.toggleVisibility(dataSource8Icon);
 			}
 		}, 0, 1000);
-*/
+
 		Timer buyerVisibility = new Timer();
 		buyerVisibility.schedule(new TimerTask() {
 			public void run() {
@@ -1079,6 +1090,7 @@ public class GUI {
 				minigameDataJack.checkMGUpgrade(upgradeBlackJack);
 				minigameDataSnake.checkMGUpgrade(upgradeSnake);
 				minigameDataPong.checkMGUpgrade(upgradePong);
+				minigameDataSlots.checkMGUpgrade(upgradeSlots);
 
 			}
 		}, 0, 1000);

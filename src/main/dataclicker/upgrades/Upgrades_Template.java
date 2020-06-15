@@ -8,6 +8,7 @@ import main.dataclicker.dataSources.*;
 import main.dataclicker.player.Player;
 import main.dataclicker.gui.*;
 import main.dataclicker.minigames.blackJack.bj.BJ;
+import main.dataclicker.minigames.dataSlots.Slotsmain;
 import main.dataclicker.minigames.dataSnake.gui.Game;
 import main.dataclicker.minigames.dataSweeper.SweeperGUI;
 
@@ -100,7 +101,6 @@ public class Upgrades_Template {
 
 	public void upgradeEffect()		
 	{
-<<<<<<< HEAD
 			int firstdps = dataSource.getDataPerSecond();
 			dataSource.setDataMultiplier(getUpgradeMultiplier());
 			dataSource.updateDataPerSecond();
@@ -108,14 +108,8 @@ public class Upgrades_Template {
 			int seconddps = dataSource.getDataPerSecond();
 			int diffdps = seconddps - firstdps;
 			Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond()+diffdps);
-=======
-		int firstdps = dataSource.getDataPerSecond();
-		dataSource.setDataMultiplier(getUpgradeMultiplier());
-		dataSource.updateDataPerSecond();
-		int seconddps = dataSource.getDataPerSecond();
-		int diffdps = seconddps - firstdps;
-		Player.setCurrentDataPerSecond(Player.getCurrentDataPerSecond()+diffdps);
->>>>>>> master
+		
+
 	}
 
 	public void upgradeMG(JButton button) {
@@ -153,6 +147,14 @@ public class Upgrades_Template {
 				}
 			});
 
+		}
+		if(button.getName() == "slots") {
+			button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent click) {
+					Slotsmain slots = new main.dataclicker.minigames.dataSlots.Slotsmain();
+					slots.main(null);
+				}
+			});
 		}
 	}
 

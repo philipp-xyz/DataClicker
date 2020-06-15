@@ -134,7 +134,7 @@ public class SlotGui {
 
 		frame.setResizable(true);
 		if (help == true) {
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 			frame.getContentPane().add(Slotsmain.panel);
 
