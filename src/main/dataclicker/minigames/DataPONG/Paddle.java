@@ -8,11 +8,12 @@ public class Paddle {
 	
 	private int x, y;
 	private int vel = 0;
-	private int speed = 10;
-	private int width = 22, height = 85;
-	private int score = 0; 
+	private int speed = 5;
+	private static int width = 22, height = 85;
+	public int score = 0; 
 	private Color color;
 	private boolean left;
+	public static int paddleMid = height / 2;
 
 	public Paddle(Color c , boolean left) {
 		color = c;
@@ -31,6 +32,7 @@ public class Paddle {
 	
 	public void addPoint() {
 		score++;
+		
 		
 	}
 
@@ -76,6 +78,8 @@ public class Paddle {
 				b.changeXDir();
 			}
 		}
+		
+		Paddle.paddleMid = this.y + height / 2;
 		
 	}
 

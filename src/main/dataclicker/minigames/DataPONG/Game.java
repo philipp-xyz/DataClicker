@@ -77,7 +77,7 @@ public class Game extends Canvas implements Runnable{
 		int frames = 0;
 		
 		
-		while(running) {
+		while(AI.score <= 3) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
 			lastTime = now;
@@ -117,7 +117,9 @@ public class Game extends Canvas implements Runnable{
 		AI.update(ball);
 		
 		
+		// AI movement
 		
+		Keyinput.ai_Movement();
 	}
 
 
@@ -157,6 +159,8 @@ public class Game extends Canvas implements Runnable{
 		g.dispose();
 		buffer.show();
 		
+
+		
 	}
 
 
@@ -172,6 +176,7 @@ public class Game extends Canvas implements Runnable{
 		Stroke dashed = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] {10}, 0); // float[]{10} puts a stroke every 10px
 		g2d.setStroke(dashed);
 		g2d.drawLine(WIDTH / 2, 0,WIDTH / 2, HEIGHT);
+		
 		
 	}
 
@@ -196,6 +201,11 @@ public class Game extends Canvas implements Runnable{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		
+		
+		
+		
 	}
 	
 	public static int sign(double d) {
@@ -220,5 +230,6 @@ public class Game extends Canvas implements Runnable{
 		return Math.min(Math.max(val, min), max);
 		 
 	}
+	
 
 }

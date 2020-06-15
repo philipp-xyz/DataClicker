@@ -7,8 +7,8 @@ public class Ball {
 
 	public static final int SIZE = 16;
 	
-	private int x, y;
-	private int xVel, yVel;	// vakue either 1 or -1
+	private static int x, y;
+	private static int xVel, yVel;	// vakue either 1 or -1
 	private int speed = 5;
 	
 	public Ball() {
@@ -34,11 +34,11 @@ public class Ball {
 		return SIZE;
 	}
 
-	public int getX() {
+	public static int getX() {
 		return x;
 	}
 
-	public int getY() {
+	public static int getY() {
 		return y;
 	}
 
@@ -73,6 +73,7 @@ public class Ball {
 		//with walls
 		if(x + SIZE >= Game.WIDTH) {
 			player.addPoint();
+			speed *=  1.3;
 			reset();
 		}
 		
